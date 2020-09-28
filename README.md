@@ -32,7 +32,7 @@ O TCC Theme Ideas é uma plataforma que  tem como objetivo ajudar alunos de grad
     yarn start
   ```
 
-  > Running server
+  > Running server project
   ```bash
     # Accessing server
     cd packages/server
