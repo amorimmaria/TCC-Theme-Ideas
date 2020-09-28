@@ -6,6 +6,10 @@ O TCC Theme Ideas é uma plataforma que  tem como objetivo ajudar alunos de grad
 ### Informações 
 * Descrição das [Tarefas - Plano de Iteração](docs/tarefas.md)
 * Página principal da [Documentação](docs/docs.md)
+---
+
+### Layout do projeto
+![Home](img/home.png)
 
 ---
 ## How to run
