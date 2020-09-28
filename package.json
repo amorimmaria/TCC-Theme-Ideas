@@ -1,0 +1,19 @@
+{
+  "name": "TCC-Theme-Ideas",
+  "private": "true",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/amorimmaria/TCC-Theme-Ideas.git",
+  "author": "Jaine Senna <jainesantossenna191@gmail.com>",
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "packages/shared/*"
+    ],
+    "nohoist": [
+      "**/jest",
+      "**/ts-jest"
+    ]
+  },
+  "license": "MIT"
+}
