@@ -1,1 +1,1 @@
-# TCC-Theme-Ideas
+# TCC Theme Ideas
