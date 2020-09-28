@@ -21,3 +21,13 @@ Membro     |     Competências   |
 Jaine Senna | Desenvolvedora JavaScript, React, Typescript |
 Maria       | Desenvolvedora JavaScript, React, Typescript.|
 
+## Perfis dos Usuários
+
+O sistema poderá ser utilizado por diversos usuários. Temos os seguintes perfis/atores:
+
+Perfil     | Descrição   |
+---------  | ----------- |
+Administrador | Este usuário realiza os cadastros base e pode realizar qualquer função.
+Docentes | Este usuário pode sugerir um tema para TCC, como também disponibilizar links de artigos.
+Discente | Este usuário pode realizar seu cadastro na plataforma, assim como buscar por temas, pesquisando pelo curso e a área ou pode sugerir um tema também.
+
