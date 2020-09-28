@@ -16,7 +16,6 @@ Taciano             | Cliente                  | tacianosilva@gmail.com
 
 ## Matriz de Competências
 
-### Matriz de Competências
 Membro     |     Competências   |
 ---------  | ----------- |
 Jaine Senna | Desenvolvedora JavaScript, React, Typescript |
