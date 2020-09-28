@@ -14,3 +14,11 @@ Jaine Senna         | Analista, Gerente, Desenvolvedora, Testadora | jainesantos
 Maria das Graças    | Gerente, Analista, Desenvolvedora, Testadora  | mariadasgracasdiasamorim@gmail.com
 Taciano             | Cliente                  | tacianosilva@gmail.com
 
+## Matriz de Competências
+
+### Matriz de Competências
+Membro     |     Competências   |
+---------  | ----------- |
+Jaine Senna | Desenvolvedora JavaScript, React, Typescript |
+Maria       | Desenvolvedora JavaScript, React, Typescript.|
+
