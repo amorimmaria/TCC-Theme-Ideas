@@ -15,12 +15,12 @@ O TCC Theme Ideas é uma plataforma que  tem como objetivo ajudar alunos de grad
     # Cloning repository
     git clone https://github.com/amorimmaria/TCC-Theme-Ideas.git
   ```
-  > 
+  > Accessing project
   ```bash
-    # Accessing project
     cd TCC-Theme-Ideas
-
-    #Download dependencies
+  ```
+  > Download dependencies
+  ```bash
     yarn
   ```
   > Running web project
