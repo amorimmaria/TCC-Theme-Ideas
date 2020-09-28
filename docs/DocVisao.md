@@ -1,0 +1,11 @@
+# Documento de visão
+Documento construído a partido do Modelo BSI - Doc 001 - Documento de Visão que pode ser encontrado no link: https://docs.google.com/document/d/1DPBcyGHgflmz5RDsZQ2X8KVBPoEF5PdAz9BBNFyLa6A/edit?usp=sharing
+
+## Equipe e Definição de Papéis
+
+Membro     |     Papel   |   E-mail   |
+---------  | ----------- | ---------- |
+Jaine Senna         | Analista, Gerente, Desenvolvedora, Testadora | jainesantossenna191@gmail.com
+Maria das Graças    | Gerente, Analista, Desenvolvedora, Testadora  | mariadasgracasdiasamorim@gmail.com
+Taciano             | Cliente                  | tacianosilva@gmail.com
+
