@@ -7,8 +7,36 @@ O TCC Theme Ideas é uma plataforma que  tem como objetivo ajudar alunos de grad
 * Descrição das [Tarefas - Plano de Iteração](docs/tarefas.md)
 * Página principal da [Documentação](docs/docs.md)
 
+---
+## How to run
 
+  > Cloning the repository
+  ```bash
+    # Cloning repository
+    git clone https://github.com/amorimmaria/TCC-Theme-Ideas.git
+  ```
+  > 
+  ```bash
+    # Accessing project
+    cd TCC-Theme-Ideas
 
+    #Download dependencies
+    yarn
+  ```
+  > Running web project
+  ```bash
+    # Accessing web
+    cd packages/web
+    
+    # Running web 
+    yarn start
+  ```
 
+  > Running server
+  ```bash
+    # Accessing server
+    cd packages/server
 
-
+    # Run server
+    yarn dev:server
+  ```
