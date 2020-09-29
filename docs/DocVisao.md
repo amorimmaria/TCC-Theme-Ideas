@@ -31,3 +31,12 @@ Administrador | Este usuário realiza os cadastros base e pode realizar qualquer
 Docentes | Este usuário pode sugerir um tema para TCC, como também disponibilizar links de artigos.
 Discente | Este usuário pode realizar seu cadastro na plataforma, assim como buscar por temas, pesquisando pelo curso e a área ou pode sugerir um tema também.
 
+## Lista de Requisitos Não-Funcionais
+
+Requisito                                 | Descrição   |
+---------                                 | ----------- |
+RNF001 - Deve ser acessível via navegador | Deve abrir perfeitamente no Firefox e no Chrome. |
+RNF002 - Consultas deve ser eficiente | O sistema deve executar as consultas em milissegundos |
+RNF003 - Log e histórico de acesso e funções | Deve manter um log de todos os acessos e das funções executadas pelo usuário |
+RNF004 - Interface de fácil navegação | O software terá uma interface de fácil navegação, onde os usuários poderão utilizá-lo sem muitas dificuldades;
+
