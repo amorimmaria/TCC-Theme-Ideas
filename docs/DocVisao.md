@@ -1,3 +1,22 @@
+### **UNIVERSIDADE FEDERAL DO RIO GRANDE DO NORTE**
+
+### **CENTRO DE ENSINO SUPERIOR DO SERIDÓ**
+
+### **DEPARTAMENTO DE COMPUTAÇÃO E TECNOLOGIA**
+
+### **CURSO DE BACHARELADO EM SISTEMAS DE INFORMAÇÃO**
+
+**Jaine de Senna Santos**  
+**Maria das Graças Dias Amorim** 
+
+
+## **TCC Theme Ideas**
+
+
+**Caicó – RN**  
+**2020**
+
+
 # Documento de Visão
 Documento construído a partido do Modelo BSI - Doc 001 - Documento de Visão que pode ser encontrado no link: https://docs.google.com/document/d/1DPBcyGHgflmz5RDsZQ2X8KVBPoEF5PdAz9BBNFyLa6A/edit?usp=sharing
 
