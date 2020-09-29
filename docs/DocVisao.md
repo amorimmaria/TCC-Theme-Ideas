@@ -50,3 +50,15 @@ RNF002 - Consultas deve ser eficiente | O sistema deve executar as consultas em 
 RNF003 - Log e histórico de acesso e funções | Deve manter um log de todos os acessos e das funções executadas pelo usuário |
 RNF004 - Interface de fácil navegação | O software terá uma interface de fácil navegação, onde os usuários poderão utilizá-lo sem muitas dificuldades;
 
+## Riscos
+
+Tabela com o mapeamento dos riscos do projeto, as possíveis soluções e os responsáveis.
+
+Data | Risco | Prioridade | Responsável | Status | Providência/Solução |
+------ | ------ | ------ | ------ | ------ | ------ |
+19/09/2020 | Não entregar o sistema completo | Alta | Todos | Vigente | Fazer esforço pra tentar entregar as funcionalidades no prazo definido. |
+19/09/2020 | Ausência por qualquer motivo do cliente | Média | Gerente | Vigente | Planejar o cronograma tendo em base a agenda do cliente |
+28/09/2020 | Divisão de tarefas mal sucedida | Baixa | Gerente | Vigente | Acompanhar de perto o desenvolvimento de cada membro da equipe |
+28/09/2020 | Implementação de protótipo com as tecnologias | Alto | Todos | Resolvido | Encontrar tutorial com a maioria da tecnologia e implementar um caso base do sistema |
+
+
