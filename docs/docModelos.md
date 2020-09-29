@@ -32,3 +32,12 @@
 ## Descrição
 
 Este documento descreve o modelo conceitual do software que é composto por um conjunto de Entidades e seus relacionamentos. No decorrer do desenvolvimento da aplicação web TCC Theme Ideas este documento servirá de referência para a codificação do banco de dados, bem como para a compreensão pelo cliente de como funcionará as relações de dados dentro do sistema em uma linguagem de fácil compreensão a todos os envolvidos.
+
+<div id='revisoes'/>
+
+### **Histórico de Revisões**
+
+| Data       | Versão | Descrição                                                              | Autor                           |
+| :--------- | :----: | :--------------------------------------------------------------------- | :------------------------------ |
+| 29/09/2020 |  1.0   | Cabeçalho, descrição do documento e sumário;  | Jaine e Maria |
+                            |
