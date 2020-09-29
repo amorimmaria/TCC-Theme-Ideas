@@ -11,6 +11,18 @@ O TCC Theme Ideas é uma plataforma que  tem como objetivo ajudar alunos de grad
 ### Layout do projeto
 ![Home](img/home.png)
 
+
+  ## Tecnologias
+  Este projeto foi feito utilizando as seguintes tecnologias:
+  > Front-end
+  * ReactJS 
+  * TypeScript
+  
+  > Back-end
+  * NodeJS  
+  * TypeScript
+  * Sqlite3
+
 ---
 ## How to run
 
@@ -45,13 +57,3 @@ O TCC Theme Ideas é uma plataforma que  tem como objetivo ajudar alunos de grad
     yarn dev:server
   ```
 
-  ## Tecnologias
-  Este projeto foi feito utilizando as seguintes tecnologias:
-  > Front-end
-  * ReactJS 
-  * TypeScript
-  
-  > Back-end
-  * NodeJS  
-  * TypeScript
-  * Sqlite3
