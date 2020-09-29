@@ -31,6 +31,16 @@ Administrador | Este usuário realiza os cadastros base e pode realizar qualquer
 Docentes | Este usuário pode sugerir um tema para TCC, como também disponibilizar links de artigos.
 Discente | Este usuário pode realizar seu cadastro na plataforma, assim como buscar por temas, pesquisando pelo curso e a área ou pode sugerir um tema também.
 
+## Lista de Requisitos Funcionais
+
+Requisito  | Descrição   | Ator |
+---------  | ----------- | ---------- |
+RF001 - Cadastro de Usuário   | O usuário poderá fazer seu cadastro com seus dados | Docente e Discente. |
+RF002 - Login de Usuário| O  usuário após o seu cadastro, poderá acessar a plataforma com seu login | Docente e Discente. |
+RF003 - Usuário pode redefinir senha| O  usuário após o seu cadastro, poderá acessar a plataforma com seu login | Docente e Discente. |
+RF004 - Usuário pode sugerir um tema de TCC|O usuário poderá sugerir temas de TCC.  | Docente e Discente. |
+RF005 - Usuário pode buscar por um tema|O usuário poderá buscar por um tema de acordo com área.  | Docente e Discente. |
+
 ## Lista de Requisitos Não-Funcionais
 
 Requisito                                 | Descrição   |
