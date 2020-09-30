@@ -60,11 +60,11 @@ Discente | Este usuário pode realizar seu cadastro na plataforma, assim como bu
 
 Requisito  | Descrição   | Ator |
 ---------  | ----------- | ---------- |
-RF001 - Usuário pode criar uma conta  | O usuário poderá fazer seu cadastro informando seus dados. | Docente e Discente. |
-RF002 - Login de Usuário| O  usuário após o seu cadastro, poderá acessar a plataforma com seu login | Docente e Discente. |
-RF003 - Usuário pode redefinir senha| O  usuário após o seu cadastro, poderá acessar a plataforma com seu login | Docente e Discente. |
-RF004 - Usuário pode sugerir um tema de TCC|O usuário poderá sugerir temas de TCC para outros usuários.  | Docente e Discente. |
-RF005 - Usuário pode buscar por um tema|O usuário poderá buscar por um tema de acordo com sua área de pesquisa.   Discente. |
+RF001 - Cadastro de Usuário |Usuário tem como atributo: Nome, Sobrenome, Avatar, Email, senha.  | Docente e Discente |
+RF002 - Login de Usuário| O  usuário após o seu cadastro, poderá acessar a plataforma com seu e-mail e senha criados no cadastro. | Docente e Discente |
+RF003 - Usuário pode redefinir senha utilizando o E-mail do cadastro.| O usuário poderá redefinir sua senha. | Docente e Discente |
+RF004 - Usuário pode sugerir um tema de TCC|Para sugerir um tema os usuários deverá preencher o formulário de sugestão com Nome, Curso, Sugestão de tema, Descrição, Área e Links de artigos. | Docente e Discente |
+RF005 - Usuário pode buscar por um tema|O usuário poderá buscar por tema informando o curso e área de pesquisa.|  Discente |
 
 ## Lista de Requisitos Não-Funcionais
 
