@@ -20,6 +20,12 @@
 # Documento de Visão
 Documento construído a partido do Modelo BSI - Doc 001 - Documento de Visão que pode ser encontrado no link: https://docs.google.com/document/d/1DPBcyGHgflmz5RDsZQ2X8KVBPoEF5PdAz9BBNFyLa6A/edit?usp=sharing
 
+## Introducão
+
+Este documento possui como objetivo definir e elencar as necessidades e características (requisitos) do sistema TCC Theme Ideas, assim como todos os elementos envolvidos em seu desenvolvimento e utilização, como perfis de usuários, riscos.
+
+O TCC Theme Ideas é uma plataforma web que tem como objetivo ajudar alunos de graduação ou de cursos em que precise desenvolver Trabalho de Conclusão de Curso(TCC) e que tenham dificuldades em encontrar um tema.
+
 ## Histório de Revisões
 Data     |     Versão  |   Descrição  | Autor |
 ---------| ----------- | ---------- | ------|
