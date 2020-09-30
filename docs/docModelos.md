@@ -46,4 +46,8 @@ Este documento descreve o modelo conceitual do software que é composto por um c
 ## Modelo Conceitual
 
 ![Modelo Conceitual](/img/modeloConceitual.png)
+
+## Modelo de Dados
+
+![Modelo de dados](/img/modeloDeDados.png)
                             
