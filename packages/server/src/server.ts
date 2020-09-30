@@ -6,7 +6,7 @@ const app = express();
 app.use(cors())
 
 app.get("/", (request, response) => {
-  return response.json({ message: "Hello World" });
+  return response.json({ message: "TCC Theme Ideas" });
 });
 
 app.listen(3333, () => {
