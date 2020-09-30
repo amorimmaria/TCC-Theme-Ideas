@@ -40,4 +40,10 @@ Este documento descreve o modelo conceitual do software que é composto por um c
 | Data       | Versão | Descrição                                                              | Autor                           |
 | :--------- | :----: | :--------------------------------------------------------------------- | :------------------------------ |
 | 29/09/2020 |  1.0   | Cabeçalho, descrição do documento e sumário;  | Jaine e Maria |
+
+<div id ='conceitual' />
+
+## Modelo Conceitual
+
+![Modelo Conceitual](/img/modeloConceitual.png)
                             
