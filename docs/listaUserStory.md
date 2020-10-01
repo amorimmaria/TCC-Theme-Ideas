@@ -59,3 +59,15 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 | ------ | --------- |
 |**TA01.01**|O usuário informa, na tela de cadastro, todos os dados para registrar-se corretamente, ao clicar em concluir ele é notificado com uma mensagem de sucesso. Mensagem: Cadastro salvo! |
 
+<div id='us02'/>
+
+### **User Story US02 - Recuperar senha**
+
+|                    |      |
+| ------------------ | ---- |
+|**Descrição**| O sistema deve conter a funcionalidade de recuperação de senha do usuário, onde na tela de login inicial, o sistema deve ter uma opção de recuperação de senha, na qual o usuário vai informar o email de cadastro, e a partir disso vai receber um e-mail com um link para redefinir a senha, depois de redefinir o usuário pode voltar a tela de login;|
+|**Requisitos envolvidos**|RF03 |
+|**Prioridade**| Essencial |
+|**Estimativa**| 8 h  |
+
+
