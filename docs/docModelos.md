@@ -6,8 +6,8 @@
 
 ### **CURSO DE BACHARELADO EM SISTEMAS DE INFORMAÇÃO**
 
-**Jaine de Senna Santos**   
-**Maria das Graças Dias Amorim** 
+**Jaine de Senna Santos**
+**Maria das Graças Dias Amorim**
 
 ## **TCC Theme Ideas: Modelo Conceitual e Modelo de Dados**
 
@@ -18,14 +18,12 @@
 <div id='sumario'/>
 ## Sumário
 
-1. [Descrição](#descricao)
-   1. [Histórico de Revisões](#revisoes)
-2. [Visão Geral](#visao)
-3. [Modelo Conceitual](#conceitual)
-   1. [Descrição das Entidades](#entidades)
-4. [Modelo de Dados](#dados)
-5. [Dicionário de Dados](#dicionario)
-6. [Referências](#referencias)
+- [**TCC Theme Ideas: Modelo Conceitual e Modelo de Dados**](#tcc-theme-ideas-modelo-conceitual-e-modelo-de-dados)
+- [Sumário](#sumário)
+- [Descrição](#descrição)
+  - [**Histórico de Revisões**](#histórico-de-revisões)
+- [Modelo Conceitual](#modelo-conceitual)
+- [Modelo de Dados](#modelo-de-dados)
 
 <div id='descricao'/>
 
@@ -51,3 +49,31 @@ Este documento descreve o modelo conceitual do software que é composto por um c
 
 ![Modelo de dados](/img/modeloDeDados.png)
                             
+## Dicionário de dados
+### Usuário
+
+| Nome | Descrição | Tipo de dado | Tamanho | Restrições |
+|------|-----------|--------------|---------|------------|
+|**Nome**|nome|Varchar|256|Not Null|
+|**Sobrenome**|sobrenome|Varchar|256|Not Null|
+|**E-mail**|email|Varchar|256|Not Null|
+|**Senha**|Senha|Varchar|256|Not Null|
+
+### Sugerir 
+
+| Nome | Descrição | Tipo de dado | Tamanho | Restrições |
+|------|-----------|--------------|---------|------------|
+|**Nome**|nome|Varchar|256|Not Null|
+|**Avatar**|avatar|Varchar|256|-|
+|**Curso**|curso|Varchar|256|Not Null|
+|**Susgestão de tema**|susgestaoDeTema|Varchar|256|Not Null|
+|**Descrição**|descricao|Varchar|256|Not Null|
+|**Área**|area|Varchar|256|Not Null|
+|**Links de Artigos**|linksDeArtigos|Varchar|256|-|
+
+### Buscar
+
+| Nome | Descrição | Tipo de dado | Tamanho | Restrições |
+|------|-----------|--------------|---------|------------|
+|**Curso**|curso|Varchar|256|Not Null|
+|**Área**|area|Varchar|256|Not Null|
