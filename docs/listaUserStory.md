@@ -24,6 +24,16 @@
    2. [User Story US02](#us02)
 3. [Referências](#referencias)
 
+
+<div id='descricao'/>
+
 ## Descrição
 
 O presente documento mostra uma breve descrição dos passos seguidos por um usuário do sistema ***TCC Theme Ideas*** ao acessar alguma das funcionalidades que estarão disponíveis.
+
+
+### Histórico de revisões
+
+| Data | Versão | Descrição | Autor |
+| :--- | :----: | :---------| :---- |
+| 30/09/2020 | 1.0 | Descrição do documento; detalhamento do User Story US01 | Jaine e Maria |
