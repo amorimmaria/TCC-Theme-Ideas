@@ -82,13 +82,19 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 
 <div id='us02'/>
 
-### **User Story US02 - Recuperar senha**
+### **User Story US02 - Recuperar Senha**
 
 |                    |      |
 | ------------------ | ---- |
-|**Descrição**| O sistema deve conter a funcionalidade de recuperação de senha do usuário, onde na tela de login inicial, o sistema deve ter uma opção de recuperação de senha, na qual o usuário vai informar o email de cadastro, e a partir disso vai receber um e-mail com um link para redefinir a senha, depois de redefinir o usuário pode voltar a tela de login;|
-|**Requisitos envolvidos**|RF03 |
-|**Prioridade**| Essencial |
-|**Estimativa**| 8 h  |
+|*Descrição*| O sistema deve conter a funcionalidade de recuperação de senha do usuário, onde na tela de login inicial, o sistema deve ter uma opção de recuperação de senha, na qual o usuário vai informar o email de cadastro, e a partir disso vai receber um e-mail com um link para redefinir a senha, depois de redefinir o usuário pode voltar a tela de login;|
+|*Requisitos envolvidos*|RF05 |
+|*Prioridade*| Essencial |
+|*Estimativa*| 8 h  |
+
+### **Testes de Aceitação (TA)**
+
+| Código | Descrição |
+| ------ | --------- |
+|*TA01.01*| O usuário ao informar o e-mail para recuperação da senha e deve receber  um link de recuperação no e-mail |
 
 
