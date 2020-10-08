@@ -79,6 +79,7 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 | ------ | --------- |
 |**TA01.01**|O usuário informa, na tela de cadastro, todos os dados para registrar-se corretamente, ao clicar em concluir ele é notificado com uma mensagem de sucesso. Mensagem: Cadastro salvo! |
 
+
 <div id='us02'/>
 
 ### **User Story US02 - Recuperar senha**
