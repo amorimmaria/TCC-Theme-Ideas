@@ -42,6 +42,26 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 
 ### Lista de User Stories
 
+
+<div id='us00'/>
+
+### **User Story US00 - Home Page**
+
+|                    |      |
+| ------------------ | ---- |
+|**Descrição**| O sistema deve mostrar duas opções para o usuário, buscar tema ou sugerir tema e dependendo da escolha do usuário ambas as opções levará para opções para preenchimento de outras informações relacionadas a opção escolhida.|
+|**Requisitos envolvidos**| RF009, RF012 |
+|**Prioridade**| Essencial |
+|**Estimativa**| 14h |
+
+### **Testes de Aceitação (TA)**
+
+| Código | Descrição |
+| ------ | --------- |
+|**TA01.01**| O usuário ao clicar na opção buscar tema, ele deve ser redirecionado para a tela de busca, e poderá informar o curso e a área e assim encontrar um tema de acordo com as informações que ele digitou. |
+|**TA02.02**| O usuário ao clicar na opção sugerir tema, ele deve ser redirecionado para a tela de sugerir tema, onde o usuário informará o tema do TCC, sugerir links de artigos com relação aquele tema, além de outras informações. |
+
+
 <div id='us01'/>
 
 ### **User Story US01 - Manter Usuário**
