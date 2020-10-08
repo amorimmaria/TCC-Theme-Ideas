@@ -30,6 +30,7 @@ O TCC Theme Ideas é uma plataforma web que tem como objetivo ajudar alunos de g
 Data     |     Versão  |   Descrição  | Autor |
 ---------| ----------- | ---------- | ------|
 28/09/2020 | 1.0 | Documento Inicial | Jaine e Maria |
+08/10/2020 | 1.1 | Documento revisado e atualizado | Jaine e Maria |
 
 ## Equipe e Definição de Papéis
 
