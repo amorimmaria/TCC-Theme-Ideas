@@ -51,6 +51,17 @@ Este documento descreve a arquitetura proposta para o sistema TCC Theme Ideas, d
 <div id='visao-geral'/>
 
 ### **Visão Geral**
+Preparar uma imagem e descrever de forma sucinta a arquitetura
+
+<div id='mecanismos-arquiteturais'/>
+
+### **Mecanismos arquiteturais**
+
+| Mecanismo de Análise | Mecanismo de Design | Mecanismo de Implementação |
+| --- | --- | --- |
+| Front-End | Interface de comunicação com o usuário do portal.  | ReactJS |
+| Build  | Programação da IDE para validação do código fonte. | Visual Studio Code  |
+| Deploy | Configuração da IDE de deploy.| Visual Studio Code |
 
 
 <div id='referencias'/>
