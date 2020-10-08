@@ -63,6 +63,12 @@ Preparar uma imagem e descrever de forma sucinta a arquitetura
 | Build  | Programação da IDE para validação do código fonte. | Visual Studio Code  |
 | Deploy | Configuração da IDE de deploy.| Visual Studio Code |
 
+<div id='tecnologias'/>
+
+### **Tecnologias**
+
+1. React JS: Biblioteca JavaScript de código aberto com foco em criar interfaces de usuário em páginas web;
+2. Visual Studio Code: IDE para de desenvolvimento;
 
 <div id='referencias'/>
 
