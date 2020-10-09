@@ -70,6 +70,12 @@ Preparar uma imagem e descrever de forma sucinta a arquitetura
 1. React JS: Biblioteca JavaScript de código aberto com foco em criar interfaces de usuário em páginas web;
 2. Visual Studio Code: IDE para de desenvolvimento;
 
+<div id='componentes'/>
+
+### **Componentes**
+
+![Modelo Conceitual](/img/diagramaComponentes.png)
+
 <div id='referencias'/>
 
 ### **Referências**
