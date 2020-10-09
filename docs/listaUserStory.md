@@ -73,7 +73,7 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 |**Requisitos envolvidos**| RF01, RF02, RF03 |
 |**Prioridade**| Essencial |
 |**Estimativa**| 14h |
-|**Tamanho Funcional**|7 PF|
+
 
 ### **Testes de Aceitação (TA)**
 
@@ -93,7 +93,6 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 |*Prioridade*| Essencial |
 |*Estimativa*| 8 h  |
 
-
 ### **Testes de Aceitação (TA)**
 
 | Código | Descrição |
@@ -111,7 +110,6 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 |**Requisitos envolvidos**|RF06, RF07, RF08 |
 |**Prioridade**| Essencial |
 |**Estimativa**| 8 h  |
-|**Tamanho Funcional**|7 PF|
 
 ### **Testes de Aceitação (TA)**
 
