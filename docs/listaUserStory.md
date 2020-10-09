@@ -98,3 +98,24 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 |*TA01.01*| O usuário ao informar o e-mail para recuperação da senha e deve receber  um link de recuperação no e-mail |
 
 
+<div id='us03'/>
+
+### **User Story US03 - Cadastro de Tema**
+
+|                    |      |
+| ------------------ | ---- |
+|**Descrição**| O sistema deve manter um cadastro de temas que cada usuário sugeriu, podendo ser criado pelo discente ou docente, onde outros discentes poderão ter acesso. |
+|**Requisitos envolvidos**|RF06, RF07, RF08 |
+|**Prioridade**| Essencial |
+|**Estimativa**| 8 h  |
+
+### **Testes de Aceitação (TA)**
+
+| Código | Descrição |
+| ------ | --------- |
+|**TA01.01**| O usuário preenche as informações para sugestão de tema e clica em cconcluir sugestão e em seguida aparecerá uma mensagem de sugestão de tema cadastrado com sucesso |
+|**TA01.02**| O usuário informa, na tela de alterar sugestão de tema, os dados validos que deseja alterar. Em seguida, receberá uma notificação de: Alterado com sucesso|
+|**TA01.03**| O usuário informa, na tela excluir sugestão de tema, ao clicar em deletar ele será notificado com uma mensagemde: Excluído com sucesso|
+
+
+
