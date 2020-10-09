@@ -117,5 +117,19 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 |**TA01.02**| O usuário informa, na tela de alterar sugestão de tema, os dados validos que deseja alterar. Em seguida, receberá uma notificação de: Alterado com sucesso|
 |**TA01.03**| O usuário informa, na tela excluir sugestão de tema, ao clicar em deletar ele será notificado com uma mensagemde: Excluído com sucesso|
 
+### *User Story US04 - Favoritar Tema*
+
+|                    |      |
+| ------------------ | ---- |
+|**Descrição**| O sistema deve manter a favoritação de um tema, quando o usuário clicar em favoritar |
+|**Requisitos envolvidos**|RF14 |
+|**Prioridade**| Desejável |
+|**Estimativa**| 6 h  |
+
+### *Testes de Aceitação (TA)*
+
+| Código | Descrição |
+| ------ | --------- |
+|**TA01.01**| O usuário clica em favoritar um tema e permanece favoritado |
 
 
