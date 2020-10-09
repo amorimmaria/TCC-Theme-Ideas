@@ -131,6 +131,7 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 |**Requisitos envolvidos**|RF14 |
 |**Prioridade**| Desejável |
 |**Estimativa**| 6 h  |
+|**Tamanho Funcional**|6 PF|
 
 ### *Testes de Aceitação (TA)*
 
