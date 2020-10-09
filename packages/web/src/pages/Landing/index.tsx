@@ -21,12 +21,12 @@ function Landing() {
         <img src={landingImg} alt="Plataforma de estudos" className="hero-image"/>
 
         <div className="buttons-container">
-          <a href="/" className="search">
+          <a href="/search" className="search">
             <img src={searchIcon} alt="buscar"/>
             Buscar tema
           </a>
 
-          <a href="/" className="suggest">
+          <a href="/suggest" className="suggest">
             <img src={suggestIcon} alt="sugerir"/>
             Sugerir tema
           </a>
