@@ -1,5 +1,11 @@
 import React from 'react';
+import Landing from './pages/Landing'
+import './assets/styles/global.css';
 
-const App: React.FC = () => <h1>Estrutura inicial do projeto</h1>
+function App() {
+  return (
+    <Landing />
+  );
+}
 
 export default App;

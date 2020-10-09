@@ -1,0 +1,52 @@
+:root {
+  --color-background: #F0F0F7;
+  --color-primary-lighter: #E5890B;
+  --color-primary-light: #cc7a07;
+  --color-primary: #33AAC2;
+  --color-secundary: #ED6907;
+  --color-secundary-dark: #a74800;
+  --color-text-in-primary: #FFFFFF;
+  --color-text-in-secondary: #032B44;
+  --color-button-text: #FFFFFF;
+
+  font-size: 60%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100vh;
+}
+
+body {
+  background: var(--color-background);
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body,
+input,
+button,
+textarea {
+  font: 500 2.3rem Poppins; /*alera tamanho da fonte da frase*/
+  color: var(--color-text-base);
+}
+
+.container {
+  width: 90vw;
+  max-width: 700px;
+}
+
+@media (min-width: 700%){
+  :root {
+    font-size: 62.5%;
+  }
+}
