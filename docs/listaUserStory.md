@@ -117,7 +117,7 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 |**TA01.02**| O usuário informa, na tela de alterar sugestão de tema, os dados validos que deseja alterar. Em seguida, receberá uma notificação de: Alterado com sucesso|
 |**TA01.03**| O usuário informa, na tela excluir sugestão de tema, ao clicar em deletar ele será notificado com uma mensagemde: Excluído com sucesso|
 
-### *User Story US04 - Favoritar Tema*
+### **User Story US04 - Favoritar Tema**
 
 |                    |      |
 | ------------------ | ---- |
