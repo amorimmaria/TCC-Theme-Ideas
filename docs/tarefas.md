@@ -11,7 +11,7 @@ It2      | 27/09/2020  | 10/10/2020 | 09/10/2020   | Jaine | Implementar US00, D
 It3      | 11/10/2020  | 24/10/2020 | 23/10/2020   | Maria | Implementar US01, US02, Detalhar US03, US04, Testar US00
 It4      | 25/10/2020  | 07/11/2020 | 06/11/2020   | Jaine |
 It5      | 08/11/2020  | 21/11/2020 | 20/11/2020   | Maria |
-It6      | 22/11/2020  | 05/12/2020 | 04/12/2020   | Jaine e Maria |
+It6      | 22/11/2020  | 05/12/2020 | 04/12/2020   | Jaine |
 
 * Observação 1: Cada Iteração de ser cadastrada como Milestones no GitHub.
 * Observação 2: Use este repositório como Modelo.
