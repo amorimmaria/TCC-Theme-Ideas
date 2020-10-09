@@ -73,6 +73,8 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 |**Requisitos envolvidos**| RF01, RF02, RF03 |
 |**Prioridade**| Essencial |
 |**Estimativa**| 14h |
+|**Tamanho Funcional**|8 PF|
+
 
 
 ### **Testes de Aceitação (TA)**
