@@ -18,7 +18,9 @@
   box-sizing: border-box;
 }
 
-html, body, #root {
+html,
+body,
+#root {
   height: 100vh;
 }
 
@@ -36,8 +38,15 @@ body,
 input,
 button,
 textarea {
-  font: 500 2.3rem Poppins; /*alera tamanho da fonte da frase*/
+  font: 500 1.6rem Poppins;
   color: var(--color-text-base);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+  box-shadow: 0 0 0 30px var(--color-input-background) inset !important;
 }
 
 .container {
@@ -45,8 +54,13 @@ textarea {
   max-width: 700px;
 }
 
-@media (min-width: 700%){
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+@media (min-width: 700px) {
   :root {
-    font-size: 62.5%;
+      font-size: 62.5%;
   }
 }
