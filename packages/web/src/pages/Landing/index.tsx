@@ -15,7 +15,7 @@ function Landing() {
                 <div id="page-menu-logo">
                     <div className="logo-container">
                         <img src={logoImg} alt="TCC" />
-                        <h2>Sua plataforma de temas para TCC.</h2>
+                        <h2>Sua plataforma de idéias para temas de TCC.</h2>
                     </div>
 
                     <img src={landingImg} alt="Plataforma de TCCs" className="hero-image" />
