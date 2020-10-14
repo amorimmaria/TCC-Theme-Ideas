@@ -40,6 +40,9 @@ O TCC Theme Ideas é uma plataforma que  tem como objetivo ajudar alunos de grad
   ```bash
     # Accessing server
     cd packages/server
+    
+    # Run migrations to create the tables
+    yarn knex:migrate
 
     # Run server
     yarn dev:server
@@ -50,8 +53,13 @@ O TCC Theme Ideas é uma plataforma que  tem como objetivo ajudar alunos de grad
   > Front-end
   * ReactJS 
   * TypeScript
+  * react-router-dom
   
   > Back-end
   * NodeJS  
   * TypeScript
   * Sqlite3
+  * express
+  * knex
+  * cors
+  * ts-node-dev
