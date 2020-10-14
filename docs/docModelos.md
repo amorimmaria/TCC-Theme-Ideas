@@ -38,6 +38,7 @@ Este documento descreve o modelo conceitual do software que é composto por um c
 | Data       | Versão | Descrição                                                              | Autor                           |
 | :--------- | :----: | :--------------------------------------------------------------------- | :------------------------------ |
 | 29/09/2020 |  1.0   | Cabeçalho, descrição do documento e sumário;  | Jaine e Maria |
+|14/10/2020| 1.1 | Correção do modelo de dados | Jaine e Maria |
 
 <div id ='conceitual' />
 
@@ -47,7 +48,7 @@ Este documento descreve o modelo conceitual do software que é composto por um c
 
 ## Modelo de Dados
 
-![Modelo de dados](/img/modeloDeDados.png)
+![Modelo de dados](/img/modeloDados.png)
                             
 ## Dicionário de dados
 ### Usuário
