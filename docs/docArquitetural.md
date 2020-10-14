@@ -53,7 +53,7 @@ Este documento descreve a arquitetura proposta para o sistema TCC Theme Ideas, d
 ### **Visão Geral**
 A arquitetura do projeto seguirá o padrão Model-View-Controller(MVC). Essa arquitetura funciona da seguinte forma: 
 
-![Modelo arquitetural](/img/modeloArquitetural.png)
+![Modelo arquitetural](/img/ModeloArquitetural.png)
 
 + ## Model
   É Responsável pelo acesso e manipulação de leitura e escrita dos dados na aplicação, nesse projeto o Nodejs tem a responsabilidade de manipular esses dados.
