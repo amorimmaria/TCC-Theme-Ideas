@@ -39,12 +39,13 @@ Este documento descreve o modelo conceitual do software que é composto por um c
 | :--------- | :----: | :--------------------------------------------------------------------- | :------------------------------ |
 | 29/09/2020 |  1.0   | Cabeçalho, descrição do documento e sumário;  | Jaine e Maria |
 |14/10/2020| 1.1 | Correção do modelo de dados | Jaine e Maria |
+|14/10/2020 | 1.2 | Correção do modelo conceitual | Jaine e Maria |
 
 <div id ='conceitual' />
 
 ## Modelo Conceitual
 
-![Modelo Conceitual](/img/modeloConceitual.png)
+![Modelo Conceitual](/img/modeloConceitualNew.png)
 
 ## Modelo de Dados
 
