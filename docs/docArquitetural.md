@@ -47,6 +47,7 @@ Este documento descreve a arquitetura proposta para o sistema TCC Theme Ideas, d
 | Data       | Versão | Descrição                                                              | Autor                           |
 | :--------- | :----: | :--------------------------------------------------------------------- | :------------------------------ |
 | 08/10/2020 |  1.0   | Cabeçalho, descrição do documento e sumário;  | Jaine e Maria |
+14/10/2020 | 1.1 | Documento revisado e atualizado | Jaine e Maria |
 
 <div id='visao-geral'/>
 
