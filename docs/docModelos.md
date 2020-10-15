@@ -55,26 +55,19 @@ Este documento descreve o modelo conceitual do software que é composto por um c
 
 | Nome | Descrição | Tipo de dado | Tamanho | Restrições |
 |------|-----------|--------------|---------|------------|
-|**Nome**|nome|Varchar|256|Not Null|
-|**Sobrenome**|sobrenome|Varchar|256|Not Null|
-|**E-mail**|email|Varchar|256|Not Null|
-|**Senha**|Senha|Varchar|256|Not Null|
+|**nome**|Nome do usuário|Varchar|256|Not Null|
+|**sobrenome**|Sobrenome do usuário|Varchar|256|Not Null|
+|**email**|E-mail do usuário|Varchar|256|Not Null|
+|**senha**|Senha do usuário|Varchar|256|Not Null|
 
-### Sugerir 
-
-| Nome | Descrição | Tipo de dado | Tamanho | Restrições |
-|------|-----------|--------------|---------|------------|
-|**Nome**|nome|Varchar|256|Not Null|
-|**Avatar**|avatar|Varchar|256|-|
-|**Curso**|curso|Varchar|256|Not Null|
-|**Susgestão de tema**|susgestaoDeTema|Varchar|256|Not Null|
-|**Descrição**|descricao|Varchar|256|Not Null|
-|**Área**|area|Varchar|256|Not Null|
-|**Links de Artigos**|linksDeArtigos|Varchar|256|-|
-
-### Buscar
+### Tema
 
 | Nome | Descrição | Tipo de dado | Tamanho | Restrições |
 |------|-----------|--------------|---------|------------|
-|**Curso**|curso|Varchar|256|Not Null|
-|**Área**|area|Varchar|256|Not Null|
+|**nome**|Nome do usuário|Varchar|256|Not Null|
+|**curso**|Curso que o usuário está cursando/dar aula|Varchar|256|Not Null|
+|**susgestaoDeTema**|Susgestão de tema para o TCC|Varchar|256|Not Null|
+|**descrição**|Uma breve descrição do tema do TCC sugerido|Varchar|256|Not Null|
+|**area**|Área que está relacionada ao tema do TCC sugerido|Varchar|256|Not Null|
+|**linksDeArtigos**|Links de artigos sugerido para ajudar com o tema|Varchar|256|-|
+
