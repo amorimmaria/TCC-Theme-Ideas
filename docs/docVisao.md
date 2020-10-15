@@ -85,7 +85,10 @@ Requisito                                 | Descrição   |
 RNF001 - Deve ser acessível via navegador | Deve abrir perfeitamente no Firefox e no Chrome. |
 RNF002 - Consultas deve ser eficiente | O sistema deve executar as consultas em milissegundos |
 RNF003 - Log e histórico de acesso e funções | Deve manter um log de todos os acessos e das funções executadas pelo usuário |
-RNF004 - Interface de fácil navegação | O software terá uma interface de fácil navegação, onde os usuários poderão utilizá-lo sem muitas dificuldades;
+RNF004 - Interface de fácil navegação | O software terá uma interface de fácil navegação, onde os usuários poderão utilizá-lo sem muitas dificuldades;|
+RNF005 - Sistema operacional Windows ou Linux |O computador deve ter como Sistema Operacional uma dessas 2 opções.
+RF006 - Conexão com a internet |  	Deve manter uma conexão ativa com a Internet.
+
 
 ## Riscos
 
