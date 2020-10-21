@@ -62,20 +62,21 @@ Discente | Este usuário pode realizar seu cadastro na plataforma, assim como bu
 
 Requisito  | Descrição   | Ator |
 ---------  | ----------- | ---------- |
-RF01 - Cadastro de Usuário   | O usuário poderá fazer seu cadastro com seus dados | Usuário |
-RF02 - Alterar Cadastro de usuário  | O usuário poderá fazer seu cadastro com seus dados | Docente e Discente |
-RF03 - Excluir Cadastro de usuário   | O usuário poderá fazer seu cadastro com seus dados | Docente e Discente |
-RF04 - Login de Usuário| O  usuário após o seu cadastro, poderá acessar a plataforma com seu login | Docente e Discente |
-RF05 - Usuário pode redefinir senha| O  usuário após o seu cadastro, poderá acessar a plataforma com seu login | Docente e Discente |
-RF06 - Cadastrar tema de TCC | O usuário poderá cadastrar um tema  | Discente e Docente |
-RF07 - Alterar tema de TCC |O usuário poderá alterar um tema ao qual ele cadastrou  | Docente e Discente |
-RF08 - Excluir tema de TCC | O usuário poderá excluir um tema da qual cadastrou | Discente e Docente |
-RF09 - Buscar tema de TCC |O usuário poderá buscar por um tema de acordo com área  | Docente e Discente |
-RF010 - Listar tema de TCC | O usuário poderá listar um tema |Discente e Docente |
-RF011 - Listar todos os temas de TCC | O usuário poderá listar todos os temas cadastrados | Discente e Docente  |
-RF012 - Sugerir tema de TCC |O usuário poderá sugerir temas de TCC  | Docente e Discente |
-RF013 Detalhar informações cadastradas do tema de TCC -| O usuário poderá visualizar informações mais detalhadas sobre o tema | Discente | 
-RF014 - Favoritar tema de TCC | O usuário pode favoritar um tema da qual ele tenha gostado | Discente|
+RF01 - Cadastro de usuário   | O usuário poderá fazer seu cadastro inserindo os dados: nome, sobrenome, e-mail e senha | Usuário |
+RF02 - Alterar cadastro de usuário  | O usuário poderá alterar seus dados: nome, sobrenome, e-mail e senha  | Docente e Discente |
+RF03 - Consultar cadastro de usuário | O usuário poderá consultar seus dados cadastrados como: nome, sobrenome, e-mail e senha| Discente e Docente|
+RF04 - Excluir cadastro de usuário   | O usuário poderá excluir seu cadastro | Docente e Discente |
+RF05 - Login de usuário| O  usuário após o seu cadastro, poderá acessar a plataforma com seu login com: e-mail e senha | Docente e Discente |
+RF06 - Usuário pode redefinir senha| Caso o usuário esqueça sua senha, ele poderá redefinir sua senha utilizando o e-mail que informou no cadastrado | Docente e Discente |
+RF07 - Cadastrar tema de TCC | O usuário poderá cadastrar um tema informando os dados: nome, curso, sugestão de tema, descrição, área do tema, adicionar links de artigos e informar se é um usuário discente ou docente  | Discente e Docente |
+RF08 - Alterar tema de TCC |O usuário poderá alterar um tema ao qual ele cadastrou  | Docente e Discente |
+RF09 - Excluir tema de TCC | O usuário poderá excluir um tema ao qual ele cadastrou | Discente e Docente |
+RF010 - Buscar tema de TCC |O usuário poderá buscar por um tema de acordo com curso e a área  | Docente e Discente |
+RF011 - Listar tema de TCC | O usuário poderá listar um tema de TCC |Discente e Docente |
+RF012 - Listar todos os temas de TCC | O usuário poderá listar todos os temas de TCCs  cadastrados | Discente e Docente  |
+RF013 - Sugerir tema de TCC |O usuário poderá sugerir temas de TCC  | Docente e Discente |
+RF014 Detalhar informações cadastradas do tema de TCC -| O usuário poderá visualizar informações mais detalhadas sobre o tema | Discente | 
+RF015 - Favoritar tema de TCC | O usuário pode favoritar um tema da qual ele tenha gostado | Discente|
 
 
 
