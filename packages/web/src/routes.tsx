@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Landing from './pages/Landing';
 import SearchTheme from './pages/SearchTheme';
-import SuggestTheme from './pages/suggestTheme';
+import SuggestTheme from './pages/SuggestTheme';
 
 function Routes(){
   return(
