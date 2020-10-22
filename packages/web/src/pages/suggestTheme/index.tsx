@@ -13,7 +13,7 @@ function SuggestTheme(){
   const [name, setName] = useState('');
   const [avatar, setAvatar] = useState('');
   const [curso, setCurso]= useState('');
-  const [suggest, setSuggest] = useState('');
+  const [sugestaoDeTema, setSugestaoDeTema] = useState('');
   const [descricao, setDescricao] = useState('');
   const [area, setArea]= useState('');
   const [linksArtigos, setLinksArtigos]= useState('');
@@ -25,7 +25,7 @@ function SuggestTheme(){
       name,
       avatar,
       curso,
-      suggest,
+      sugestaoDeTema,
       descricao,
       area,
       linksArtigos
@@ -82,8 +82,8 @@ function SuggestTheme(){
           <Input 
             name="suggest" 
             label="Sugestão de tema"
-            value={suggest} 
-            onChange={(e) => { setSuggest(e.target.value) }}
+            value={sugestaoDeTema} 
+            onChange={(e) => { setSugestaoDeTema(e.target.value) }}
           />
 
           <Textarea 
