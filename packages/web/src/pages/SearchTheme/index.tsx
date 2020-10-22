@@ -1,8 +1,7 @@
 import React, { FormEvent, useState } from 'react';
-import Input from '../../components/Input';
 import PageHeader from '../../components/PageHeader';
 import Select from '../../components/Select';
-//import api from '../../service/api';
+import api from '../../service/api';
 
 
 import './styles.css';
@@ -13,7 +12,7 @@ interface Themes {
 
 function SearchTheme(){
 
-  //const [themes, setThemes] = useState([]);
+  const [themes, setThemes] = useState([]);
  
   const [curso, setCurso]= useState('');
   const [area, setArea]= useState('');
@@ -21,14 +20,14 @@ function SearchTheme(){
   async function searchThemes(e: FormEvent) {
     e.preventDefault();
 
-    /*const response = await api.get('themes',{
+    const response = await api.get('themes',{
       params: {
         curso,
         area,
       }
     });
 
-    setThemes(response.data);*/
+    setThemes(response.data);
    
   }
 

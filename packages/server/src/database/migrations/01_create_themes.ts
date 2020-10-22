@@ -3,15 +3,14 @@ import Knex from 'knex';
 export async function up(knex:Knex) {
   return knex.schema.createTable('themes', table =>{
     table.increments('id').primary();
-    table.string('nome').notNullable();
+    table.string('name').notNullable();
+    table.string('avatar').notNullable();
     table.string('curso').notNullable();
     table.string('sugestaoDeTema').notNullable();
     table.string('descricao').notNullable();
     table.string('area').notNullable();
-    table.string('linksDeArtigos').notNullable();
-    table.string('tipoDeUsuario').notNullable();
-
-
+    table.string('linksArtigos').notNullable();
+    
     table.integer('user_id')
       .notNullable()
       .references('id')

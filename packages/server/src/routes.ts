@@ -1,47 +1,10 @@
-import express from 'express';
-import db from './database/connection';
+import express, { response } from 'express';
+import ThemesControllers from './controllers/ThemesControllers';
 
 const routes = express.Router();
+const themesControllers = new ThemesControllers();
 
-
-routes.post('/themes', async (request, response) => {
-  const {
-    nome,
-    sobrenome,
-    email,
-    curso,
-    sugestaoDeTema,
-    descricao,
-    area,
-    linksDeArtigos,
-    tipoDeUsuario
-
-  } = request.body;
-
-  const insertedUsersIds = await db('users').insert({
-    nome,
-    sobrenome,
-    email,
-    
-  });
-
-  const user_id = insertedUsersIds[0];
-
-
-  await db('themes').insert({
-    nome,
-    curso,
-    sugestaoDeTema,
-    descricao,
-    area,
-    linksDeArtigos,
-    tipoDeUsuario,
-    user_id,
-  });
-
-
-  return response.send();
-  
-});
+routes.post('/themes', themesControllers.create);
+routes.get('/themes', themesControllers.index);
 
 export default routes;
