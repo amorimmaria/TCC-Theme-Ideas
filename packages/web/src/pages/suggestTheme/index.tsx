@@ -10,17 +10,26 @@ import Select from '../../components/Select';
 
 function SuggestTheme(){
 
+  const [name, setName] = useState('');
+  const [avatar, setAvatar] = useState('');
   const [curso, setCurso]= useState('');
+  const [suggest, setSuggest] = useState('');
+  const [descricao, setDescricao] = useState('');
   const [area, setArea]= useState('');
+  const [linksArtigos, setLinksArtigos]= useState('');
 
   async function suggestThemes(e: FormEvent) {
     e.preventDefault();
 
-    /*const response = await api.get('themes',{
-      params: {
-        curso,
-        area,
-      }
+    /*api.post('themes',{
+      name,
+      avatar,
+      curso,
+      suggest,
+      descricao,
+      area,
+      linksArtigos
+
     });
 
     setThemes(response.data);*/
@@ -36,8 +45,20 @@ function SuggestTheme(){
         <fieldset>
           <legend>Seus dados</legend>
 
-          <Input name="name" label="Nome completo"/>
-          <Input name="avatar" label="Avatar"/>
+          <Input 
+              name="name" 
+              label="Nome completo" 
+              value={name} 
+              onChange={(e) => { setName(e.target.value) }}
+          />
+
+           <Input 
+              name="avatar" 
+              label="Avatar"
+              value={avatar} 
+              onChange={(e) => { setAvatar(e.target.value) }}
+          />
+
         </fieldset>
 
         <fieldset>
@@ -58,8 +79,19 @@ function SuggestTheme(){
               {value: 'Sistemas de Informação', label: 'Sistemas de Informação'},
             ]}
           />
-          <Input name="suggest" label="Sugestão de tema"/>
-          <Textarea name="descricao" label="Descrição"/>
+          <Input 
+            name="suggest" 
+            label="Sugestão de tema"
+            value={suggest} 
+            onChange={(e) => { setSuggest(e.target.value) }}
+          />
+
+          <Textarea 
+            name="descricao" 
+            label="Descrição"
+            value={descricao}
+            onChange={(e) => { setDescricao(e.target.value) }}
+          />
 
           <Select 
             name="area" 
@@ -76,7 +108,12 @@ function SuggestTheme(){
               {value: 'Ciencia de Dados', label: 'Ciencia de Dados'},
             ]}
           />
-          <Input name="linksArtigos" label="Links de Artigos"/>
+          <Input 
+            name="linksArtigos" 
+            label="Links de Artigos"
+            value={linksArtigos}
+            onChange= {(e) => {setLinksArtigos(e.target.value)}}
+          />
                     
         </fieldset>
 
