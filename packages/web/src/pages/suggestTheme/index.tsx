@@ -80,7 +80,7 @@ function SuggestTheme(){
             ]}
           />
           <Input 
-            name="suggest" 
+            name="sugestaoDeTema" 
             label="Sugestão de tema"
             value={sugestaoDeTema} 
             onChange={(e) => { setSugestaoDeTema(e.target.value) }}
