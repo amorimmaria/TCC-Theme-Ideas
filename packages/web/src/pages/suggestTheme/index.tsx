@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FormEvent, useState } from 'react';
 import Input from '../../components/Input';
 import PageHeader from '../../components/PageHeader';
 
@@ -9,11 +9,27 @@ import Textarea from '../../components/Textarea';
 import Select from '../../components/Select';
 
 function SuggestTheme(){
+
+  const [curso, setCurso]= useState('');
+  const [area, setArea]= useState('');
+
+  async function suggestThemes(e: FormEvent) {
+    e.preventDefault();
+
+    /*const response = await api.get('themes',{
+      params: {
+        curso,
+        area,
+      }
+    });
+
+    setThemes(response.data);*/
+  }
+
   return (
     <div id="page-suggest" className="container">
       <PageHeader 
-        title="Que incrível que você quer sugerir um tema" 
-        // description="O primeiro passo é preencher esse formulário"
+        title="Que incrível que você quer sugerir um tema"
       />
 
       <main>
@@ -30,8 +46,9 @@ function SuggestTheme(){
           <Select 
             name="Curso" 
             label="Curso"
+            value={curso}
+            onChange= {(e) => {setCurso(e.target.value)}}
             options={[
-              {value: 'Escolha uma opção', label: 'Escolha uma opção'},
               {value: 'Ciência da Computação', label: 'Ciência da Computação'},
               {value: 'Ciências e Tecnologias', label: 'Ciências e Tecnologias'},
               {value: 'Design', label: 'Design'},
@@ -47,8 +64,9 @@ function SuggestTheme(){
           <Select 
             name="area" 
             label="Área"
+            value={area}
+            onChange= {(e) => {setArea(e.target.value)}}
             options={[
-              {value: 'Escolha uma opção', label: 'Escolha uma opção'},
               {value: 'IoT', label: 'IoT'},
               {value: 'Segurança', label: 'Segurança'},
               {value: 'Banco de Dados', label: 'Banco de Dados'},
