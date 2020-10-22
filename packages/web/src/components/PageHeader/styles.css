@@ -26,7 +26,8 @@
 }
 
 .page-header .top-bar-container > img {
-  height: 10.0rem;
+  margin-top: 3rem;
+  height: 12rem;
 }
 
 .page-header .header-content {
