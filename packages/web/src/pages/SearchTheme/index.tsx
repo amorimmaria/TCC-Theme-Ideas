@@ -37,14 +37,14 @@ function SearchTheme(){
       <PageHeader title="Estes são os temas disponíveis.">
         <form  id="search-themes" onSubmit={searchThemes}>
           <Input
-            nome="curso"
+            name="curso"
             label="Curso"
             value={curso}
             onChange= {(e) => {setCurso(e.target.value)}}
         
           />
           <Input 
-            nome="area"
+            name="area"
             label="Área"
             value={area}
             onChange= {(e) => {setArea(e.target.value)}}
