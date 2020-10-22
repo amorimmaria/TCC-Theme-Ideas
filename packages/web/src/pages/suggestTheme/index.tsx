@@ -123,7 +123,7 @@ function SuggestTheme(){
             Importante <br />
             Preencha todos os dados
           </p>
-          <button type="button">
+          <button type="submit">
             Salvar sugestão
           </button>
         </footer>
