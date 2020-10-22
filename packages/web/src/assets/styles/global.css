@@ -1,3 +1,4 @@
+
 :root {
   --color-background: #F0F0F7;
   --color-primary-lighter: #E5890B;
@@ -7,7 +8,14 @@
   --color-secundary-dark: #a74800;
   --color-text-in-primary: #FFFFFF;
   --color-text-in-secondary: #032B44;
+  --color-input-background: #F8F8FC;
+  --color-title-in-primary: #FFFFFF;
   --color-button-text: #FFFFFF;
+  --color-line-in-white: #96cff1; /*trocar*/
+  --color-text-search: #e6f4f1;
+  --color-box-base: #FFFFFF;
+  --color-box-footer: #FAFAFC;
+  --colot-text-complement: #7eaab3;  /*Trocar se preciso for*/
 
   font-size: 60%;
 }
