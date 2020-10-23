@@ -28,6 +28,7 @@ export default class ThemesControllers {
     const {
       name,
       avatar,
+      tipoDeUsuario,
       curso,
       sugestaoDeTema,
       descricao,
@@ -48,6 +49,7 @@ export default class ThemesControllers {
       await trx('themes').insert({
         name,
         avatar,
+        tipoDeUsuario,
         curso,
         sugestaoDeTema,
         descricao,
