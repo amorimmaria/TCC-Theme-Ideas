@@ -1,14 +1,17 @@
 import React, { FormEvent, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import Input from '../../components/Input';
 import PageHeader from '../../components/PageHeader';
-
-import warningIcon from '../../assets/icons/warning.svg';
-
-import './styles.css';
 import Textarea from '../../components/Textarea';
 import Select from '../../components/Select';
 
+import warningIcon from '../../assets/icons/warning.svg';
+import './styles.css';
+import api from '../../service/api';
+
 function SuggestTheme(){
+
+  const history = useHistory();
 
   const [name, setName] = useState('');
   const [avatar, setAvatar] = useState('');
@@ -18,10 +21,10 @@ function SuggestTheme(){
   const [area, setArea]= useState('');
   const [linksArtigos, setLinksArtigos]= useState('');
 
-  async function suggestThemes(e: FormEvent) {
+  function handleCreateSuggest(e: FormEvent) {
     e.preventDefault();
 
-    /*api.post('themes',{
+    api.post('themes',{
       name,
       avatar,
       curso,
@@ -29,10 +32,14 @@ function SuggestTheme(){
       descricao,
       area,
       linksArtigos
+    }).then(() => {
+      alert('Cadastro realizado com sucesso');
+
+      history.push('/');
+    }).catch(() => {
+      alert('Erro ao cadastrar');
 
     });
-
-    setThemes(response.data);*/
   }
 
   return (
@@ -42,94 +49,96 @@ function SuggestTheme(){
       />
 
       <main>
-        <fieldset>
-          <legend>Seus dados</legend>
+        <form onSubmit={handleCreateSuggest}>
+          <fieldset>
+            <legend>Seus dados</legend>
+            
+            <Input 
+                name="name" 
+                label="Nome completo" 
+                value={name} 
+                onChange={(e) => { setName(e.target.value) }}
+            />
 
-          <Input 
-              name="name" 
-              label="Nome completo" 
-              value={name} 
-              onChange={(e) => { setName(e.target.value) }}
-          />
+            <Input 
+                name="avatar" 
+                label="Avatar"
+                value={avatar} 
+                onChange={(e) => { setAvatar(e.target.value) }}
+            />
 
-           <Input 
-              name="avatar" 
-              label="Avatar"
-              value={avatar} 
-              onChange={(e) => { setAvatar(e.target.value) }}
-          />
+          </fieldset>
 
-        </fieldset>
+          <fieldset>
+            <legend>Sobre sugestão do tema</legend>
 
-        <fieldset>
-          <legend>Sobre sugestão do tema</legend>
+            <Select 
+              name="Curso" 
+              label="Curso"
+              value={curso}
+              onChange= {(e) => {setCurso(e.target.value)}}
+              options={[
+                {value: 'Ciência da Computação', label: 'Ciência da Computação'},
+                {value: 'Ciências e Tecnologias', label: 'Ciências e Tecnologias'},
+                {value: 'Design', label: 'Design'},
+                {value: 'Engenharia de Computação', label: 'Engenharia de Computação'},
+                {value: 'Engenharia de Software', label: 'Engenharia de Software'},
+                {value: 'Matemática', label: 'Matemática'},
+                {value: 'Sistemas de Informação', label: 'Sistemas de Informação'},
+              ]}
+            />
+            <Input 
+              name="sugestaoDeTema" 
+              label="Sugestão de tema"
+              value={sugestaoDeTema} 
+              onChange={(e) => { setSugestaoDeTema(e.target.value) }}
+            />
 
-          <Select 
-            name="Curso" 
-            label="Curso"
-            value={curso}
-            onChange= {(e) => {setCurso(e.target.value)}}
-            options={[
-              {value: 'Ciência da Computação', label: 'Ciência da Computação'},
-              {value: 'Ciências e Tecnologias', label: 'Ciências e Tecnologias'},
-              {value: 'Design', label: 'Design'},
-              {value: 'Engenharia de Computação', label: 'Engenharia de Computação'},
-              {value: 'Engenharia de Software', label: 'Engenharia de Software'},
-              {value: 'Matemática', label: 'Matemática'},
-              {value: 'Sistemas de Informação', label: 'Sistemas de Informação'},
-            ]}
-          />
-          <Input 
-            name="sugestaoDeTema" 
-            label="Sugestão de tema"
-            value={sugestaoDeTema} 
-            onChange={(e) => { setSugestaoDeTema(e.target.value) }}
-          />
+            <Textarea 
+              name="descricao" 
+              label="Descrição"
+              value={descricao}
+              onChange={(e) => { setDescricao(e.target.value) }}
+            />
 
-          <Textarea 
-            name="descricao" 
-            label="Descrição"
-            value={descricao}
-            onChange={(e) => { setDescricao(e.target.value) }}
-          />
-
-          <Select 
-            name="area" 
-            label="Área"
-            value={area}
-            onChange= {(e) => {setArea(e.target.value)}}
-            options={[
-              {value: 'IoT', label: 'IoT'},
-              {value: 'Segurança', label: 'Segurança'},
-              {value: 'Banco de Dados', label: 'Banco de Dados'},
-              {value: 'Desenvolvimento', label: 'Desenvolvimento'},
-              {value: 'Engenharia de Software', label: 'Engenharia de Software'},
-              {value: 'Inteligencia Artificial', label: 'Inteligencia Artificial'},
-              {value: 'Ciencia de Dados', label: 'Ciencia de Dados'},
-            ]}
-          />
-          <Input 
-            name="linksArtigos" 
-            label="Links de Artigos"
-            value={linksArtigos}
-            onChange= {(e) => {setLinksArtigos(e.target.value)}}
-          />
-                    
-        </fieldset>
-
-        <footer>
-          <p>
-            <img src={warningIcon} alt="Aviso importante"/>
-            Importante <br />
-            Preencha todos os dados
-          </p>
-          <button type="submit">
-            Salvar sugestão
-          </button>
-        </footer>
+            <Select 
+              name="area" 
+              label="Área"
+              value={area}
+              onChange= {(e) => {setArea(e.target.value)}}
+              options={[
+                {value: 'IoT', label: 'IoT'},
+                {value: 'Segurança', label: 'Segurança'},
+                {value: 'Banco de Dados', label: 'Banco de Dados'},
+                {value: 'Desenvolvimento', label: 'Desenvolvimento'},
+                {value: 'Engenharia de Software', label: 'Engenharia de Software'},
+                {value: 'Inteligencia Artificial', label: 'Inteligencia Artificial'},
+                {value: 'Ciencia de Dados', label: 'Ciencia de Dados'},
+              ]}
+            />
+            <Textarea
+              name="linksArtigos" 
+              label="Links de Artigos"
+              value={linksArtigos}
+              onChange= {(e) => {setLinksArtigos(e.target.value)}}
+            />
+                      
+          </fieldset>
+        
+          <footer>
+            <p>
+              <img src={warningIcon} alt="Aviso importante"/>
+              Importante <br />
+              Preencha todos os dados
+            </p>
+            <button type="submit">
+              Salvar sugestão
+            </button>
+          </footer>
+        </form>
       </main> 
     </div>
-  )
+  );
 }
 
 export default SuggestTheme;
