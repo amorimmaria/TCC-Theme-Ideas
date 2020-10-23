@@ -1,14 +1,12 @@
 import React, { FormEvent, useState } from 'react';
 import PageHeader from '../../components/PageHeader';
 import Select from '../../components/Select';
+import ThemesItem, { Themes } from '../../components/ThemesItem';
 import api from '../../service/api';
 
 
 import './styles.css';
 
-interface Themes {
-  id: number;
-}
 
 function SearchTheme(){
 
@@ -26,7 +24,6 @@ function SearchTheme(){
         area,
       }
     });
-
     setThemes(response.data);
    
   }
@@ -73,6 +70,12 @@ function SearchTheme(){
           </button>
         </form> 
       </PageHeader>
+
+      <main>
+        {themes.map((themes: Themes) => {
+          return <ThemesItem key={themes.id} themes={themes} />;
+        })}
+      </main>
     </div>
   )
 }
