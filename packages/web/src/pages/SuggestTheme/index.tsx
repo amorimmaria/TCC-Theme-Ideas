@@ -75,8 +75,8 @@ function SuggestTheme(){
                 value={tipoDeUsuario} 
                 onChange={(e) => { setTipoDeUsuario(e.target.value) }}
                 options={[
-                  {value: 'docente', label: 'Docente'},
-                  {value: 'discente', label: 'Discente'}
+                  {value: 'Docente', label: 'Docente'},
+                  {value: 'Discente', label: 'Discente'}
                 ]}
             />
 

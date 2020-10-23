@@ -36,7 +36,7 @@ const ThemesItem: React.FC <ThemesItemProps> = ({themes}) =>{
           <span>{themes.tipoDeUsuario}</span>
         </div>
         <div>
-            <span>{themes.curso}</span>
+          <span>{themes.curso}</span>
         </div>
         <div>
           <span>{themes.sugestaoDeTema}</span>
@@ -51,7 +51,7 @@ const ThemesItem: React.FC <ThemesItemProps> = ({themes}) =>{
           <span>{themes.linksArtigos}</span>
         </div>
       </header>
-      
+
         <a 
           onClick = {createNewConnection} 
           href="teste">
