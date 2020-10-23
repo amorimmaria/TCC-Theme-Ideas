@@ -54,6 +54,7 @@ O TCC Theme Ideas é uma plataforma que  tem como objetivo ajudar alunos de grad
   * ReactJS 
   * TypeScript
   * react-router-dom
+  * axios
   
   > Back-end
   * NodeJS  
