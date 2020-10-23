@@ -38,13 +38,13 @@ function SearchTheme(){
             value={curso}
             onChange= {(e) => {setCurso(e.target.value)}}
             options={[
-              {value: 'Sistemas de Informação', label:'Sistemas de Informação'},
-              {value: 'Ciência da Computação', label:'Ciência da Computação'},
-              {value: 'Ciências e Tecnologias', label:'Ciências e Tecnologias'},
-              {value: 'Design', label:'Design'},
-              {value: 'Engenharia de Computação', label:'Engenharia de Computação'},
-              {value: 'Engenharia de Software', label:'Engenharia de Software'},
-              {value: 'Matemática', label:'Matemática'},
+              {value: 'Ciência da Computação', label: 'Ciência da Computação'},
+              {value: 'Ciências e Tecnologias', label: 'Ciências e Tecnologias'},
+              {value: 'Design', label: 'Design'},
+              {value: 'Engenharia de Computação', label: 'Engenharia de Computação'},
+              {value: 'Engenharia de Software', label: 'Engenharia de Software'},
+              {value: 'Matemática', label: 'Matemática'},
+              {value: 'Sistemas de Informação', label: 'Sistemas de Informação'},
             ]}
         
           />
@@ -54,13 +54,13 @@ function SearchTheme(){
             value={area}
             onChange= {(e) => {setArea(e.target.value)}}
             options={[
-              {value: 'Iot', label:'IoT'},
-              {value: 'Segurança', label:'Segurança'},
-              {value: 'Banco de Dados', label:'Banco de Dados'},
-              {value: 'Desenvolvimento', label:'Desenvolvimento'},
-              {value: 'Engenharia de Software', label:'Engenharia de Software'},
-              {value: 'Inteligência Artificial', label:'Inteligência Artificial'},
-              {value: 'Ciência de Dados', label:'Ciência de Dados'},
+              {value: 'IoT', label: 'IoT'},
+              {value: 'Segurança', label: 'Segurança'},
+              {value: 'Banco de Dados', label: 'Banco de Dados'},
+              {value: 'Desenvolvimento', label: 'Desenvolvimento'},
+              {value: 'Engenharia de Software', label: 'Engenharia de Software'},
+              {value: 'Inteligencia Artificial', label: 'Inteligencia Artificial'},
+              {value: 'Ciencia de Dados', label: 'Ciencia de Dados'},
 
             ]}
           />
