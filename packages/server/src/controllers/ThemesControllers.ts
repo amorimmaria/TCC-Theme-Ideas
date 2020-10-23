@@ -22,14 +22,12 @@ export default class ThemesControllers {
       .join('users', 'themes.user_id', '=', 'users.id')
       .select(['themes.*', 'users.*']);
      
-    console.log(themes);
     return response.json(themes);
   }
   async create(request: Request, response: Response) {
     const {
       name,
       avatar,
-      tipoDeUsuario,
       curso,
       sugestaoDeTema,
       descricao,
@@ -50,7 +48,6 @@ export default class ThemesControllers {
       await trx('themes').insert({
         name,
         avatar,
-        tipoDeUsuario,
         curso,
         sugestaoDeTema,
         descricao,
