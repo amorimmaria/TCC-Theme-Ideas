@@ -45,7 +45,12 @@
   margin-top: 2.4rem;
 }
 
-#page-suggest main fieldset .input-block + .textarea-block {
+#page-suggest main fieldset .input-block + .textarea-block,
+#page-suggest main fieldset .input-block + .select-block,
+#page-suggest main fieldset .select-block + .input-block,
+#page-suggest main fieldset .select-block + .textarea-block,
+#page-suggest main fieldset .textarea-block + .select-block
+{
   margin-top: 2.4rem;
 }
 

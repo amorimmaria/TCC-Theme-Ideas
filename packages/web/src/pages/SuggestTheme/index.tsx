@@ -15,6 +15,7 @@ function SuggestTheme(){
 
   const [name, setName] = useState('');
   const [avatar, setAvatar] = useState('');
+  const [tipoDeUsuario, setTipoDeUsuario] = useState('');
   const [curso, setCurso]= useState('');
   const [sugestaoDeTema, setSugestaoDeTema] = useState('');
   const [descricao, setDescricao] = useState('');
@@ -27,6 +28,7 @@ function SuggestTheme(){
     api.post('themes',{
       name,
       avatar,
+      tipoDeUsuario,
       curso,
       sugestaoDeTema,
       descricao,
@@ -65,6 +67,17 @@ function SuggestTheme(){
                 label="Avatar"
                 value={avatar} 
                 onChange={(e) => { setAvatar(e.target.value) }}
+            />
+
+              <Select 
+                name="tipoDeUsuario" 
+                label="Docente ou discente?"
+                value={tipoDeUsuario} 
+                onChange={(e) => { setTipoDeUsuario(e.target.value) }}
+                options={[
+                  {value: 'docente', label: 'Docente'},
+                  {value: 'discente', label: 'Discente'}
+                ]}
             />
 
           </fieldset>

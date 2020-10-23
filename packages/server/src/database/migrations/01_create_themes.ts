@@ -5,6 +5,7 @@ export async function up(knex:Knex) {
     table.increments('id').primary();
     table.string('name').notNullable();
     table.string('avatar').notNullable();
+    table.string('tipoDeUsuario').notNullable();
     table.string('curso').notNullable();
     table.string('sugestaoDeTema').notNullable();
     table.string('descricao').notNullable();
