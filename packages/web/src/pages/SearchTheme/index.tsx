@@ -39,8 +39,8 @@ function SearchTheme(){
             onChange= {(e) => {setCurso(e.target.value)}}
             options={[
               {value: 'Sistemas de Informação', label:'Sistemas de Informação'},
-              {value: 'Ciência da Computação', label:'Computação de Informação'},
-              {value: 'Ciências e Tecnologias', label:'Ciências de Informação'},
+              {value: 'Ciência da Computação', label:'Ciência da Computação'},
+              {value: 'Ciências e Tecnologias', label:'Ciências e Tecnologias'},
               {value: 'Design', label:'Design'},
               {value: 'Engenharia de Computação', label:'Engenharia de Computação'},
               {value: 'Engenharia de Software', label:'Engenharia de Software'},
