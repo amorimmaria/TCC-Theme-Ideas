@@ -100,6 +100,12 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 |**Prioridade**| Essencial |
 |**Estimativa**| 14h |
 |**Tamanho Funcional**|7 PF|
+
+
+### **Testes de Aceitação (TA)**
+
+| Código | Descrição |
+| ------ | --------- |
 |**TA01.01**| O usuário ao informar o curso para mostrar os temas cadastrados de acordo com a opção que o usuário informou|
 
 <div id='us03'/>
@@ -139,7 +145,7 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 
 | Código | Descrição |
 | ------ | --------- |
-|*TA01.01*| O usuário ao informar o e-mail para recuperação da senha e deve receber  um link de recuperação no e-mail |
+|**TA01.01**| O usuário ao informar o e-mail para recuperação da senha e deve receber  um link de recuperação no e-mail |
 
 
 <div id='us05'/>
