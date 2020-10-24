@@ -20,8 +20,12 @@
 
 1. [Descrição](#descricao)
 2. [Lista de User Stories](#us)
-   1. [User Story US01](#us01)
-   2. [User Story US02](#us02)
+   1. [User Story US00](#us00)
+   2. [User Story US01](#us01)
+   3. [User Story US02](#us02)
+   4. [User Story US03](#us03)
+   5. [User Story US04](#us04)
+   6. [User Story US05](#us05)
 3. [Referências](#referencias)
 
 
@@ -65,7 +69,42 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 
 <div id='us01'/>
 
-### **User Story US01 - Manter Usuário**
+### **User Story US01 - Cadastro de Tema**
+
+|                    |      |
+| ------------------ | ---- |
+|**Descrição**| O sistema deve manter um cadastro de temas que cada usuário sugeriu, podendo ser criado pelo discente ou docente, onde outros discentes poderão ter acesso. |
+|**Requisitos envolvidos**|RF07 |
+|**Prioridade**| Essencial |
+|**Estimativa**| 8 h  |
+|**Tamanho Funcional**|7 PF|
+
+### **Testes de Aceitação (TA)**
+
+| Código | Descrição |
+| ------ | --------- |
+|**TA01.01**| O usuário preenche as informações para sugestão de tema e clica em cconcluir sugestão e em seguida aparecerá uma mensagem de sugestão de tema cadastrado com sucesso |
+|**TA01.02**| O usuário informa, na tela de alterar sugestão de tema, os dados validos que deseja alterar. Em seguida, receberá uma notificação de: Alterado com sucesso|
+|**TA01.03**| O usuário informa, na tela excluir sugestão de tema, ao clicar em deletar ele será notificado com uma mensagemde: Excluído com sucesso|
+
+
+
+<div id='us02'/>
+
+### **User Story US02 - Buscar Tema**
+
+|                    |      |
+| ------------------ | ---- |
+|**Descrição**| O sistema deve mostrar os temas cadastrados quando o usuário buscar informando o curso |
+|**Requisitos envolvidos**| RF010 |
+|**Prioridade**| Essencial |
+|**Estimativa**| 14h |
+|**Tamanho Funcional**|7 PF|
+|**TA01.01**| O usuário ao informar o curso para mostrar os temas cadastrados de acordo com a opção que o usuário informou|
+
+<div id='us03'/>
+
+### **User Story US03 - Manter Usuário**
 
 |                    |      |
 | ------------------ | ---- |
@@ -84,9 +123,9 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 |**TA01.01**|O usuário informa, na tela de cadastro, todos os dados para registrar-se corretamente, ao clicar em concluir ele é notificado com uma mensagem de sucesso. Mensagem: Cadastro salvo! |
 
 
-<div id='us02'/>
+<div id='us04'/>
 
-### **User Story US02 - Recuperar Senha**
+### **User Story US04 - Recuperar Senha**
 
 |                    |      |
 | ------------------ | ---- |
@@ -103,27 +142,9 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 |*TA01.01*| O usuário ao informar o e-mail para recuperação da senha e deve receber  um link de recuperação no e-mail |
 
 
-<div id='us03'/>
+<div id='us05'/>
 
-### **User Story US03 - Cadastro de Tema**
-
-|                    |      |
-| ------------------ | ---- |
-|**Descrição**| O sistema deve manter um cadastro de temas que cada usuário sugeriu, podendo ser criado pelo discente ou docente, onde outros discentes poderão ter acesso. |
-|**Requisitos envolvidos**|RF06, RF07, RF08 |
-|**Prioridade**| Essencial |
-|**Estimativa**| 8 h  |
-|**Tamanho Funcional**|7 PF|
-
-### **Testes de Aceitação (TA)**
-
-| Código | Descrição |
-| ------ | --------- |
-|**TA01.01**| O usuário preenche as informações para sugestão de tema e clica em cconcluir sugestão e em seguida aparecerá uma mensagem de sugestão de tema cadastrado com sucesso |
-|**TA01.02**| O usuário informa, na tela de alterar sugestão de tema, os dados validos que deseja alterar. Em seguida, receberá uma notificação de: Alterado com sucesso|
-|**TA01.03**| O usuário informa, na tela excluir sugestão de tema, ao clicar em deletar ele será notificado com uma mensagemde: Excluído com sucesso|
-
-### **User Story US04 - Favoritar Tema**
+### **User Story US05 - Favoritar Tema**
 
 |                    |      |
 | ------------------ | ---- |
