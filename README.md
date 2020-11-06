@@ -64,3 +64,5 @@ O TCC Theme Ideas é uma plataforma que  tem como objetivo ajudar alunos de grad
   * knex
   * cors
   * ts-node-dev
+  * jsonwebtoken
+  * nodemailer
