@@ -1,28 +1,28 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
-import axios from 'axios-config'
+import axios from '../../axios-config'
 
 // Utils
-import { formatFetchedPhone } from 'utils/format'
+import { formatFetchedPhone } from '../../utils/format'
 
 // Components
-import PageHeader from 'components/PageHeader'
-import Input from 'components/UI/Input'
-import Select from 'components/UI/Select'
-import Spinner from 'components/UI/Spinner'
+import PageHeader from '../../components/PageHeader'
+import Input from '../../components/UI/Input'
+import Select from '../../components/UI/Select'
+import Spinner from '../../components/UI/Spinner'
 
 // Images
 import warningIcon from 'assets/images/icons/warning.svg'
 
 // Contexts
-import { useAuth } from 'contexts/auth'
+import { useAuth } from '../../contexts/auth'
 
 // CSS styles
 import './styles.css'
 
 // Interfaces
-import { FormFields, ProfileData } from 'interfaces/forms'
-import FeedbackModal from 'components/FeedbackModal'
+import { FormFields, ProfileData } from '../../interfaces/forms'
+import FeedbackModal from '../../components/FeedbackModal'
 
 const initialFields: FormFields = {
     whatsapp: {
