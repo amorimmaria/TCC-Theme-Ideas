@@ -1,133 +1,217 @@
-#page-suggest {
+#page-theme-form {
   width: 100vw;
   height: 100vh;
 }
 
-#page-suggest .page-header .header-content{
+#page-theme-form .page-header .header-content {
   margin-bottom: 6.4rem;
 }
 
-#page-suggest main{
-  background-color: var(--color-box-base);
+#page-theme-form main {
+  background: var(--color-box-base);
   width: 100%;
   max-width: 74rem;
   border-radius: 0.8rem;
-  margin: -3.7rem auto 3.2rem;
+  margin: -3.2rem auto 3.2rem;
   padding-top: 6.4rem;
   overflow: hidden;
 }
 
-#page-suggest main fieldset {
+#page-theme-form main form fieldset {
   border: 0;
   padding: 0 2.4rem;
 }
 
-#page-suggest main fieldset + fieldset {
+#page-theme-form main form fieldset + fieldset {
   margin-top: 6.4rem;
 }
 
-#page-suggest main fieldset legend {
+#page-theme-form main form fieldset legend {
   font: 700 2.4rem Archivo;
-  color: var(--color-text-in-secondary);
+  color: var(--color-text-title);
   margin-bottom: 2.4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   padding-bottom: 1.6rem;
-  border-bottom: 1px solid var(--color-text-search);
-
+  border-bottom: 1px solid var(--color-line-in-white);
 }
 
-#page-suggest main fieldset .input-block + .textarea-block,
-#page-suggest main fieldset .select-block + .input-block
-{
-  margin-top: 2.4rem;
+#page-theme-form main form fieldset legend button {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  cursor: pointer;
+  font: 700 1.6rem Archivo;
+  transition: color 200ms ease;
+  outline: 0;
 }
 
-#page-suggest main fieldset .input-block + .textarea-block,
-#page-suggest main fieldset .input-block + .select-block,
-#page-suggest main fieldset .select-block + .input-block,
-#page-suggest main fieldset .select-block + .textarea-block,
-#page-suggest main fieldset .textarea-block + .select-block
-{
-  margin-top: 2.4rem;
+#page-theme-form main form fieldset legend button:disabled {
+  cursor: not-allowed;
+  color: var(--color-text-complement);
 }
 
-#page-suggest main label {
-  color: var(--colot-text-complement);
+#page-theme-form main form fieldset legend button:not(:disabled):hover {
+ color: var(--color-primary-dark);
 }
 
-#page-suggest main footer {
-  padding: 4rem 2.4rem;
+#page-theme-form main label {
+  color: var(--color-text-complement);
+}
+
+#page-theme-form main form fieldset .input-block + .input-block,
+#page-theme-form main form fieldset .Select + .input-block {
+  margin-top: 1.4rem;
+}
+
+#page-theme-form main form footer {
+  padding: 4rem 2.6rem;
   background: var(--color-box-footer);
-  border-top: 1px solid var(--color-text-search);
-  margin-top: 3.4rem;
+  border-top: 1px solid var(--color-line-in-white);
+  margin-top: 6.4rem;
 }
 
-#page-suggest main p {
+#page-theme-form main form footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  text-align: center;
   font-size: 1.4rem;
   line-height: 2.4rem;
-  color: var(--color-text-in-secondary);
+  color: var(--color-text-complement);
 }
 
-#page-suggest main p img{
-  margin-right: 2rem;
-  height: 4rem;
+#page-theme-form main form footer p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-#page-suggest main footer button {
+#page-theme-form main form footer button {
   width: 100%;
   height: 5.6rem;
   background: var(--color-secundary);
   color: var(--color-button-text);
-  border: 0rem;
+  border: 0;
   border-radius: 0.8rem;
   cursor: pointer;
-  font-size: 700 1.6rem Archivo;
+  font: 700 1.6rem Archivo;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  transition: backgroud-color 0.2s;
+  transition: background-color 200ms ease;
   margin-top: 3.2rem;
+  outline: 0;
 }
 
-#page-suggest main footer button:hover {
+#page-theme-form main form footer button:hover {
   background: var(--color-secundary-dark);
 }
 
-@media(min-width: 700px){
-  #page-suggest {
-    max-width: 100%;
+#page-theme-form main form footer button:disabled {
+  background: var(--color-text-complement);
+  cursor: not-allowed;
+}
+
+#page-theme-form main form fieldset .schedule-item {
+  background: #eee;
+  padding: 1.6rem;
+  position: relative;
+  border-radius: 0.8rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  column-gap: 1.6rem;
+}
+
+#page-theme-form main form fieldset .schedule-item + .schedule-item {
+  margin-top: 1.4rem;
+}
+
+#page-theme-form main form fieldset .schedule-item .remove-schedule {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  width: 2.4rem;
+  text-align: center;
+  height: 2.4rem;
+  z-index: 98;
+}
+
+#page-theme-form main form fieldset .schedule-item .remove-schedule,
+#page-theme-form main form fieldset .schedule-item .remove-schedule svg {
+  cursor: pointer;
+}
+
+#page-theme-form main form fieldset .schedule-item .schedule-input-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#page-theme-form main form fieldset .schedule-item .schedule-input-group input {
+  width: 100%;
+  height: 5.6rem;
+  background: var(--color-input-background);
+  border: none;
+  border-radius: 0.8rem;
+  outline: 0;
+  padding: 0 1.6rem;
+  font: 1.6rem Archivo;
+}
+
+#page-theme-form main form footer button .spinner-resizer {
+  width: 3.4rem;
+  height: 3.4rem;
+}
+
+@media (min-width: 700px) {
+  #page-theme-form {
+      max-width: 100vw;
   }
 
-  #page-suggest .page-header .header-content{
-    margin-bottom: 0;
-
+  #page-theme-form .page-header .header-content {
+      margin-bottom: 0;
   }
 
-  #page-suggest main fieldset {
-    padding: 0 6.4rem;
+  #page-theme-form main form fieldset {
+      padding: 0 6.4rem;
   }
 
-  #page-suggest main footer {
-    padding: 4.6rem 6.4rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  #page-theme-form main form fieldset .schedule-item .input-block {
+      margin-top: 0 !important;
   }
 
-  #page-suggest main footer p {
-    justify-content: space-between;
+  #page-theme-form main form footer {
+      padding: 4rem 6.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+      text-align: initial;
   }
 
-  #page-suggest main footer button {
-    width: 20rem;
-    margin-top: 0rem;
+  #page-theme-form main form footer p {
+      flex-direction: row;
+      text-align: initial;
+      justify-content: space-between;
   }
 
+  #page-theme-form main form footer p img {
+      margin-right: 2rem;
+  }
+
+  #page-theme-form main form footer p span {
+      display: inline-block;
+  }
+
+  #page-theme-form main form footer button {
+      width: 20rem;
+      margin-top: 0;
+  }
 }
