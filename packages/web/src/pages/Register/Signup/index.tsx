@@ -214,7 +214,7 @@ function Signup() {
                             onClick={() => setShowPassword(!showPassword)}
                         >
                             <Icon
-                                color={showPassword ? '#33AAC2' : '#33AAC2'}
+                                color={showPassword ? '#33AAC2' : '#8ad2e0'}
                                 icon={showPassword ? hidePasswordIcon : showPasswordIcon}
                             />
                         </div>

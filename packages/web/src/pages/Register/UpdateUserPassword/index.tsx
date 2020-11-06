@@ -151,7 +151,7 @@ function UpdateUserPassword() {
                             onClick={() => setShowNewPassword(!showNewPassword)}
                         >
                             <Icon
-                                color={showNewPassword ? '#8257E5' : '#6A6180'}
+                                color={showNewPassword ? '#33AAC2' : '#8ad2e0'}
                                 icon={showNewPassword ? hidePasswordIcon : showPasswordIcon}
                             />
                         </div>
