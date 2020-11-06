@@ -1,33 +1,35 @@
-import React from 'react';
-import { Link} from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
+// Images
+import logoImg from 'assets/images/iconLogo2.svg'
+import backIcon from 'assets/images/icons/back.svg'
 
-import logoImg from '../../assets/icons/iconLogo2.svg';
-import backIcon from '../../assets/icons/back.svg';
-
-import './styles.css';
+// CSS styles
+import './styles.css'
 
 interface PageHeaderProps {
-  title:string;
+    title: string,
+    description?: string
 }
 
-const PageHeader: React.FC<PageHeaderProps> = (props) => {
-  return (
+const PageHeader: React.FC<PageHeaderProps> = ({ title, description, children }) => {
+    return (
+        <header className="page-header">
+            <div className="top-bar-container">
+                <Link to="/menu">
+                    <img src={backIcon} alt="Voltar" />
+                </Link>
+                <img src={logoImg} alt="Logo" />
+            </div>
 
-    <header className="page-header">
-        <div className="top-bar-container">
-          < Link to="/" >
-            <img src= {backIcon} alt="Voltar"/>
-          </Link>
-          <img src={logoImg} alt="TCC Theme Ideas" />
-        </div>
-
-        <div className="header-content">
-          <strong>{props.title}</strong>
-          {props.children}
-        </div>
-      </header>
-  );
+            <div className="header-content">
+                <strong>{title}</strong>
+                {description && <p>{description}</p>}
+                {children}
+            </div>
+        </header>
+    )
 }
 
-export default PageHeader;
+export default PageHeader
