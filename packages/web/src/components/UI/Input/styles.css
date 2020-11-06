@@ -1,0 +1,137 @@
+#input-wrapper {
+  margin-top: 1.3rem;
+}
+
+#input-wrapper .input-group {
+  position: relative;
+  background-color: var(--color-input-background);
+  width: 100%;
+  border: 1px solid var(--color-text-in-primary);
+  border-radius: 0.8rem;
+  margin-top: 1rem;
+}
+
+#input-wrapper .input-group + #input-wrapper .input-group {
+  margin-top: 1.4rem;
+}
+
+#input-wrapper .input-group label {
+  font-size: 1.4rem;
+}
+
+#input-wrapper .input-group input {
+  width: 100%;
+  height: 5.6rem;
+  background: var(--color-input-background);
+  border: none;
+  border-radius: 0.8rem;
+  outline: 0;
+  padding: 0 1.6rem;
+  font: 1.6rem Archivo;
+}
+
+#input-wrapper .input-group input::placeholder {
+  color: var(--color-text-in-primary);
+}
+
+#input-wrapper .input-group:focus-within::after {
+  animation: inputFocus 200ms ease forwards;
+  height: 2px;
+  content: '';
+  background: var(--color-primary-light);
+  position: absolute;
+  left: 1.6rem;
+  right: 1.6rem;
+  bottom: 0;
+  transform: scale(0);
+}
+
+#input-wrapper .input-group.invalid {
+  border: 2px solid crimson;
+}
+
+#input-wrapper .input-group:focus-within::before {
+  content: '';
+  width: 0.25rem;
+  animation: inputFocus 300ms ease forwards;
+  background-color: var(--color-primary);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+#input-wrapper .input-group svg {
+  position: absolute;
+  top: 34%;
+  right: 4%;
+  font-size: 2rem;
+}
+
+#input-wrapper .input-group .icon-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 34%;
+  right: 4%;
+}
+
+#input-wrapper .input-group .icon-group svg {
+  position: relative;
+  top: 0;
+  right: 0;
+}
+
+#input-wrapper .input-group .icon-group svg:nth-child(odd) {
+  margin-left: 1rem;
+}
+
+#input-wrapper .input-group {
+  position: relative;
+}
+
+#input-wrapper .input-group + #input-wrapper .input-group {
+  margin-top: 2.4rem;
+}
+
+#input-wrapper .input-group label {
+  font-size: 1.4rem;
+}
+
+#input-wrapper .input-group textarea {
+  width: 100%;
+  height: 16rem;
+  min-height: 8rem;
+  margin-top: 0.8rem;
+  border-radius: 0.8rem;
+  background: var(--color-input-background);
+  border: none;
+  outline: 0;
+  resize: none;
+  padding: 1.2rem 1.6rem;
+  font: 1.6rem Archivo;
+}
+
+#input-wrapper .input-group:focus-within::after {
+  animation: inputFocus 200ms ease forwards;
+  height: 0.2rem;
+  content: '';
+  background: var(--color-primary-light);
+  position: absolute;
+  left: 1.6rem;
+  right: 1.6rem;
+  bottom: 0.7rem;
+  transform: scale(0);
+}
+
+@keyframes inputFocus {
+  from {
+      width: 0;
+      transform: scale(0);
+  }
+  to {
+      width: calc(100% - 3.2rem);
+      transform: scale(1);
+  }
+}

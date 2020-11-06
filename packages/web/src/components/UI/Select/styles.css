@@ -1,0 +1,78 @@
+.Select {
+  margin-top: 1.1rem;
+}
+
+.Select .SelectContent {
+  width: 100%;
+  background: var(--color-input-background);
+  box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.8rem;
+  padding: 1.2rem 0.8rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  position: relative;
+  transition: box-shadow 300ms ease;
+}
+
+.Select .SelectContent .SelectSelector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Select .SelectContent .SelectSelector span {
+  color: var(--primary-theme-dark);
+  width: 100%;
+  line-height: 1;
+}
+
+.Select .SelectContent .SelectSelector svg {
+  font-size: 2.4rem;
+}
+
+.Select .SelectContent ul {
+  margin-left: 0;
+  list-style: none;
+  padding-top: 1.2rem;
+  max-height: 20rem;
+  background: var(--color-input-background);
+  box-shadow: 0.3rem 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+  overflow: scroll;
+  position: absolute;
+  border-radius: 0 0 .8rem .8rem;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+.Select .SelectContent ul::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.Select .SelectContent ul::-webkit-scrollbar-thumb {
+  background: var(--color-text-in-primary);
+}
+
+.Select .SelectContent ul li {
+  padding: 0.8rem;
+}
+
+.Select .SelectContent ul li:not(.Selected):hover {
+  background: var(--color-line-in-white);
+}
+
+.Select .SelectContent ul .Selected {
+  background: #ccc;
+}
+
+.Select.Open .SelectContent {
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.Select.Open .SelectContent ul {
+  display: initial;
+}
+
+.Select.Close .SelectContent ul {
+  display: none;
+}
