@@ -1,0 +1,54 @@
+.input-info {
+  width: 30rem;
+  z-index: 10;
+  border-radius: 0.8rem 0.8rem 0 0.8rem;
+  background-color: var(--color-primary);
+  position: absolute;
+  top: -7rem;
+  right: 4rem;
+  padding: 1.2rem;
+  font-size: 1.5rem;
+  color: var(--color-button-text);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.input-info .input-info-text {
+  margin-top: 0 !important;
+  margin-bottom: 0.2rem !important;
+}
+
+.input-info.hide {
+  animation: hide 300ms ease forwards;
+}
+
+.input-info.show {
+  animation: show 300ms ease forwards;
+}
+
+@keyframes hide {
+  from {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+  }
+  to {
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(0);
+  }
+}
+
+@keyframes show {
+  from {
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(0);
+  }
+  to {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+  }
+  
+}
