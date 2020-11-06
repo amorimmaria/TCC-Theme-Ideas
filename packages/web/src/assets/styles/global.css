@@ -1,22 +1,22 @@
-
 :root {
   --color-background: #F0F0F7;
   --color-primary-lighter: #E5890B;
-  --color-primary-light: #cc7a07;
+  --color-primary-light: #CC7A07;
   --color-primary: #33AAC2;
+  --color-primary-dark: #E5890B;
+  --color-primary-darker: #CC7A07;
   --color-secundary: #ED6907;
   --color-secundary-dark: #a74800;
-  --color-text-in-primary: #FFFFFF;
-  --color-text-in-secondary: #032B44;
-  --color-input-background: #F8F8FC;
   --color-title-in-primary: #FFFFFF;
+  --color-text-in-primary: #b5e3fd;
+  --color-text-title: #032B44;
+  --color-text-complement: #2c7aaa;
+  --color-text-base: #21648d;
+  --color-line-in-white: #96CFF1;
+  --color-input-background: #F8F8FC;
   --color-button-text: #FFFFFF;
-  --color-line-in-white: #96cff1; /*trocar*/
-  --color-text-search: #e6f4f1;
   --color-box-base: #FFFFFF;
   --color-box-footer: #FAFAFC;
-  --colot-text-complement: #7eaab3;  /*Trocar se preciso for*/
-
   font-size: 60%;
 }
 
@@ -47,7 +47,7 @@ input,
 button,
 textarea {
   font: 500 1.6rem Poppins;
-  color: var(--color-text-base);
+  color: var(--color-text-title);
 }
 
 input:-webkit-autofill,
@@ -69,6 +69,6 @@ img {
 
 @media (min-width: 700px) {
   :root {
-      font-size: 62.5%;
+    font-size: 62.5%;
   }
 }
