@@ -1,10 +1,10 @@
 import express, { response } from 'express';
-import ThemesControllers from './controllers/ThemesControllers';
+import ThemesControllers from './controllers/ThemesController';
 
 const routes = express.Router();
-const themesControllers = new ThemesControllers();
+const themesController = new ThemesControllers();
 
-routes.post('/themes', themesControllers.create);
-routes.get('/themes', themesControllers.index);
+routes.post('/themes', themesController.create);
+routes.get('/themes', themesController.index);
 
 export default routes;
