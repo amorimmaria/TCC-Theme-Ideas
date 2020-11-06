@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 // Contexts
-import { useAuth } from 'contexts/auth'
+import { useAuth } from '../../../contexts/auth'
 
 // Components
-import InputInfo from 'components/InputInfo'
+import InputInfo from '../../../components/InputInfo'
 
 // Images
-import purpleHeartImg from 'assets/images/icons/purple-heart.svg'
+import purpleHeartImg from '../../../assets/images/icons/purple-heart.svg'
 
 // Icons
 import { Icon } from '@iconify/react'
@@ -20,7 +20,7 @@ import infoIcon from '@iconify/icons-mdi/information-outline'
 import './styles.css'
 
 // Interfaces
-import { FormFields } from 'interfaces/forms'
+import { FormFields } from '../../../interfaces/forms'
 
 const initialFields = {
     email: {

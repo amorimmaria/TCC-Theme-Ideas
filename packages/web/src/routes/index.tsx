@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import AppRoutes from './app.routes'
 import AuthRoutes from './auth.routes'
-import { useAuth } from 'contexts/auth'
+import { useAuth } from '../contexts/auth'
 
 function Routes() {
     const [routes, setRoutes] = useState<JSX.Element | null>(null)

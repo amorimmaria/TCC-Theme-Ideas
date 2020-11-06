@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
 // Contexts
-import { useAuth } from 'contexts/auth'
-import { useProcessFinished } from 'contexts/process-finished'
+import { useAuth } from '../../../contexts/auth'
+import { useProcessFinished } from '../../../contexts/process-finished'
 
 // Components
-import InputInfo from 'components/InputInfo'
+import InputInfo from '../../../components/InputInfo'
 
 // Icons
 import { Icon } from '@iconify/react'
@@ -18,7 +18,7 @@ import infoIcon from '@iconify/icons-mdi/information-outline'
 import './styles.css'
 
 // Interfaces
-import { FormFields } from 'interfaces/forms'
+import { FormFields } from '../../../interfaces/forms'
 
 const initialFields = {
     newPassword: {

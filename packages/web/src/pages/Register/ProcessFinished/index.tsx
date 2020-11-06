@@ -2,10 +2,10 @@ import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 
 // Images
-import checkInBoxImg from 'assets/images/icons/success-check-icon.svg'
+import checkInBoxImg from '../../../assets/images/icons/success-check-icon.svg'
 
 // Contexts
-import { useProcessFinished } from 'contexts/process-finished'
+import { useProcessFinished } from '../../../contexts/process-finished'
 
 // CSS styles
 import './styles.css'

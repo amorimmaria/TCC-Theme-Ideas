@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Route, Switch, Redirect, useHistory } from 'react-router-dom'
 
 // Images
-import logo from 'assets/images/iconLogo2.svg'
+import logo from '../../assets/images/iconLogo2.svg'
 
 // Pages
 import Login from './Login'

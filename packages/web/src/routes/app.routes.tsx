@@ -2,10 +2,10 @@ import React from 'react'
 import { Route, Redirect, Switch } from 'react-router-dom'
 
 // Pages
-import Menu from 'pages/Menu' 
-import Profile from 'pages/Profile'
-import SearchTheme from 'pages/SearchTheme'
-import SuggestTheme from 'pages/SuggestTheme'
+import Menu from '../pages/Menu' 
+import Profile from '../pages/Profile'
+import SearchTheme from '../pages/SearchTheme'
+import SuggestTheme from '../pages/SuggestTheme'
 
 function AppRoutes() {
     return (

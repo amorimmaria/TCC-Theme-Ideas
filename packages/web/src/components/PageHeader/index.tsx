@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 // Images
-import logoImg from 'assets/images/iconLogo2.svg'
-import backIcon from 'assets/images/icons/back.svg'
+import logoImg from '../../assets/images/iconLogo2.svg'
+import backIcon from '../../assets/images/icons/back.svg'
 
 // CSS styles
 import './styles.css'

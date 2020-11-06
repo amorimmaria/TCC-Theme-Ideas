@@ -1,5 +1,5 @@
 import React, { useContext, createContext, useState, useEffect } from 'react'
-import axios from 'axios-config'
+import axios from '../axios-config'
 
 import noAvatarImg from '../assets/images/sem-avatar.svg'
 

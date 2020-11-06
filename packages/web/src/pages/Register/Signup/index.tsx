@@ -8,20 +8,20 @@ import hidePasswordIcon from '@iconify/icons-mdi/eye-off'
 import infoIcon from '@iconify/icons-mdi/information-outline'
 
 // Components
-import InputInfo from 'components/InputInfo'
+import InputInfo from '../../../components/InputInfo'
 
 // Images
-import goBackImg from 'assets/images/icons/back.svg'
+import goBackImg from '../../../assets/images/icons/back.svg'
 
 // Contexts
-import { useAuth } from 'contexts/auth'
-import { useProcessFinished } from 'contexts/process-finished'
+import { useAuth } from '../../../contexts/auth'
+import { useProcessFinished } from '../../../contexts/process-finished'
 
 // CSS styles
 import './styles.css'
 
 // Interfaces
-import { FormFields } from 'interfaces/forms'
+import { FormFields } from '../../../interfaces/forms'
 
 const initialFields = {
     name: {

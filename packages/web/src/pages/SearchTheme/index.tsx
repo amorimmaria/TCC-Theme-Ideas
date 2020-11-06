@@ -1,18 +1,18 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
-import axios from 'axios-config'
+import axios from '../../axios-config'
 import { useHistory } from 'react-router-dom'
 
 // Components
-import PageHeader from 'components/PageHeader'
-import ThemeItem from 'components/ThemeItem'
-import Select from 'components/UI/Select'
-import Spinner from 'components/UI/Spinner'
+import PageHeader from '../../components/PageHeader'
+import ThemeItem from '../../components/ThemeItem'
+import Select from '../../components/UI/Select'
+import Spinner from '../../components/UI/Spinner'
 
 // Contexts
-import { useAuth } from 'contexts/auth'
+import { useAuth } from '../../contexts/auth'
 
 // Images
-import notFoundIcon from 'assets/images/icons/not-found.svg'
+import notFoundIcon from '../../assets/images/icons/not-found.svg'
 
 // Icons
 import { Icon } from '@iconify/react'

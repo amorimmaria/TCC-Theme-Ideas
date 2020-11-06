@@ -1,10 +1,10 @@
 import React, { InputHTMLAttributes, useState } from 'react'
 
 // Utils
-import { formatCurrentPhone } from 'utils/format'
+import { formatCurrentPhone } from '../../../utils/format'
 
 // Components
-import InputInfo from 'components/InputInfo'
+import InputInfo from '../../../components/InputInfo'
 
 // Icons
 import { Icon } from '@iconify/react'
@@ -16,7 +16,7 @@ import infoIcon from '@iconify/icons-mdi/information-outline'
 import './styles.css'
 
 // Interfaces
-import { FormFields } from 'interfaces/forms'
+import { FormFields } from '../../../interfaces/forms'
 
 type InputTextarea = InputHTMLAttributes<HTMLInputElement> & InputHTMLAttributes<HTMLTextAreaElement>
 

@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import axios from 'axios-config'
+import axios from '../../axios-config'
 
 // Contexts
-import { useAuth } from 'contexts/auth'
+import { useAuth } from '../../contexts/auth'
 
 // Images
-import logo from 'assets/images/logo.svg'
-import menu from 'assets/images/landing.svg'
+import logo from '../../assets/images/logo.svg'
+import menu from '../../assets/images/landing.svg'
 import searchIcon from '../../assets/images/icons/lupa.svg'
 import suggestIcon from '../../assets/images/icons/lampada.svg'
-import purpleHeartIcon from 'assets/images/icons/purple-heart.svg'
-import signoutIcon from 'assets/images/icons/signout.svg'
+import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg'
+import signoutIcon from '../../assets/images/icons/signout.svg'
 
 // CSS styles
 import './styles.css'

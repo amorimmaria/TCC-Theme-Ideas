@@ -1,11 +1,11 @@
 import React from 'react'
-import axios from 'axios-config'
+import axios from '../../axios-config'
 
 // Components
 
 // Images
-import whatsappIcon from 'assets/images/icons/whatsapp.svg'
-import noAvatarImg from 'assets/images/sem-avatar.svg'
+import whatsappIcon from '../../assets/images/icons/whatsapp.svg'
+import noAvatarImg from '../../assets/images/sem-avatar.svg'
 
 // CSS styles
 import './styles.css'

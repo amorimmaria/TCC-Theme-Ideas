@@ -12,7 +12,7 @@ import Select from '../../components/UI/Select'
 import Spinner from '../../components/UI/Spinner'
 
 // Images
-import warningIcon from 'assets/images/icons/warning.svg'
+import warningIcon from '../../assets/images/icons/warning.svg'
 
 // Contexts
 import { useAuth } from '../../contexts/auth'

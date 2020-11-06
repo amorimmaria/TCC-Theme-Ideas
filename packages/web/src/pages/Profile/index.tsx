@@ -1,28 +1,28 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios-config'
+import axios from '../../axios-config'
 
 // Utils
-import { formatFetchedPhone } from 'utils/format'
+import { formatFetchedPhone } from '../../utils/format'
 
 // Icons
 import { Icon } from '@iconify/react'
 import cameraIcon from '@iconify/icons-mdi/camera'
 
 // Images
-import noAvatarImg from 'assets/images/sem-avatar.svg'
+import noAvatarImg from '../../assets/images/sem-avatar.svg'
 
 // Components
-import PageHeader from 'components/PageHeader'
-import Input from 'components/UI/Input'
-import Select from 'components/UI/Select'
-import Spinner from 'components/UI/Spinner'
-import FeedbackModal from 'components/FeedbackModal'
+import PageHeader from '../../components/PageHeader'
+import Input from '../../components/UI/Input'
+import Select from '../../components/UI/Select'
+import Spinner from '../../components/UI/Spinner'
+import FeedbackModal from '../../components/FeedbackModal'
 
 // Contexts
-import { useAuth } from 'contexts/auth'
+import { useAuth } from '../../contexts/auth'
 
 // Interfaces
-import { FormFields } from 'interfaces/forms'
+import { FormFields } from '../../interfaces/forms'
 
 // CSS styles
 import './styles.css'

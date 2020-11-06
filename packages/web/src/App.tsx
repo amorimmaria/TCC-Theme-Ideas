@@ -1,13 +1,13 @@
 import React from 'react'
 
 // Pages
-import Routes from 'routes'
+import Routes from './routes'
 
-import { AuthProvider } from 'contexts/auth'
-import { ProcessFinishedContextProvider } from 'contexts/process-finished'
+import { AuthProvider } from './contexts/auth'
+import { ProcessFinishedContextProvider } from './contexts/process-finished'
 
 // CSS styles
-import 'assets/styles/global.css'
+import './assets/styles/global.css'
 
 function App() {
   return (
