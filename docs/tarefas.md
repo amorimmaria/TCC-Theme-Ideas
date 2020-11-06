@@ -6,7 +6,7 @@ Este plano de iteração será usando como exemplo da disciplina Engenharia de S
 
 Iteração | Data início | Data Final | Apresentação | Gerente   | Detalhes
 -------- | ----------- | ---------- | ------------ | -------   | -------
-It1      | 17/09/2020  | 30/09/2020 | 01/10/2020   | Maria | Criar Documento de Visão, Modelos e Plano de Iteração e Release, Detalhar US00 - Home Page (Caso base)
+It1      | 17/09/2020  | 30/09/2020 | 01/10/2020   | Maria | Criar Documento de Visão, Modelos e Plano de Iteração e Release, Detalhar US00 - Home Page
 It2      | 27/09/2020  | 10/10/2020 | 09/10/2020   | Jaine | Implementar US00 - Home Page, Detalhar US01 - Cadastro de Tema, US02 - Buscar Tema
 It3      | 11/10/2020  | 24/10/2020 | 23/10/2020   | Maria | Implementar US03, detalhar e implementar US05, Testar  US00
 It4      | 25/10/2020  | 07/11/2020 | 06/11/2020   | Jaine | Implementar US03 - Manter Usuário, US04 - Recuperar Senha e atualizar US00 - Home page, US01 - Cadastro de Tema e US02 - Buscar Tema
