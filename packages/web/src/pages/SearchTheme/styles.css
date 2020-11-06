@@ -1,4 +1,4 @@
-#page-search {
+#page-theme-list {
   width: 100vw;
   height: 100vh;
 }
@@ -7,13 +7,9 @@
   margin-top: 3.2rem;
 }
 
-#search-themes label {
-  color: var(--color-text-search);
-}
-
 #search-themes button {
   width: 100%;
-  height: 5.0rem;
+  height: 5.6rem;
   background: var(--color-secundary);
   color: var(--color-button-text);
   border: 0;
@@ -24,42 +20,90 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  transition: background-color 0.2s;
-  margin-top: 3.0rem;
+  transition: background-color 200ms ease;
+  margin-top: 4.5rem;
+  outline: 0;
+}
 
+#search-themes button svg {
+  margin-right: 1.4rem;
+  font-size: 2.4rem;
 }
 
 #search-themes button:hover {
   background: var(--color-secundary-dark);
 }
 
+#search-themes label {
+  color: var(--color-text-in-primary);
+}
 
-@media(min-width: 700px){
-  #page-search {
-    max-width: 100%;
-  }
+#page-theme-list main {
+  margin: 3.2rem auto;
+  width: 90%;
+}
 
-  #search-themes {
-    display: grid;
-    grid-template-columns: 1fr repeat(2, 1fr);
-    column-gap: 16px;
-    position: absolute;
-    bottom: -28px;
-  }
-
-  #search-themes .input-block + .input-block,
-  #search-themes .select-block + .select-block{
-
-    margin-top: 0;
-  }
-
+#page-theme-list main .spinner-resizer {
+  width: 20rem;
+  height: 20rem;
+  margin: 3.4rem auto;
 }
 
 
+#page-theme-list main #all-results {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--color-text-complement);
+}
 
+#page-theme-list main .no-themes-found {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
 
+#page-theme-list main .no-themes-found header {
+  font-size: 2.5rem;
+  text-align: center;
+}
 
+#page-theme-list main .no-themes-found img {
+  width: 24rem;
+}
 
+@media (min-width: 700px) {
+  #page-theme-list {
+      max-width: 100%;
+  }
+  #search-themes {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 1.6rem;
+      position: absolute;
+      align-items: center;
+      bottom: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150%;
+  }
 
-
-
+  .Select .SelectContent {
+      width: auto;
+      height: 5.6rem;
+  }
+  .Select .SelectContent .SelectSelector {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+  .input-block input {
+      margin-top: 0.5rem;
+  }
+  #page-theme-list main {
+      padding: 3.2rem 0;
+      max-width: 105rem;
+      margin: 0 auto;
+  }
+}
