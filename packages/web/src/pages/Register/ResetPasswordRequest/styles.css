@@ -1,0 +1,131 @@
+#page-register-password-reset-request {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+    position: relative;
+}
+
+#page-register-password-reset-request img {
+    margin-right: 32.5rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+#page-register-password-reset-request img:hover {
+    filter: brightness(80%);
+}
+
+#page-register-password-reset-request h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 3.4rem;
+    color: var(--color-text-title);
+    margin-top: 1.2rem;
+}
+
+#page-register-password-reset-request form {
+    width: 75%;
+    margin-top: 1.5rem;
+}
+
+#page-register-password-reset-request form .input-group {
+    position: relative;
+    background-color: var(--color-input-background);
+    width: 100%;
+    border: 1px solid var(--color-text-in-primary);
+    border-radius: 0.8rem;
+    margin-top: 1.2rem;
+}
+
+#page-register-password-reset-request form .input-group.invalid {
+    border: 2px solid crimson;
+}
+
+#page-register-password-reset-request form .input-group input {
+    width: 100%;
+    border-radius: inherit;
+    border: none;
+    outline: none;
+    height: 5.5rem;
+    padding: 1rem 1.6rem;
+    background-color: var(--color-input-background);
+}
+
+#page-register-password-reset-request form .input-group:focus-within::before {
+    content: '';
+    width: 0.25rem;
+    animation: inputFocus 300ms ease forwards;
+    background-color: var(--color-primary);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+#page-register-password-reset-request form .input-group svg {
+    position: absolute;
+    top: 34%;
+    right: 4%;
+    font-size: 2rem;
+}
+
+#page-register-password-reset-request form .input-group svg:hover {
+    color: var(--color-primary);
+}
+
+#page-register-password-reset-request #password-reset-request-feedback-feedback {
+    color: crimson;
+    text-align: center;
+    margin-top: inherit;
+}
+
+#page-register-password-reset-request form button {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 0.8rem;
+    background-color: var( --color-text-in-primary);
+    color: var(--color-text-complement);
+    height: 5rem;
+    font-weight: 600;
+    font-family: Archivo, sans-serif;
+    font-size: 1.8rem;
+    cursor: not-allowed;
+    transition: background-color 300ms ease;
+    margin: 2rem 0 0.5rem;
+    user-select: none;
+}
+
+#page-register-password-reset-request form button:enabled {
+    background-color: var(--color-secundary);
+    color: var(--color-button-text);
+    cursor: pointer;
+}
+
+#page-register-password-reset-request form button:enabled:hover {
+    background-color: var(--color-secundary-dark);
+}
+
+@media (min-width: 1000px) {
+    #page-register-password-reset-request img {
+        position: absolute;
+        top: -13.5rem;
+    }
+
+    #page-register-password-reset-request h2 {
+        position: absolute;
+        top: -3.5rem;
+        left: 0;
+    }
+
+    #page-register-password-reset-request p:first-of-type {
+        margin-top: 7.5rem;
+        margin-bottom: -1rem;
+    }
+
+    #page-register-password-reset-request form {
+        width: 100%;
+    }
+}
