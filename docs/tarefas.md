@@ -9,7 +9,7 @@ Iteração | Data início | Data Final | Apresentação | Gerente   | Detalhes
 It1      | 17/09/2020  | 30/09/2020 | 01/10/2020   | Maria | Criar Documento de Visão, Modelos e Plano de Iteração e Release, Detalhar US00
 It2      | 27/09/2020  | 10/10/2020 | 09/10/2020   | Jaine | Implementar US00, Detalhar US01, US02
 It3      | 11/10/2020  | 24/10/2020 | 23/10/2020   | Maria | Implementar US03, detalhar e implementar US05, Testar  US00
-It4      | 25/10/2020  | 07/11/2020 | 06/11/2020   | Jaine |
+It4      | 25/10/2020  | 07/11/2020 | 06/11/2020   | Jaine | Implementar US03, US04 e atualizar US00, US01 e US02
 It5      | 08/11/2020  | 21/11/2020 | 20/11/2020   | Maria |
 It6      | 22/11/2020  | 05/12/2020 | 04/12/2020   | Jaine |
 
