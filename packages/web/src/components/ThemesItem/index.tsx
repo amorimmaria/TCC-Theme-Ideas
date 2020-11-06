@@ -27,7 +27,7 @@ const ThemesItem: React.FC <ThemesItemProps> = ({themes}) =>{
     
   }
  
-  return (
+  /*return (
     <article className="themes-item">
       <header>
         <img src={themes.avatar} alt={themes.name}/>
@@ -55,6 +55,29 @@ const ThemesItem: React.FC <ThemesItemProps> = ({themes}) =>{
         <a 
           onClick = {createNewConnection} 
           href="teste">
+        </a>
+    </article>
+  )*/
+  return (
+    <article className="themes-item">
+      <header>
+        <img src={themes.avatar} alt={themes.name}/>
+        <div>
+        <strong>{themes.name}</strong>
+          <span>{themes.tipoDeUsuario}</span>
+        </div>
+        <span>
+          <p><strong>Curso:&nbsp; &nbsp; </strong>{themes.curso}</p>
+          <p><strong>Sugestão de Tema:&nbsp; &nbsp;</strong>{themes.sugestaoDeTema}</p>
+          <p><strong>Descrição:&nbsp; &nbsp;</strong>{themes.descricao}</p>
+          <p><strong>Área:&nbsp; &nbsp;</strong>{themes.area}</p>
+          <p><strong>Links de Artigos:&nbsp; &nbsp;</strong>{themes.linksArtigos}</p>
+        </span>
+      </header>
+        <a 
+          onClick = {createNewConnection} 
+          href={"teste"}
+        >
         </a>
     </article>
   )

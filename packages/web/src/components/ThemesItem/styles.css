@@ -1,16 +1,19 @@
-.themes-item {
-  background: var(--color-box-base);
-  border-radius: 0.8rem;
-  margin-top: 2.4rem;
-  overflow: hidden;
-}
 
+.themes-item {
+  padding: 2.8rem 2rem;
+  border-radius: 0.8rem;
+  margin-top: 2.0rem;
+  overflow: hidden;
+  width: 736px;
+  height: 600px;  
+  }
+  
 .themes-item header {
+  display: block;
   position: absolute;
   width: 736px;
   height: 595px;
-  left: 480px;
-  top: 388px;
+  left: 470px;
   background: #FFFFFF;
   border: 1px solid #E6E6F0;
   box-sizing: border-box;
@@ -29,7 +32,6 @@
 
 .themes-item div strong {
   position: absolute;
-  width: 194px;
   height: 25px;
   left: 150px;
   top: 50px;
@@ -42,42 +44,40 @@
   color: var(--color-text-title);
 }
 
-
-
 .themes-item header div span {
+  
+  height: 25px;
+  left: 150px;
+  top: 50px;
+
   font-size: 1.6rem;
   display: block;
-  margin-top: 0.4rem;
+  margin-top: -4.5rem;
   height: 25px;
-  left: 200px;
-  margin-left: 2.4rem;
-  
-  
+  left: 190px;
+  margin-left: 9.8rem;
 }
 
+.themes-item header span p {
+  margin-left: 4.0rem;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+}
+
+
+.themes-item header span p strong {
+  margin-left: 4.0rem;
+  font-size: 1.6rem;
+  line-height: 5rem;
+}
+
+
+
 @media(min-width: 700px){
-  .themes-item header,
-  .themes-item footer {
+  .themes-item header {
+    
     padding: 3.2rem;
   }
-
-  .themes-item > p {
-    padding: 0 3.2rem;
-  }
-
-  .themes-item footer p strong {
-    display: initial;
-    margin-left: 1.6rem;
-  }
-
-  .themes-item footer button {
-    width: 24.5rem;
-    font-size: 1.6rem;
-    justify-content: center;
-  }
-
-  .themes-item footer button img {
-    margin-right: 1.6rem;
-  }
+  
 
 }
