@@ -40,16 +40,17 @@ Este documento descreve o modelo conceitual do software que é composto por um c
 | 29/09/2020 |  1.0   | Cabeçalho, descrição do documento e sumário;  | Jaine e Maria |
 |14/10/2020| 1.1 | Correção do modelo de dados | Jaine e Maria |
 |14/10/2020 | 1.2 | Correção do modelo conceitual | Jaine e Maria |
+|07/11/2020 | 1.3 | Correção do modelo conceitual, relacional e o dicionário de dados | Jaine e Maria |
 
 <div id ='conceitual' />
 
 ## Modelo Conceitual
 
-![Modelo Conceitual](/img/modeloConceitualNew.png)
+![Modelo Conceitual](/img/modeloConceitual.png)
 
 ## Modelo de Dados
 
-![Modelo de dados](/img/modeloDados.png)
+![Modelo de dados](/img/modeloRelacional.png)
                             
 ## Dicionário de dados
 ### Usuário
@@ -57,7 +58,7 @@ Este documento descreve o modelo conceitual do software que é composto por um c
 | Nome | Descrição | Tipo de dado | Tamanho | Restrições |
 |------|-----------|--------------|---------|------------|
 |**nome**|Nome do usuário|Varchar|256|Not Null|
-|**sobrenome**|Sobrenome do usuário|Varchar|256|Not Null|
+|**avatar**|Sobrenome do usuário|Varchar|256|Not Null|
 |**email**|E-mail do usuário|Varchar|256|Not Null|
 |**senha**|Senha do usuário|Varchar|256|Not Null|
 
@@ -65,10 +66,10 @@ Este documento descreve o modelo conceitual do software que é composto por um c
 
 | Nome | Descrição | Tipo de dado | Tamanho | Restrições |
 |------|-----------|--------------|---------|------------|
-|**nome**|Nome do usuário|Varchar|256|Not Null|
+|**tipoDeUsuario**| O usuário define se é do tipo discente ou docente| Varchar | 256 | Not Null|
 |**curso**|Curso que o usuário está cursando/dar aula|Varchar|256|Not Null|
 |**susgestaoDeTema**|Susgestão de tema para o TCC|Varchar|256|Not Null|
 |**descrição**|Uma breve descrição do tema do TCC sugerido|Varchar|256|Not Null|
 |**area**|Área que está relacionada ao tema do TCC sugerido|Varchar|256|Not Null|
-|**linksDeArtigos**|Links de artigos sugerido para ajudar com o tema|Varchar|256|-|
+|**linksArtigos**|Links de artigos sugerido para ajudar com o tema|Varchar|256|-|
 
