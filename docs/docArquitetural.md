@@ -92,5 +92,6 @@ A arquitetura do projeto seguirá o padrão Model-View-Controller(MVC). Essa arq
 
 <div id='referencias'/>
 
+
 ### **Referências**
 https://docs.google.com/document/d/1i80vPaInPi5lSpI7rk4QExnO86iEmrsHBfmYRy6RDSM/edit#
