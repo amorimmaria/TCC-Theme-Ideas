@@ -41,6 +41,8 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 | Data | Versão | Descrição | Autor |
 | :--- | :----: | :---------| :---- |
 | 30/09/2020 | 1.0 | Descrição do documento; detalhamento do User Story US01 | Jaine e Maria |
+| 06/11/2020 | 1.1 | Corrigindo alguns erros ortográficos e detalhando melhor os testes de aceitação | Jaine e Maria |
+
 
 <div id='us'/>
 
@@ -63,7 +65,7 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 
 | Código | Descrição |
 | ------ | --------- |
-|**TA01.01**| O usuário ao clicar na opção buscar tema, ele deve ser redirecionado para a tela de busca, e poderá informar o curso e a área e assim encontrar um tema de acordo com as informações que ele digitou. |
+|**TA01.01**| O usuário ao clicar na opção buscar tema, ele deve ser redirecionado para a tela de busca, e poderá informar o curso tipo de usuário e a área e assim encontrar um tema de acordo com as informações que ele digitou. |
 |**TA02.02**| O usuário ao clicar na opção sugerir tema, ele deve ser redirecionado para a tela de sugerir tema, onde o usuário informará o tema do TCC, sugerir links de artigos com relação aquele tema, além de outras informações. |
 
 
@@ -83,9 +85,9 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 
 | Código | Descrição |
 | ------ | --------- |
-|**TA01.01**| O usuário preenche as informações para sugestão de tema e clica em cconcluir sugestão e em seguida aparecerá uma mensagem de sugestão de tema cadastrado com sucesso |
+|**TA01.01**| O usuário preenche as informações para sugestão de tema e clica em concluir sugestão e em seguida aparecerá uma mensagem de sugestão de tema cadastrado com sucesso |
 |**TA01.02**| O usuário informa, na tela de alterar sugestão de tema, os dados validos que deseja alterar. Em seguida, receberá uma notificação de: Alterado com sucesso|
-|**TA01.03**| O usuário informa, na tela excluir sugestão de tema, ao clicar em deletar ele será notificado com uma mensagemde: Excluído com sucesso|
+|**TA01.03**| O usuário informa, na tela excluir sugestão de tema, ao clicar em deletar ele será notificado com uma mensagem de: Tema excluído com sucesso|
 
 
 
@@ -95,7 +97,7 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 
 |                    |      |
 | ------------------ | ---- |
-|**Descrição**| O sistema deve mostrar os temas cadastrados quando o usuário buscar informando o curso |
+|**Descrição**| O sistema deve mostrar os temas cadastrados quando o usuário buscar informando o curso, tipo de usuário ou por área|
 |**Requisitos envolvidos**| RF010 |
 |**Prioridade**| Essencial |
 |**Estimativa**| 14h |
@@ -106,7 +108,11 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 
 | Código | Descrição |
 | ------ | --------- |
-|**TA01.01**| O usuário ao informar o curso para mostrar os temas cadastrados de acordo com a opção que o usuário informou|
+|**TA01.01**| O usuário ao informar o curso no filtro de busca,mostra os temas cadastrados de acordo com a opção que o usuário informou|
+|**TA01.02**| O usuário ao informar o tipo de usuário, se é discente ou docente no filtro de busca, mostra os temas cadastrados de acordo com a opção que o usuário informou|
+|**TA01.03**| O usuário ao informar a área no filtro de busca, mostra os temas cadastrados de acordo com a opção que o usuário informou|
+|**TA01.04**| O usuário não colocando nenhuma opção de filtro como, curso, tipo de usuário e área, o sistema deverá mostrar todos os temas cadastrados||
+
 
 <div id='us03'/>
 
@@ -114,7 +120,7 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 
 |                    |      |
 | ------------------ | ---- |
-|**Descrição**| O sistema deve manter um cadastro de usuário que tem acesso ao sistema via login e senha. Um usuário tem os atributos nome, sobrenome, avatar, email e senha. O email será o login e ele pode registrar-se diretamente no sistema, o avatar é um link para uma foto de seu perfil.|
+|**Descrição**| O sistema deve manter um cadastro de usuário que tem acesso ao sistema via login e senha. Um usuário tem os atributos: nome, sobrenome, avatar, e-mail e senha. O e-mail será o login e ele pode registrar-se diretamente no sistema, o avatar é onde o usuário poderá adicionar uma foto em seu perfil.|
 |**Requisitos envolvidos**| RF01, RF02, RF03 |
 |**Prioridade**| Essencial |
 |**Estimativa**| 14h |
@@ -126,7 +132,7 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 
 | Código | Descrição |
 | ------ | --------- |
-|**TA01.01**|O usuário informa, na tela de cadastro, todos os dados para registrar-se corretamente, ao clicar em concluir ele é notificado com uma mensagem de sucesso. Mensagem: Cadastro salvo! |
+|**TA01.01**|O usuário informa, na tela de cadastro, todos os dados como nome, sobrenome, avatar, e-mail e senha, para registrar-se corretamente, ao clicar em concluir ele é notificado com uma mensagem de sucesso. Mensagem: Cadastro realizado com sucesso! |
 
 
 <div id='us04'/>
@@ -135,7 +141,7 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 
 |                    |      |
 | ------------------ | ---- |
-|**Descrição**| O sistema deve conter a funcionalidade de recuperação de senha do usuário, onde na tela de login inicial, o sistema deve ter uma opção de recuperação de senha, na qual o usuário vai informar o email de cadastro, e a partir disso vai receber um e-mail com um link para redefinir a senha, depois de redefinir o usuário pode voltar a tela de login;|
+|**Descrição**| O sistema deve conter a funcionalidade de recuperação de senha do usuário, onde na tela de login inicial, o sistema deve ter uma opção de recuperação de senha, na qual o usuário vai informar o e-mail de cadastro, e a partir disso vai receber um e-mail com um link para redefinir a senha, depois de redefinir o usuário pode voltar a tela de login e logar novamente ao sistema com sua senha já redefinida|
 |**Requisitos envolvidos**|RF05 |
 |**Prioridade**| Essencial |
 |**Estimativa**| 8 h  |
@@ -145,7 +151,8 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 
 | Código | Descrição |
 | ------ | --------- |
-|**TA01.01**| O usuário ao informar o e-mail para recuperação da senha e deve receber  um link de recuperação no e-mail |
+|**TA01.01**| O usuário ao informar o e-mail para recuperação da senha, deve receber  um link de recuperação no e-mail |
+|**TA01.02**| Ao clicar no link de recuperação o usuário deve ser redirecionado para uma tela de redefinir a senha e ao informar o e-mail de cadastro, deverá informar a nova senha e repetir a nova senha e a partir disso, poder fazer login no sistema com a senha ja redefinida.
 
 
 <div id='us05'/>
