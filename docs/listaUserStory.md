@@ -26,6 +26,8 @@
    4. [User Story US03](#us03)
    5. [User Story US04](#us04)
    6. [User Story US05](#us05)
+   7. [User Story US06](#us06)
+
 3. [Referências](#referencias)
 
 
@@ -56,7 +58,7 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 |                    |      |
 | ------------------ | ---- |
 |**Descrição**| O sistema deve mostrar duas opções para o usuário, buscar tema ou sugerir tema e dependendo da escolha do usuário ambas as opções levará para opções para preenchimento de outras informações relacionadas a opção escolhida.|
-|**Requisitos envolvidos**| RF009, RF012 |
+|**Requisitos envolvidos**| RF010, RF013 |
 |**Prioridade**| Essencial |
 |**Estimativa**| 14h |
 |**Tamanho Funcional**|7 PF|
@@ -142,7 +144,7 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 |                    |      |
 | ------------------ | ---- |
 |**Descrição**| O sistema deve conter a funcionalidade de recuperação de senha do usuário, onde na tela de login inicial, o sistema deve ter uma opção de recuperação de senha, na qual o usuário vai informar o e-mail de cadastro, e a partir disso vai receber um e-mail com um link para redefinir a senha, depois de redefinir o usuário pode voltar a tela de login e logar novamente ao sistema com sua senha já redefinida|
-|**Requisitos envolvidos**|RF05 |
+|**Requisitos envolvidos**|RF06|
 |**Prioridade**| Essencial |
 |**Estimativa**| 8 h  |
 |**Tamanho Funcional**|7 PF|
@@ -167,10 +169,28 @@ O presente documento mostra uma breve descrição dos passos seguidos por um usu
 |**Estimativa**| 6 h  |
 |**Tamanho Funcional**|6 PF|
 
-### *Testes de Aceitação (TA)*
+### Testes de Aceitação (TA)
 
 | Código | Descrição |
 | ------ | --------- |
 |**TA01.01**| O usuário clica em favoritar um tema e permanece favoritado |
 
+<div id='us06' />
+
+### **User Story US06 - Perfil de Usuário**
+|                    |      |
+| ------------------ | ---- |
+|**Descrição**| O sistema deve conter a funcionalidade de exibir as informações do perfil do usuário com as informações que ele cadastrou como: nome, e-mail, curso, área, sugestão de tema, descrição do tema e links de artigos relacionado ao tema que o usuário cadastrou. Além disso, é possível o usuário atualizar informações no seu perfil, como a foto do perfil e as informações relacionadas ao tema que ele sugeriu como: sugestão do tema, curso, área, descrição do tema e os links de artigos. Além do mais o usuário poderá remover a sugestão de tema que ele cadastrou. |
+|**Requisitos envolvidos**|RF02, RF03, RF08 e RF09 |
+|**Prioridade**| Essencial |
+|**Estimativa**| 8 h  |
+|**Tamanho Funcional**|7 PF|
+
+### Testes de Aceitação (TA)
+
+| Código | Descrição |
+| ------ | --------- |
+|**TA01.01**| O usuário clica em seu avatar, ou seja, na foto do seu perfil e suas informações como nome, tipo de usuário, e-mail, curso, sugestão de tema, área do tema, descrição do tema são exibidas na tela|
+|**TA01.02**| O usuário poderá alterar os dados como: sugestão do tema, curso, área, descrição do tema e os links de artigos|
+|**TA01.03**| O usuário poderá remover um tema da qual ele cadastrou, ao remover o tema aparece uma mensagem: Tema removido com sucesso!|
 
