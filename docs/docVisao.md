@@ -80,7 +80,6 @@ RF014 Detalhar informações cadastradas do tema de TCC -| O usuário poderá vi
 RF015 - Favoritar tema de TCC | O usuário pode favoritar um tema da qual ele tenha gostado | Discente|
 
 
-
 ## Lista de Requisitos Não-Funcionais
 
 Requisito                                 | Descrição   |
