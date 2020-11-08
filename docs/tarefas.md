@@ -9,7 +9,7 @@ Iteração | Data início | Data Final | Apresentação | Gerente   | Detalhes
 It1      | 17/09/2020  | 30/09/2020 | 01/10/2020   | Maria | Criar Documento de Visão, Modelos e Plano de Iteração e Release, Detalhar US00 - Home Page
 It2      | 27/09/2020  | 10/10/2020 | 09/10/2020   | Jaine | Implementar US00 - Home Page, Detalhar US01 - Cadastro de Tema, US02 - Buscar Tema
 It3      | 11/10/2020  | 24/10/2020 | 23/10/2020   | Maria | Implementar US01 - Cadastro de Tema, US02 - Buscar Tema e detalhar US03 - Manter Usuário, Testar  US00 - Home Page
-It4      | 25/10/2020  | 07/11/2020 | 06/11/2020   | Jaine | Implementar US03 - Manter Usuário, US04 - Recuperar Senha e atualizar US00 - Home page, US01 - Cadastro de Tema e US02 - Buscar Tema
+It4      | 25/10/2020  | 07/11/2020 | 06/11/2020   | Jaine | Implementar US03 - Manter Usuário, US04 - Recuperar Senha, US06 - Perfil do Usuário e atualizar US00 - Home page, US01 - Cadastro de Tema e US02 - Buscar Tema
 It5      | 08/11/2020  | 21/11/2020 | 20/11/2020   | Maria | Implementar US05 - Favoritar Tema
 It6      | 22/11/2020  | 05/12/2020 | 04/12/2020   | Jaine |
 
