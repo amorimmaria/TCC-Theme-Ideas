@@ -33,6 +33,7 @@ Data     |     Versão  |   Descrição  | Autor |
 08/10/2020 | 1.1 | Documento revisado e atualizado | Jaine e Maria |
 14/10/2020 | 1.2 | Documento revisado e atualizado | Jaine e Maria |
 21/10/2020 | 1.3 | Documento revisado e atualizado | Jaine e Maria |
+08/11/2020 | 1.4 | Documento revisado e atualizado | Jaine e Maria |
 
 ## Equipe e Definição de Papéis
 
