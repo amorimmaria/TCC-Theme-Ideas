@@ -29,5 +29,6 @@
 | Teste |Descrição | Especificação | Resultado |
 |---|---|---|---|
 | **Teste 01: Remove tema**| O usuário acessa a página de perfil do usuário e clica no botão remover tema ele é notificado com uma mensagem de sucesso. Mensagem: Tema removido com sucesso! | A implementação está de acordo com o especificado.| Ok|
-| **Teste 02: Alterar tema**| O usuário acessa a página de perfil do usuário onde ele poderá editar os dados que foram cadastrados ele é notificado com uma mensagem de sucesso. Mensagem: TO perfil foi atualizado com sucesso! | A implementação está de acordo com o especificado.| Ok|
+| **Teste 02: Alterar tema**| O usuário acessa a página de perfil do usuário onde ele poderá editar os dados que foram cadastrados, , ao clicar em Salvar modificações ele é notificado com uma mensagem de sucesso. Mensagem: TO perfil foi atualizado com sucesso! | A implementação está de acordo com o especificado.| Ok|
+| **Teste 03: Incluir foto do perfil**| O usuário acessa a página de perfil do usuário onde ele poderá colocar uma foto no perfil, ao clicar em Salvar modificações ele é notificado com uma mensagem de sucesso. Mensagem: TO perfil foi atualizado com sucesso! | A implementação está de acordo com o especificado.| Ok|
 
