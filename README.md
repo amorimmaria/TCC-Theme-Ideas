@@ -79,3 +79,9 @@ O TCC Theme Ideas é uma plataforma que  tem como objetivo ajudar alunos de grad
 
 ### Página de 'Esqueci a Senha'
 ![Home](img/esqueciSenha.png)
+
+### Página de cadastro de tema
+![Home](img/cadastroTema.png)
+
+### Página de buscar tema
+![Home](img/buscarTema.png)
