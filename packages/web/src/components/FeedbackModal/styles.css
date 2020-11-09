@@ -21,8 +21,8 @@
 
 .feedback-modal {
   position: fixed;
-  width: 80%;
-  height: 80%;
+  width: 50%;
+  height: 40%;
   background: var(--color-primary);
   background-size: contain;
   border-radius: 5rem;
