@@ -113,11 +113,6 @@
     background-color: var(--color-secundary-dark);
 }
 
-#page-register-login #user-actions label #checkmark:after {
-    content: "";
-    display: none;
-}
-
 #page-register-login #user-actions label input:checked~#checkmark:after {
     display: block;
 }
@@ -131,6 +126,9 @@
     border-width: 0 0.3rem 0.3rem 0;
     transform: rotate(45deg);
     position: relative;
+
+    content: "";
+    display: none;
 }
 
 #page-register-login #user-actions #forgot-password {
