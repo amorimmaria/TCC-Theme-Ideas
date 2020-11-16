@@ -1,76 +1,76 @@
 #page-register {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 #page-register-header {
-    flex: 0.75;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    color: var(--color-text-title);
-    font-size: 2rem;
-    font-family: 'Poppins', sans-serif;
-    background: var(--color-primary) center center no-repeat;
-    background-size: contain;
+  flex: 0.75;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: var(--color-text-title);
+  font-size: 2rem;
+  font-family: 'Poppins', sans-serif;
+  background: var(--color-primary) center center no-repeat;
+  background-size: contain;
 }
 
 #page-register-header img {
-    width: 60%;
-    margin: 0 auto;
-    user-select: none;
+  width: 60%;
+  margin: 0 auto;
+  user-select: none;
 }
 
 #page-register-header h2 {
-    margin-top: 2.25rem;
+  margin-top: 2.25rem;
 }
 
 #page-register-content {
-    flex: 2;
+  flex: 2;
 }
 
 #page-register-content form .input-group .icon-group {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    top: 34%;
-    right: 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 34%;
+  right: 4%;
 }
 
 #page-register-content form .icon-group svg {
-    position: relative;
-    top: 0;
-    right: 0;
+  position: relative;
+  top: 0;
+  right: 0;
 }
 
 #page-register-content form .icon-group svg:nth-child(odd) {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 
 @media (min-width: 1000px) {
-    #page-register {
-        flex-direction: row;
-    }
+  #page-register {
+    flex-direction: row;
+  }
 
-    #page-register.invert {
-        flex-direction: row-reverse;
-    }
+  #page-register.invert {
+    flex-direction: row-reverse;
+  }
 
-    #page-register-header {
-        flex: 3;
-    }
+  #page-register-header {
+    flex: 3;
+  }
 
-    #page-register-content {
-        flex: 2.5;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+  #page-register-content {
+    flex: 2.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }

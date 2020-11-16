@@ -54,7 +54,7 @@
 }
 
 #page-theme-form main form fieldset legend button:not(:disabled):hover {
- color: var(--color-primary-dark);
+  color: var(--color-primary-dark);
 }
 
 #page-theme-form main label {
@@ -169,46 +169,46 @@
 
 @media (min-width: 700px) {
   #page-theme-form {
-      max-width: 100vw;
+    max-width: 100vw;
   }
 
   #page-theme-form .page-header .header-content {
-      margin-bottom: 0;
+    margin-bottom: 0;
   }
 
   #page-theme-form main form fieldset {
-      padding: 0 6.4rem;
+    padding: 0 6.4rem;
   }
 
   #page-theme-form main form fieldset .schedule-item .input-block {
-      margin-top: 0 !important;
+    margin-top: 0 !important;
   }
 
   #page-theme-form main form footer {
-      padding: 4rem 6.4rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-direction: row;
-      text-align: initial;
+    padding: 4rem 6.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    text-align: initial;
   }
 
   #page-theme-form main form footer p {
-      flex-direction: row;
-      text-align: initial;
-      justify-content: space-between;
+    flex-direction: row;
+    text-align: initial;
+    justify-content: space-between;
   }
 
   #page-theme-form main form footer p img {
-      margin-right: 2rem;
+    margin-right: 2rem;
   }
 
   #page-theme-form main form footer p span {
-      display: inline-block;
+    display: inline-block;
   }
 
   #page-theme-form main form footer button {
-      width: 20rem;
-      margin-top: 0;
+    width: 20rem;
+    margin-top: 0;
   }
 }
