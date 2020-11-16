@@ -32,7 +32,7 @@
   font-size: 1.6rem;
   display: block;
   margin-top: 0.4rem;
-  
+
 }
 
 .theme-item > p {
@@ -80,25 +80,25 @@
 @media (min-width: 700px) {
   .theme-item header,
   .theme-item footer {
-      padding: 3.2rem;
+    padding: 3.2rem;
   }
 
   .theme-item > p {
-      padding: 0 3.2rem;
+    padding: 0 3.2rem;
   }
 
   .theme-item footer p strong {
-      display: initial;
-      margin-left: 1.6rem;
+    display: initial;
+    margin-left: 1.6rem;
   }
 
   .theme-item footer a {
-      width: 24.5rem;
-      font-size: 1.6rem;
-      justify-content: center;
+    width: 24.5rem;
+    font-size: 1.6rem;
+    justify-content: center;
   }
 
   .theme-item footer a img {
-      margin-right: 1.6rem;
+    margin-right: 1.6rem;
   }
 }

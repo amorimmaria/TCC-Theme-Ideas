@@ -75,35 +75,35 @@
 
 @media (min-width: 700px) {
   #page-theme-list {
-      max-width: 100%;
+    max-width: 100%;
   }
   #search-themes {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      column-gap: 1.6rem;
-      position: absolute;
-      align-items: center;
-      bottom: -60px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 150%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 1.6rem;
+    position: absolute;
+    align-items: center;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150%;
   }
 
   .Select .SelectContent {
-      width: auto;
-      height: 5.6rem;
+    width: auto;
+    height: 5.6rem;
   }
   .Select .SelectContent .SelectSelector {
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
   }
   .input-block input {
-      margin-top: 0.5rem;
+    margin-top: 0.5rem;
   }
   #page-theme-list main {
-      padding: 3.2rem 0;
-      max-width: 105rem;
-      margin: 0 auto;
+    padding: 3.2rem 0;
+    max-width: 105rem;
+    margin: 0 auto;
   }
 }

@@ -167,85 +167,85 @@
 
 @media (min-width: 1100px) {
   #page-menu #page-menu-top {
-      padding: 3rem 10rem;
+    padding: 3rem 10rem;
   }
 
   #page-menu #page-menu-top #page-menu-header #user-avatar img {
-      width: 4.5rem;
-      height: 4.5rem;
-  }
-  
+    width: 4.5rem;
+    height: 4.5rem;
+}
+
   #page-menu #page-menu-top #page-menu-header #user-avatar p {
-      font-size: 2rem;
+    font-size: 2rem;
   }
 
   #page-menu #page-menu-top #page-menu-header #user-signout {
-      width: 4rem;
-      height: 4rem;
-      padding: 0.9rem;
+    width: 4rem;
+    height: 4rem;
+    padding: 0.9rem;
   }
 
   #page-menu #page-menu-top #page-menu-logo {
-      flex-direction: row;
+    flex-direction: row;
   }
 
   #page-menu #page-menu-top #page-menu-logo .logo-container img {
-      height: 35rem; /*altera tamanho da logo*/
-      left: 2rem; /*fasta para esquerda*/
-      position: relative;
+    height: 35rem; /*altera tamanho da logo*/
+    left: 2rem; /*fasta para esquerda*/
+    position: relative;
   }
 
   #page-menu #page-menu-top #page-menu-logo .logo-container h2 {
-      font-size: 3rem;
-      text-align: left;
-      max-width: 45rem;
+    font-size: 3rem;
+    text-align: left;
+    max-width: 45rem;
   }
 
   #page-menu #page-menu-top #page-menu-logo .hero-image {
-      width: 90%;
-      margin-right: 5rem; /*fastar a img*/
+    width: 90%;
+    margin-right: 5rem; /*fastar a img*/
   }
 
   #page-menu #page-menu-top #page-menu-logo {
-      display: grid;
-        align-items: center;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: ' logo nada hero';
-        height: 100%;
+    display: grid;
+      align-items: center;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: ' logo nada hero';
+      height: 100%;
   }
   #page-menu #page-menu-top #page-menu-logo .hero-image {
-  grid-area: hero;
+    grid-area: hero;
   }
 
   #page-menu #page-menu-bottom {
-      display: grid;
-      align-items: center;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-areas: 'welcome connections buttons buttons';
-      height: 100%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 'welcome connections buttons buttons';
+    height: 100%;
   }
 
   #page-menu #page-menu-bottom #welcome-text {
-      grid-area: welcome;
-      flex-direction: column;
-      align-items: flex-start;
-      text-align: left;
-      margin-left: 13rem; /*fastar para direita*/
+    grid-area: welcome;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-left: 13rem; /*fastar para direita*/
   }
-  
+
   #page-menu #page-menu-bottom #welcome-text #what-todo {
-      margin-left: 0;
+    margin-left: 0;
   }
 
   #page-menu #page-menu-bottom #total-connections {
-      grid-area: connections;
+    grid-area: connections;
   }
 
   #page-menu #page-menu-bottom #buttons-container {
-      grid-area: buttons;
+    grid-area: buttons;
   }
 
   #page-menu #page-menu-bottom #buttons-container a {
-      width: 30rem;
+    width: 30rem;
   }
 }

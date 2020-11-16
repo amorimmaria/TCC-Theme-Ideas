@@ -34,17 +34,6 @@
   color: var(--color-text-in-primary);
 }
 
-/* #input-wrapper .input-group:focus-within::after {
-  animation: inputFocus 200ms ease forwards;
-  height: 2px;
-  content: '';
-  background: var(--color-primary-light);
-  position: absolute;
-  left: 1.6rem;
-  right: 1.6rem;
-  bottom: 0;
-  transform: scale(0);
-} */
 #input-wrapper .input-group:focus-within::after {
   animation: inputFocus 200ms ease forwards;
   height: 0.2rem;
@@ -125,11 +114,11 @@
 
 @keyframes inputFocus {
   from {
-      width: 0;
-      transform: scale(0);
+    width: 0;
+    transform: scale(0);
   }
   to {
-      width: calc(100% - 3.2rem);
-      transform: scale(1);
+    width: calc(100% - 3.2rem);
+    transform: scale(1);
   }
 }

@@ -77,9 +77,9 @@
 
 @media (min-width: 700px) {
   .feedback-modal {
-      position: absolute;
-      width: 60%;
-      background: var(--color-primary);
-      background-size: contain;
+    position: absolute;
+    width: 60%;
+    background: var(--color-primary);
+    background-size: contain;
   }
 }
