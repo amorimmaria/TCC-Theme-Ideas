@@ -9,10 +9,10 @@ const MAX_RESULTS_PER_PAGE = 10
 export default class ThemesController {
     static async index(req: Request, res: Response) {
         const { curso, area, tipoDeUsuario, page = "1" } = req.query
-       
+
 
         try {
-            const sql = `select 
+            const sql = `select
             users.__id AS id,
             users.name,
             users.avatar,
@@ -22,7 +22,7 @@ export default class ThemesController {
             themes.sugestaoDeTema,
             themes.descricao,
             themes.linksArtigos
-            
+
             from users
             join themes
             on themes.__user_id = users.__id
@@ -38,9 +38,9 @@ export default class ThemesController {
             // Analisa a string em dois objetos separados
             const secondParsedSearch = parsedSearch.map((s: any) => ({
                 ...s,
-               
+
             }))
-          
+
             // Aplica filtros de usuário
             const finalParsedSearch = secondParsedSearch.filter((s: any) => {
                 let returnSearchItem = true
@@ -122,9 +122,9 @@ export default class ThemesController {
 
     static async indexFavourites(req: Request, res: Response) {
         const { page = "1", getAll = false } = req.query
-        const userid = req.headers.userid
+        // const userid = req.headers.userid
 
-        const sql = `select 
+        const sql = `select
         users.__id AS id,
         users.name,
         users.avatar,
@@ -134,7 +134,7 @@ export default class ThemesController {
         themes.sugestaoDeTema,
         themes.descricao,
         themes.linksArtigos
-        
+
         from users
         join themes
         on themes.__user_id = users.__id
@@ -153,10 +153,10 @@ export default class ThemesController {
                 ...s,
             }))
 
-            const startIndex = !getAll 
+            const startIndex = !getAll
                 ? (parseInt(String(page)) - 1) * MAX_RESULTS_PER_PAGE
                 : 0
-            const endIndex = !getAll 
+            const endIndex = !getAll
                 ? parseInt(String(page)) * MAX_RESULTS_PER_PAGE
                 : finalParsedSearch.length
 
