@@ -25,7 +25,8 @@ export default class ProfileController {
             let themeData: any[] = []
 
             if (classData.length !== 0) {
-                const { id } = await trx("themes")
+                //const { id } = await trx("themes")
+                await trx("themes")
                     .select("id")
                     .where("__user_id", "=", userID)
                     .first()
@@ -53,8 +54,8 @@ export default class ProfileController {
             sugestaoDeTema,
             descricao,
             area,
-            linksArtigos          
-            
+            linksArtigos
+
         } = req.body
 
         const userID = req.headers.userid as string
@@ -109,7 +110,7 @@ export default class ProfileController {
                 .del()
 
             return res.status(200).json({ message: "Tema deletado com sucesso." })
-        } 
+        }
         catch(error) {
             return res.status(500).json({ error })
         }
