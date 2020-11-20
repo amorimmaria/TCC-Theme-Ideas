@@ -34,7 +34,7 @@ routes.post("/themes/favourites", AuthMiddleware, ThemesController.createFavouri
 routes.delete("/themes/favourites", AuthMiddleware, ThemesController.deleteFavourite)
 
 // Conexões
-routes.get("/connections", AuthMiddleware, ConnectionsController.index)
-routes.post("/connections", AuthMiddleware, ConnectionsController.create)
+routes.get("/connections", ConnectionsController.index)
+routes.post("/connections", ConnectionsController.create)
 
 export default routes
