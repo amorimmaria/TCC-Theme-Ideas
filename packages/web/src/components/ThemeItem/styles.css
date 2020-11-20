@@ -20,6 +20,7 @@
 
 .theme-item header div {
   margin-left: 2.4rem;
+  padding-right: 3.2rem;
 }
 
 .theme-item header div strong {
@@ -31,8 +32,6 @@
 .theme-item header div span {
   font-size: 1.6rem;
   display: block;
-  margin-top: 0.4rem;
-
 }
 
 .theme-item > p {
@@ -100,5 +99,10 @@
 
   .theme-item footer a img {
     margin-right: 1.6rem;
+    max-width:400px;
+    max-height:50px;
+    width: auto;
+    height: auto;
+
   }
 }
