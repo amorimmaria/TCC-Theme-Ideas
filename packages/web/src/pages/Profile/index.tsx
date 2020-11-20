@@ -32,7 +32,7 @@ const initialFields: FormFields = {
     value: '',
     validation:  /^[a-z-_\d.]{3,}@[a-z]{3,}(\.com|\.br|\.com\.br)$/,
     valid: false,
-    info: 'O link tem que ser válido',
+    info: 'O E-mail tem que ser no formato: exemplo@dominio.com',
     showInfo: "initial",
     touched: false
   }
