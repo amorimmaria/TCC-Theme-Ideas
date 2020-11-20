@@ -87,8 +87,8 @@ function SuggestTheme() {
     .then(response => {
     const userData: ProfileData = response.data
       if (userData.curso) {
-        setHasClass(true)
-        setShowModal(true)
+        setHasClass(false)
+        setShowModal(false)
         return
       }
 
@@ -142,13 +142,13 @@ function SuggestTheme() {
     })
   }
 
-  const errorModal = (
-    <FeedbackModal
-      status="error"
-      message="Você já cadastrou um tema!"
-      onCloseModal={() => history.replace("/menu")}
-    />
-  )
+  // const errorModal = (
+  //   <FeedbackModal
+  //     status="error"
+  //     message="Você já cadastrou um tema!"
+  //     onCloseModal={() => history.replace("/menu")}
+  //   />
+  // )
 
   const successModal = (
     <FeedbackModal
@@ -288,11 +288,8 @@ function SuggestTheme() {
   return (
     <>
       {
-        hasClass
-          ? showModal && errorModal
-          : showModal
-            ? successModal
-            : mainContent
+        hasClass ? successModal :
+        mainContent
       }
     </>
   )

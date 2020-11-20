@@ -26,7 +26,7 @@ export default class ThemesController {
       from users
       join themes
       on themes.__user_id = users.__id
-      group by users.name`
+      `
 
       const search = await db.raw(sql)
       // Analisando a atring em uma matriz de  sequência
@@ -133,12 +133,12 @@ static async indexFavourites(req: Request, res: Response) {
   themes.sugestaoDeTema,
   themes.descricao,
   themes.linksArtigos,
-  themes.emailContato
+  users.emailContato
 
   from users
   join themes
   on themes.__user_id = users.__id
-  group by users.name`
+  `
 
   try {
     const search = await db.raw(sql)
