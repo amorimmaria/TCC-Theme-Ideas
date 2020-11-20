@@ -105,70 +105,70 @@ function Profile() {
             if (profileData.whatsapp)
               whatsapp = formatFetchedPhone(profileData.whatsapp)
 
-              setFields({
+            setFields({
 
-                ...fields,
-                whatsapp: {
-                  ...fields.whatsapp,
-                  value: whatsapp,
-                  validation: !profileData.curso
-                    ? /^([@]?|\([0-9]{2}\)\s9{0,1}[0-9]{4}-[0-9]{4})$/
-                    : fields.whatsapp.validation
-                },
-                emailContato: {
-                  ...fields.emailContato,
-                  value: profileData.emailContato ? String(profileData.emailContato) : '',
-                  validation: !profileData.curso
-                    ? /^[a-z-_\d.]{3,}@[a-z]{3,}(\.com|\.br|\.com\.br)$/i
-                    : fields.emailContato.validation
-                },
+              ...fields,
+              whatsapp: {
+                ...fields.whatsapp,
+                value: whatsapp,
+                validation: !profileData.curso
+                  ? /^([@]?|\([0-9]{2}\)\s9{0,1}[0-9]{4}-[0-9]{4})$/
+                  : fields.whatsapp.validation
+              },
+              emailContato: {
+                ...fields.emailContato,
+                value: profileData.emailContato ? String(profileData.emailContato) : '',
+                validation: !profileData.curso
+                  ? /^[a-z-_\d.]{3,}@[a-z]{3,}(\.com|\.br|\.com\.br)$/i
+                  : fields.emailContato.validation
+              },
 
-                descricao: {
-                  ...fields.descricao,
-                  value: profileData.descricao ? String(profileData.descricao) : '',
-                  validation: !profileData.curso
-                    ? /^[\d\w\sà-ú,.!-]{30,1000}$/
-                    : fields.descricao.validation
+              descricao: {
+                ...fields.descricao,
+                value: profileData.descricao ? String(profileData.descricao) : '',
+                validation: !profileData.curso
+                  ? /^[\d\w\sà-ú,.!-]{30,1000}$/
+                  : fields.descricao.validation
 
-                },
-                sugestaoDeTema: {
-                  ...fields.sugestaoDeTema,
-                  value: profileData.sugestaoDeTema ? String(profileData.sugestaoDeTema) : '',
-                  validation: !profileData.curso
-                    ? /^[\d\w\sà-ú,.!-]{10,300}$/
-                    : fields.sugestaoDeTema.validation
-                },
-                linksArtigos: {
-                  ...fields.linksArtigos,
-                  value: profileData.linksArtigos ? String(profileData.linksArtigos) : '',
-                  validation: !profileData.curso
-                    ? /^[\d\w\sà-ú0-9,/:.!-]{10,1000}$/
-                    : fields.linksArtigos.validation
+              },
+              sugestaoDeTema: {
+                ...fields.sugestaoDeTema,
+                value: profileData.sugestaoDeTema ? String(profileData.sugestaoDeTema) : '',
+                validation: !profileData.curso
+                  ? /^[\d\w\sà-ú,.!-]{10,300}$/
+                  : fields.sugestaoDeTema.validation
+              },
+              linksArtigos: {
+                ...fields.linksArtigos,
+                value: profileData.linksArtigos ? String(profileData.linksArtigos) : '',
+                validation: !profileData.curso
+                  ? /^[\d\w\sà-ú0-9,/:.!-]{10,1000}$/
+                  : fields.linksArtigos.validation
 
-                }
-              })
+              }
+            })
 
-              if (profileData.avatar) setAvatar(profileData.avatar)
-              else setAvatar(noAvatarImg)
+            if (profileData.avatar) setAvatar(profileData.avatar)
+            else setAvatar(noAvatarImg)
 
-              setName(profileData.name)
-              setEmail(profileData.email)
+            setName(profileData.name)
+            setEmail(profileData.email)
 
 
 
-              if (profileData.curso)
-                setCurso(profileData.curso)
+            if (profileData.curso)
+              setCurso(profileData.curso)
 
-              if (profileData.area)
-                setArea(profileData.area)
+            if (profileData.area)
+              setArea(profileData.area)
 
-              setPageReady(true)
+            setPageReady(true)
 
-          })
-          .catch(err => {
-            setLoading(false)
-            console.log(err)
-          })
+        })
+        .catch(err => {
+          setLoading(false)
+          console.log(err)
+        })
     })()
   }, []) // eslint-disable-line
 
