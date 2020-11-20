@@ -41,6 +41,8 @@ function SearchTheme() {
   const [loadingMore, setLoadingMore] = useState(false)
   const [loadingFeedback, setLoadingFeedback] = useState('')
   const [reFetch, setReFetch] = useState(true)
+  const [totalThemes, setTotalThemes] = useState(0)
+
 
   const [pageNumber, setPageNumber] = useState(1)
   const [hasMore, setHasMore] = useState(true)
@@ -77,6 +79,8 @@ function SearchTheme() {
             setLoading(false)
             setClassList(response.data.resultsInfo.results)
             setHasMore(!!response.data.resultsInfo.next)
+            setTotalThemes(response.data.resultsInfo.total)
+
           })
           .catch(() => {
             setLoading(false)
@@ -149,6 +153,7 @@ function SearchTheme() {
     <div id="page-theme-list" className="container">
       <PageHeader
         title="Estes são os temas disponíveis."
+        description={`Temos um total de ${totalThemes} Tema(s)!`}
       >
         <form id="search-themes" onSubmit={filterThemes}>
           <Select
