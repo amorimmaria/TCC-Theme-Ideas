@@ -102,7 +102,7 @@ export default class AuthenticationController {
               // As senhas são iguais, procedendo ao login do usuário
             const user = await
               trx("users")
-              .select("__id", "name", "avatar", "email", "whatsapp")
+              .select("__id", "name", "avatar", "email", "emailContato")
               .where("email", "=", email).first()
 
             const token = generateToken(user.__id, !rememberUser)

@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import axios from '../../axios-config'
 
-// Utils
-import { formatFetchedPhone } from '../../utils/format'
 
 // Components
 import PageHeader from '../../components/PageHeader'
@@ -26,20 +24,11 @@ import FeedbackModal from '../../components/FeedbackModal'
 
 const initialFields: FormFields = {
 
-  whatsapp: {
-    value: '',
-    validation: /^\([0-9]{2}\)\s9{0,1}[0-9]{4}-[0-9]{4}$/,
-    valid: false,
-    info: 'O número de telefone deve estar no formato adequado. Ex.: (92) 8121-0742',
-    showInfo: "initial",
-    touched: false
-  },
-
   emailContato: {
     value: '',
     validation:  /^[a-z-_\d.]{3,}@[a-z]{3,}(\.com|\.br|\.com\.br)$/,
     valid: false,
-    info: 'O link tem que ser válido',
+    info: 'O E-mail tem que ter o formato: exemplo@dominio.com',
     showInfo: "initial",
     touched: false
   },
@@ -105,10 +94,6 @@ function SuggestTheme() {
 
       setFields({
         ...fields,
-        whatsapp: {
-          ...fields.whatsapp,
-          value: userData.whatsapp ? formatFetchedPhone(userData.whatsapp) : ''
-        },
         emailContato: {
           ...fields.emailContato,
           value: userData.emailContato
@@ -134,7 +119,6 @@ function SuggestTheme() {
     e.preventDefault()
     setLoading(true)
     axios.post('/themes', {
-      whatsapp: fields.whatsapp.value.replace(/[)(\s-]/g, ""),
       emailContato: fields.emailContato.value,
       descricao: fields.descricao.value,
       sugestaoDeTema: fields.sugestaoDeTema.value,
@@ -185,20 +169,6 @@ function SuggestTheme() {
         <form onSubmit={e => registerClass(e)}>
           <fieldset>
             <legend>Seus dados</legend>
-              <Input
-                value={fields.whatsapp.value}
-                inputId="whatsapp"
-                inputLabel="WhatsApp"
-                placeholder="(00) 91234-5678"
-                inputType="input"
-                inputContentType="tel"
-                fields={fields}
-                setFields={setFields}
-                formValid={formValid}
-                setFormValid={setFormValid}
-                hasInfo
-              />
-
               <Input
                 value={fields.emailContato.value}
                 inputId="emailContato"

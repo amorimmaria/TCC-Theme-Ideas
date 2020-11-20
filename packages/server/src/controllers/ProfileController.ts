@@ -14,12 +14,12 @@ export default class ProfileController {
 
     try {
       const userData = await trx("users")
-        .select("name", "email", "avatar", "whatsapp")
+        .select("name", "email", "avatar", "emailContato")
         .where("__id", "=", userID)
         .first()
 
       const classData = await trx("themes")
-        .select("emailContato", "curso", "sugestaoDeTema", "descricao", "area", "linksArtigos" )
+        .select("emailContato", "curso", "sugestaoDeTema", "tipoDeUsuario", "descricao", "area", "linksArtigos" )
         .where("__user_id", "=", userID)
 
       let themeData: any[] = []
@@ -49,7 +49,6 @@ export default class ProfileController {
 static async update(req: Request, res: Response) {
   const {
     avatar,
-    whatsapp,
     emailContato,
     curso,
     sugestaoDeTema,
@@ -71,7 +70,7 @@ static async update(req: Request, res: Response) {
       .where("__id", "=", userID)
       .update({
         avatar,
-        whatsapp
+        emailContato
       })
 
     if (curso) {

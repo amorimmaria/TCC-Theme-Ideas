@@ -82,7 +82,6 @@ static async create(req: Request, res: Response) {
   if (!userID) return res.status(400).json({ error: "ID do usuário não recebido." })
 
   const {
-    whatsapp,
     emailContato,
     tipoDeUsuario,
     curso,
@@ -97,7 +96,7 @@ static async create(req: Request, res: Response) {
   try {
     await trx("users")
       .where("__id", "=", userID)
-      .update({ whatsapp })
+      .update({ emailContato })
 
     const insertedUsersIds = await trx("themes").insert({
       tipoDeUsuario,

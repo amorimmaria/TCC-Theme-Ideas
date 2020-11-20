@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from '../../axios-config'
 
-// Utils
-import { formatFetchedPhone } from '../../utils/format'
-
 
 // Images
 import noAvatarImg from '../../assets/images/sem-avatar.svg'
@@ -26,14 +23,7 @@ import './styles.css'
 
 
 const initialFields: FormFields = {
-  whatsapp: {
-    value: '',
-    validation: /^\([0-9]{2}\)\s9?[0-9]{4}-[0-9]{4}$/,
-    valid: false,
-    info: 'O número de telefone deve estar no formato adequado. Ex.: (92) 8121-0742',
-    showInfo: "initial",
-    touched: false
-  },
+
   emailContato: {
     value: '',
     validation: /^[a-z-_\d.]{3,}@[a-z]{3,}(\.com|\.br|\.com\.br)$/i,
@@ -100,21 +90,14 @@ function Profile() {
           .then(response => {
             setLoading(false)
             const profileData = response.data
-            let whatsapp = ''
+            let emailContato = ''
 
-            if (profileData.whatsapp)
-              whatsapp = formatFetchedPhone(profileData.whatsapp)
+            if (profileData.emailContato)
+              emailContato = (profileData.emailContato)
 
             setFields({
 
               ...fields,
-              whatsapp: {
-                ...fields.whatsapp,
-                value: whatsapp,
-                validation: !profileData.curso
-                  ? /^([@]?|\([0-9]{2}\)\s9{0,1}[0-9]{4}-[0-9]{4})$/
-                  : fields.whatsapp.validation
-              },
               emailContato: {
                 ...fields.emailContato,
                 value: profileData.emailContato ? String(profileData.emailContato) : '',
@@ -189,7 +172,7 @@ function Profile() {
     e.preventDefault()
     setModalType("update-profile")
 
-    const parsedWhatsapp = fields.whatsapp.value.replace(/[)(\s-]/g, "")
+    // const parsedemailContato = fields.emailContato.value.replace(/[)(\s-]/g, "")
     const parsedDescricao = fields.descricao.value
     const parsedSugestaoDeTema = fields.sugestaoDeTema.value
     const parsedLinksArtigos = fields.linksArtigos.value
@@ -204,7 +187,6 @@ function Profile() {
       curso,
       area,
       tipoDeUsuario,
-      whatsapp: parsedWhatsapp
     }
 
     axios.put("/update-profile", userData, {
@@ -219,7 +201,7 @@ function Profile() {
         authContext.user = {
           ...authContext.user!,
           avatar,
-          whatsapp: fields.whatsapp.value,
+          emailContato: fields.emailContato.value,
         }
       })
       .catch(() => {

@@ -1,8 +1,5 @@
 import React, { InputHTMLAttributes, useState } from 'react'
 
-// Utils
-import { formatCurrentPhone } from '../../../utils/format'
-
 // Components
 import InputInfo from '../../../components/InputInfo'
 
@@ -55,8 +52,8 @@ const Input: React.FC<InputProps> = ({
     const inputIdentifier = e.target.id
     let newInputValue: string = e.target.value
 
-    if (inputIdentifier === "whatsapp")
-      newInputValue = formatCurrentPhone(newInputValue)
+    if (inputIdentifier === "emailContato")
+      newInputValue = (newInputValue)
 
     const allFields = Object.keys(fields!)
 

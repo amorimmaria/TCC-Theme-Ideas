@@ -22,7 +22,6 @@ interface ThemeItemProps {
   themeSugestaoDeTema: string,
   themeDescricao: string,
   themeLinksArtigos: string,
-  themeWhatsapp: number,
   themeRef?: any
 }
 

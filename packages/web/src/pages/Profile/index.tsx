@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react'
 import axios from '../../axios-config'
 import { Link } from 'react-router-dom'
 
-// Utils
-import { formatFetchedPhone } from '../../utils/format'
-
 // Icons
 import { Icon } from '@iconify/react'
 import cameraIcon from '@iconify/icons-mdi/camera'
@@ -30,14 +27,7 @@ import './styles.css'
 
 
 const initialFields: FormFields = {
-  whatsapp: {
-    value: '',
-    validation: /^\([0-9]{2}\)\s9?[0-9]{4}-[0-9]{4}$/,
-    valid: false,
-    info: 'O número de telefone deve estar no formato adequado. Ex.: (92) 8121-0742',
-    showInfo: "initial",
-    touched: false
-  },
+
   emailContato: {
     value: '',
     validation:  /^[a-z-_\d.]{3,}@[a-z]{3,}(\.com|\.br|\.com\.br)$/,
@@ -79,26 +69,19 @@ function Profile() {
                 .then(response => {
                     setLoading(false)
                     const profileData = response.data
-                    let whatsapp = ''
+                    let emailContato = ''
 
-                    if (profileData.whatsapp)
-                        whatsapp = formatFetchedPhone(profileData.whatsapp)
+                    if (profileData.emailContato)
+                        emailContato = (profileData.emailContato)
 
                     setFields({
 
                         ...fields,
-                        whatsapp: {
-                            ...fields.whatsapp,
-                            value: whatsapp,
-                            validation: !profileData.curso
-                                ? /^([@]?|\([0-9]{2}\)\s9{0,1}[0-9]{4}-[0-9]{4})$/
-                                : fields.whatsapp.validation
-                        },
                         emailContato: {
                             ...fields.emailContato,
                             value: profileData.emailContato ? String(profileData.emailContato) : '',
                             validation: !profileData.emailContato
-                                ? /^[\d\w\sà-ú0-9,/:.!-]{10,1000}$/
+                                ? /^[a-z-_\d.]{3,}@[a-z]{3,}(\.com|\.br|\.com\.br)$/
                                 : fields.emailContato.validation
 
                         }
@@ -159,14 +142,12 @@ function Profile() {
       e.preventDefault()
       setModalType("update-profile")
 
-      const parsedWhatsapp = fields.whatsapp.value.replace(/[)(\s-]/g, "")
       const parsedemailContato = fields.emailContato.value
 
       const userData = {
         avatar,
         emailContato: parsedemailContato,
         tipoDeUsuario,
-        whatsapp: parsedWhatsapp
       }
 
       axios.put("/update-profile", userData, {
@@ -181,7 +162,7 @@ function Profile() {
           authContext.user = {
             ...authContext.user!,
             avatar,
-            whatsapp: fields.whatsapp.value,
+            emailContato: fields.emailContato.value,
           }
         })
         .catch(() => {
@@ -268,19 +249,7 @@ function Profile() {
               inputContentType="email"
               disabled
             />
-            <Input
-              value={fields.whatsapp.value}
-              inputId="whatsapp"
-              inputLabel="WhatsApp"
-              placeholder="(00) 91234-5678"
-              inputType="input"
-              inputContentType="tel"
-              fields={fields}
-              setFields={setFields}
-              formValid={formValid}
-              setFormValid={setFormValid}
-              hasInfo
-            />
+
             <Input
               value={fields.emailContato.value}
               inputId="emailContato"

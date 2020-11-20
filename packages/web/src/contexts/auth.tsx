@@ -8,7 +8,7 @@ interface User {
   name: string,
   email: string,
   avatar: string,
-  whatsapp: string | null,
+  emailContato: string | null,
   desc: string | null
 }
 

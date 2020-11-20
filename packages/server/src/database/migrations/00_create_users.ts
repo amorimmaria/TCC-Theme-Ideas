@@ -7,7 +7,7 @@ export async function up(knex: Knex) {
     table.string("email").notNullable()
     table.string("password").notNullable()
     table.binary("avatar")
-    table.string("whatsapp")
+    table.string("emailContato")
   })
 }
 
