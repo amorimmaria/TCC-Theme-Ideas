@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from '../../axios-config'
+import { Link } from 'react-router-dom'
 
 // Utils
 import { formatFetchedPhone } from '../../utils/format'
@@ -10,11 +11,11 @@ import cameraIcon from '@iconify/icons-mdi/camera'
 
 // Images
 import noAvatarImg from '../../assets/images/sem-avatar.svg'
+import cp from '../../assets/images/icons/cp.png'
 
 // Components
 import PageHeader from '../../components/PageHeader'
 import Input from '../../components/UI/Input'
-import Select from '../../components/UI/Select'
 import Spinner from '../../components/UI/Spinner'
 import FeedbackModal from '../../components/FeedbackModal'
 
@@ -37,25 +38,9 @@ const initialFields: FormFields = {
     showInfo: "initial",
     touched: false
   },
-  descricao: {
+  emailContato: {
     value: '',
-    validation: /^[\d\w\sà-ú,.!-]{30,1000}$/,
-    valid: false,
-    info: 'A descricao precisa conter de 30 a 1000 caracteres.',
-    showInfo: "initial",
-    touched: false
-  },
-  sugestaoDeTema: {
-    value: '',
-    validation:  /^[\d\w\sà-ú,.!-]{10,300}$/,
-    valid: false,
-    info: 'O tema tem quer ter mais de 10 caracteres',
-    showInfo: "initial",
-    touched: false
-  },
-  linksArtigos: {
-    value: '',
-    validation:  /^[\d\w\sà-ú0-9,/:.!-]{10,1000}$/,
+    validation:  /^[a-z-_\d.]{3,}@[a-z]{3,}(\.com|\.br|\.com\.br)$/,
     valid: false,
     info: 'O link tem que ser válido',
     showInfo: "initial",
@@ -72,10 +57,10 @@ function Profile() {
     const [avatar, setAvatar] = useState<string>('')
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
+    const [emailContato, setEmailContato] = useState("")
 
     const [tipoDeUsuario, setTipoDeUsuario] = useState('')
     const [curso, setCurso]= useState('');
-    const [area, setArea]= useState('');
 
     const [loading, setLoading] = useState(false)
     const [pageReady, setPageReady] = useState(false)
@@ -109,28 +94,12 @@ function Profile() {
                                 ? /^([@]?|\([0-9]{2}\)\s9{0,1}[0-9]{4}-[0-9]{4})$/
                                 : fields.whatsapp.validation
                         },
-                        descricao: {
-                            ...fields.descricao,
-                            value: profileData.descricao ? String(profileData.descricao) : '',
-                            validation: !profileData.curso
-                                ? /^[\d\w\sà-ú,.!-]{30,1000}$/
-                                : fields.descricao.validation
-
-                        },
-                        sugestaoDeTema: {
-                            ...fields.sugestaoDeTema,
-                            value: profileData.sugestaoDeTema ? String(profileData.sugestaoDeTema) : '',
-                            validation: !profileData.sugestaoDeTema
-                                ? /^[\d\w\sà-ú,.!-]{10,300}$/
-                                : fields.sugestaoDeTema.validation
-
-                        },
-                        linksArtigos: {
-                            ...fields.linksArtigos,
-                            value: profileData.linksArtigos ? String(profileData.linksArtigos) : '',
-                            validation: !profileData.linksArtigos
+                        emailContato: {
+                            ...fields.emailContato,
+                            value: profileData.emailContato ? String(profileData.emailContato) : '',
+                            validation: !profileData.emailContato
                                 ? /^[\d\w\sà-ú0-9,/:.!-]{10,1000}$/
-                                : fields.linksArtigos.validation
+                                : fields.emailContato.validation
 
                         }
                     })
@@ -141,12 +110,8 @@ function Profile() {
                     setName(profileData.name)
                     setEmail(profileData.email)
 
-
-                    if (profileData.curso)
-                        setCurso(profileData.curso)
-
-                    if (profileData.area)
-                        setArea(profileData.area)
+                    if(profileData.emailContato)
+                      setEmailContato(profileData.emailContato)
 
                     setPageReady(true)
 
@@ -195,17 +160,11 @@ function Profile() {
       setModalType("update-profile")
 
       const parsedWhatsapp = fields.whatsapp.value.replace(/[)(\s-]/g, "")
-      const parsedDescricao = fields.descricao.value
-      const parsedSugestaoDeTema = fields.sugestaoDeTema.value
-      const parsedLinksArtigos = fields.linksArtigos.value
+      const parsedemailContato = fields.emailContato.value
 
       const userData = {
         avatar,
-        descricao: parsedDescricao,
-        sugestaoDeTema: parsedSugestaoDeTema,
-        linksArtigos: parsedLinksArtigos,
-        curso,
-        area,
+        emailContato: parsedemailContato,
         tipoDeUsuario,
         whatsapp: parsedWhatsapp
       }
@@ -229,27 +188,6 @@ function Profile() {
           setStatus("error")
           setShowModal(true)
         })
-  }
-
-  function removeTheme() {
-    setLoading(true)
-    setModalType("remove-theme")
-    axios.delete("/remove-theme", {
-      headers: {
-        authorization: "Bearer " + authContext.token,
-        userid: authContext.user?.__id
-      }
-    })
-    .then(() => {
-      setLoading(false)
-      setStatus("success")
-      setShowModal(true)
-    })
-    .catch(() => {
-      setLoading(false)
-      setStatus("error")
-      setShowModal(true)
-    })
   }
 
   const updatedModal = (
@@ -343,96 +281,29 @@ function Profile() {
               setFormValid={setFormValid}
               hasInfo
             />
+            <Input
+              value={fields.emailContato.value}
+              inputId="emailContato"
+              inputLabel="E-mail para contato"
+              placeholder= "E-mail"
+              inputType="input"
+              inputContentType="text"
+              fields={fields}
+              setFields={setFields}
+              formValid={formValid}
+              setFormValid={setFormValid}
+              hasInfo
+            />
 
 
           </fieldset>
             {
-              curso && (
-                <>
-                  <fieldset>
-                    <legend>
-                      Sobre sugestão de tema
-                        <button
-                          type="button"
-                          onClick={removeTheme}
-                        >Remover tema</button>
-                    </legend>
-                    <div id="suggest-theme">
-                      <Select
-                        selectLabel="Curso"
-                        selected={{ value: curso, label: curso }}
-                        items={[
-                          {value: 'Ciência da Computação', label: 'Ciência da Computação'},
-                          {value: 'Ciências e Tecnologias', label: 'Ciências e Tecnologias'},
-                          {value: 'Design', label: 'Design'},
-                          {value: 'Engenharia de Computação', label: 'Engenharia de Computação'},
-                          {value: 'Engenharia de Software', label: 'Engenharia de Software'},
-                          {value: 'Matemática', label: 'Matemática'},
-                          {value: 'Sistemas de Informação', label: 'Sistemas de Informação'},
-                        ]}
-                        onOptionSelect={selected => {
-                          setCurso(selected.value)
-                          updateFormStatus()
-                        }}
-                      />
-                      <Input
-                        value={fields.sugestaoDeTema.value}
-                        inputId="sugestaoDeTema"
-                        inputLabel="Sugestão de tema"
-                        inputType="textarea"
-                        inputContentType="text"
-                        fields={fields}
-                        setFields={setFields}
-                        formValid={formValid}
-                        setFormValid={setFormValid}
-                        hasInfo
-                      />
-
-                      <Input
-                        value={fields.descricao.value}
-                        inputId="descricao"
-                        inputLabel="Descrição (max 300 caracteres)"
-                        inputType="textarea"
-                        inputContentType="text"
-                        fields={fields}
-                        setFields={setFields}
-                        formValid={formValid}
-                        setFormValid={setFormValid}
-                        hasInfo
-                      />
-                      <Select
-                        selectLabel="Área"
-                        selected={{ value: area, label: area }}
-                        items={[
-                          {value: 'IoT', label: 'IoT'},
-                          {value: 'Segurança', label: 'Segurança'},
-                          {value: 'Banco de Dados', label: 'Banco de Dados'},
-                          {value: 'Desenvolvimento', label: 'Desenvolvimento'},
-                          {value: 'Engenharia de Software', label: 'Engenharia de Software'},
-                          {value: 'Inteligencia Artificial', label: 'Inteligencia Artificial'},
-                          {value: 'Ciencia de Dados', label: 'Ciencia de Dados'},
-                        ]}
-                        onOptionSelect={selected => {
-                          setArea(selected.value)
-                          updateFormStatus()
-                        }}
-                      />
-                      <Input
-                        value={fields.linksArtigos.value}
-                        inputId="linksArtigos"
-                        inputLabel="Links de Artigos"
-                        inputType="textarea"
-                        inputContentType="text"
-                        fields={fields}
-                        setFields={setFields}
-                        formValid={formValid}
-                        setFormValid={setFormValid}
-                        hasInfo
-                      />
-                    </div>
-                  </fieldset>
-                </>
-              )
+              <div id="buttons-container">
+              <Link to="/cadastrado" className="cadastrado">
+                  <img src={cp} alt="Temas cadastrado" />
+                  Meus temas cadastrados
+              </Link>
+          </div>
             }
 
             <footer>
