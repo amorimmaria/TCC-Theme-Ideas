@@ -4,7 +4,6 @@ export async function up(knex: Knex) {
   await knex.schema.createTable("themes", table => {
     table.increments()
     table.string('tipoDeUsuario').notNullable();
-    table.string('emailContato').notNullable();
     table.string('curso').notNullable();
     table.string('sugestaoDeTema').notNullable();
     table.string('descricao').notNullable();

@@ -9,7 +9,6 @@ interface User {
   email: string,
   avatar: string,
   emailContato: string | null,
-  desc: string | null
 }
 
 interface UserData {

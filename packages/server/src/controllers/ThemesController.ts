@@ -21,7 +21,7 @@ export default class ThemesController {
       themes.sugestaoDeTema,
       themes.descricao,
       themes.linksArtigos,
-      themes.emailContato
+      users.emailContato
 
       from users
       join themes
@@ -100,7 +100,6 @@ static async create(req: Request, res: Response) {
 
     const insertedUsersIds = await trx("themes").insert({
       tipoDeUsuario,
-      emailContato,
       curso,
       sugestaoDeTema,
       descricao,

@@ -80,7 +80,7 @@ function Profile() {
                         emailContato: {
                             ...fields.emailContato,
                             value: profileData.emailContato ? String(profileData.emailContato) : '',
-                            validation: !profileData.emailContato
+                            validation: !profileData.curso
                                 ? /^[a-z-_\d.]{3,}@[a-z]{3,}(\.com|\.br|\.com\.br)$/
                                 : fields.emailContato.validation
 
