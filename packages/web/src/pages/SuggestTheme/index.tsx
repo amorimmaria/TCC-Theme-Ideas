@@ -35,6 +35,15 @@ const initialFields: FormFields = {
     touched: false
   },
 
+  emailContato: {
+    value: '',
+    validation:  /^[a-z-_\d.]{3,}@[a-z]{3,}(\.com|\.br|\.com\.br)$/,
+    valid: false,
+    info: 'O link tem que ser válido',
+    showInfo: "initial",
+    touched: false
+  },
+
   descricao: {
     value: '',
     validation: /^[\d\w\sà-ú,.!-]{30,1000}$/,
@@ -100,6 +109,10 @@ function SuggestTheme() {
           ...fields.whatsapp,
           value: userData.whatsapp ? formatFetchedPhone(userData.whatsapp) : ''
         },
+        emailContato: {
+          ...fields.emailContato,
+          value: userData.emailContato
+        },
         sugestaoDeTema: {
           ...fields.sugestaoDeTema,
           value: userData.sugestaoDeTema
@@ -122,6 +135,7 @@ function SuggestTheme() {
     setLoading(true)
     axios.post('/themes', {
       whatsapp: fields.whatsapp.value.replace(/[)(\s-]/g, ""),
+      emailContato: fields.emailContato.value,
       descricao: fields.descricao.value,
       sugestaoDeTema: fields.sugestaoDeTema.value,
       linksArtigos: fields.linksArtigos.value,
@@ -178,6 +192,20 @@ function SuggestTheme() {
                 placeholder="(00) 91234-5678"
                 inputType="input"
                 inputContentType="tel"
+                fields={fields}
+                setFields={setFields}
+                formValid={formValid}
+                setFormValid={setFormValid}
+                hasInfo
+              />
+
+              <Input
+                value={fields.emailContato.value}
+                inputId="emailContato"
+                inputLabel="E-mail para contato"
+                placeholder= "E-mail"
+                inputType="input"
+                inputContentType="text"
                 fields={fields}
                 setFields={setFields}
                 formValid={formValid}

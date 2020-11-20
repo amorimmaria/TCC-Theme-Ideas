@@ -20,7 +20,8 @@ export default class ThemesController {
       themes.area,
       themes.sugestaoDeTema,
       themes.descricao,
-      themes.linksArtigos
+      themes.linksArtigos,
+      themes.emailContato
 
       from users
       join themes
@@ -82,6 +83,7 @@ static async create(req: Request, res: Response) {
 
   const {
     whatsapp,
+    emailContato,
     tipoDeUsuario,
     curso,
     sugestaoDeTema,
@@ -99,6 +101,7 @@ static async create(req: Request, res: Response) {
 
     const insertedUsersIds = await trx("themes").insert({
       tipoDeUsuario,
+      emailContato,
       curso,
       sugestaoDeTema,
       descricao,
@@ -120,7 +123,7 @@ static async create(req: Request, res: Response) {
 
 static async indexFavourites(req: Request, res: Response) {
   const { page = "1", getAll = false } = req.query
-  // const userid = req.headers.userid
+  // const userid = req.headers.userid //favoritos
 
   const sql = `select
   users.__id AS id,
@@ -131,7 +134,8 @@ static async indexFavourites(req: Request, res: Response) {
   themes.tipoDeUsuario,
   themes.sugestaoDeTema,
   themes.descricao,
-  themes.linksArtigos
+  themes.linksArtigos,
+  themes.emailContato
 
   from users
   join themes

@@ -26,6 +26,7 @@ interface ClassItem {
   name: 'string',
   avatar: string,
   whatsapp: number,
+  emailContato: string,
   sugestaoDeTema: string,
   tipoDeUsuario: string,
   curso: string,
@@ -225,6 +226,7 @@ function SearchTheme() {
                         themeSugestaoDeTema={currentClass.sugestaoDeTema}
                         themeTipoDeUsuario={currentClass.tipoDeUsuario}
                         themeLinksArtigos={currentClass.linksArtigos}
+                        themeEmailContato={currentClass.emailContato}
                         themeWhatsapp={currentClass.whatsapp}
                       />
                     )
@@ -240,6 +242,7 @@ function SearchTheme() {
                       themeSugestaoDeTema={currentClass.sugestaoDeTema}
                       themeTipoDeUsuario={currentClass.tipoDeUsuario}
                       themeLinksArtigos={currentClass.linksArtigos}
+                      themeEmailContato={currentClass.emailContato}
                       themeWhatsapp={currentClass.whatsapp}
                     />
                   )

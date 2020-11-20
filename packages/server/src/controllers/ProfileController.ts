@@ -19,7 +19,7 @@ export default class ProfileController {
         .first()
 
       const classData = await trx("themes")
-        .select("curso", "sugestaoDeTema", "descricao", "area", "linksArtigos" )
+        .select("emailContato", "curso", "sugestaoDeTema", "descricao", "area", "linksArtigos" )
         .where("__user_id", "=", userID)
 
       let themeData: any[] = []
@@ -50,6 +50,7 @@ static async update(req: Request, res: Response) {
   const {
     avatar,
     whatsapp,
+    emailContato,
     curso,
     sugestaoDeTema,
     descricao,
@@ -84,6 +85,7 @@ static async update(req: Request, res: Response) {
         await trx("themes")
           .where("__user_id", "=", userID)
           .update({
+            emailContato,
             curso,
             sugestaoDeTema,
             descricao,

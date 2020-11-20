@@ -14,6 +14,7 @@ export interface FormFields {
 export interface ProfileData {
   area: string;
   tipoDeUsuario: string;
+  emailContato: string;
   curso: string;
   linksArtigos: string;
   descricao: string;

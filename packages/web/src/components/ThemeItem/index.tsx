@@ -4,7 +4,7 @@ import axios from '../../axios-config'
 // Components
 
 // Images
-import whatsappIcon from '../../assets/images/icons/whatsapp.svg'
+import EmailIcon from '../../assets/images/icons/email.png'
 import noAvatarImg from '../../assets/images/sem-avatar.svg'
 
 // CSS styles
@@ -17,6 +17,7 @@ interface ThemeItemProps {
   themeName: string,
   themeCurso: string,
   themeArea: string,
+  themeEmailContato: string,
   themeTipoDeUsuario: string,
   themeSugestaoDeTema: string,
   themeDescricao: string,
@@ -55,10 +56,10 @@ const ThemeItem: React.FC<ThemeItemProps> = React.memo(props => {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href={`https://wa.me/${props.themeWhatsapp}`}
+          href={`mailto:${props.themeEmailContato}?subject=Interesse no tema sugerido no TCC Theme Ideas`}
           onClick={createConnection}
         >
-          <img src={whatsappIcon} alt="Ícone do Whatsapp" />
+          <img src={EmailIcon} alt="Ícone do email" />
           Entrar em contato
 
         </a>
