@@ -3,8 +3,8 @@ import React from 'react'
 // Pages
 import Routes from './routes'
 
-import { AuthProvider } from './contexts/auth'
-import { ProcessFinishedContextProvider } from './contexts/process-finished'
+import { AuthProvider } from './hooks/auth'
+import { ProcessFinishedContextProvider } from './hooks/process-finished'
 
 // CSS styles
 import './assets/styles/global.css'

@@ -4,8 +4,8 @@ import { useHistory } from 'react-router-dom'
 // Images
 import checkInBoxImg from '../../../assets/images/icons/success-check-icon.svg'
 
-// Contexts
-import { useProcessFinished } from '../../../contexts/process-finished'
+// hooks
+import { useProcessFinished } from '../../../hooks/process-finished'
 
 // CSS styles
 import './styles.css'

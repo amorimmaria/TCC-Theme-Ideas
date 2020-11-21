@@ -12,8 +12,8 @@ import Select from '../../components/UI/Select'
 import Spinner from '../../components/UI/Spinner'
 import FeedbackModal from '../../components/FeedbackModal'
 
-// Contexts
-import { useAuth } from '../../contexts/auth'
+// hooks
+import { useAuth } from '../../hooks/auth'
 
 // Interfaces
 import { FormFields } from '../../interfaces/forms'

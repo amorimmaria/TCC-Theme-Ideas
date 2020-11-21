@@ -13,9 +13,9 @@ import InputInfo from '../../../components/InputInfo'
 // Images
 import goBackImg from '../../../assets/images/icons/back.svg'
 
-// Contexts
-import { useAuth } from '../../../contexts/auth'
-import { useProcessFinished } from '../../../contexts/process-finished'
+// hooks
+import { useAuth } from '../../../hooks/auth'
+import { useProcessFinished } from '../../../hooks/process-finished'
 
 // CSS styles
 import './styles.css'

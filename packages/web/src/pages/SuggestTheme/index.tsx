@@ -12,8 +12,8 @@ import Spinner from '../../components/UI/Spinner'
 // Images
 import warningIcon from '../../assets/images/icons/warning.svg'
 
-// Contexts
-import { useAuth } from '../../contexts/auth'
+// hooks
+import { useAuth } from '../../hooks/auth'
 
 // CSS styles
 import './styles.css'

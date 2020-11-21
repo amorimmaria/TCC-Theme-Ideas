@@ -8,8 +8,8 @@ import ThemeItem from '../../components/ThemeItem'
 import Select from '../../components/UI/Select'
 import Spinner from '../../components/UI/Spinner'
 
-// Contexts
-import { useAuth } from '../../contexts/auth'
+// hooks
+import { useAuth } from '../../hooks/auth'
 
 // Images
 import notFoundIcon from '../../assets/images/icons/not-found.svg'

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import axios from '../../axios-config'
 
-// Contexts
-import { useAuth } from '../../contexts/auth'
+// hooks
+import { useAuth } from '../../hooks/auth'
 
 // Images
 import logo from '../../assets/images/logo.svg'

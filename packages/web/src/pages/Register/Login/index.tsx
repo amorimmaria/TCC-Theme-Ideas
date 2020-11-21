@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
-// Contexts
-import { useAuth } from '../../../contexts/auth'
+// hooks
+import { useAuth } from '../../../hooks/auth'
 
 // Components
 import InputInfo from '../../../components/InputInfo'
@@ -50,6 +50,8 @@ function Login() {
   const [feedback, setFeedback] = useState('')
   const authContext = useAuth()
 
+  const history = useHistory()
+
   function onInputValueChange(e: React.ChangeEvent<HTMLInputElement>) {
     const inputIdentifier = e.target.id
     const newInputValue = e.target.value
@@ -91,7 +93,10 @@ function Login() {
       rememberUser
     }
     const response = await authContext.signIn(userAccount)
-    if (typeof response === 'string') setFeedback(response)
+    history.push('/menu')
+
+    if (typeof response === 'string')setFeedback(response)
+
   }
 
   function onInfoHover(inputIdentifier: string) {

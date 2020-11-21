@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
-// Contexts
-import { useAuth } from '../../../contexts/auth'
-import { useProcessFinished } from '../../../contexts/process-finished'
+// hooks
+import { useAuth } from '../../../hooks/auth'
+import { useProcessFinished } from '../../../hooks/process-finished'
 
 // Components
 import InputInfo from '../../../components/InputInfo'
