@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+<file path="/home/maria/project-dev/TCC-Theme-Ideas/web/src/__tests__/Login.spec.ts">
+    <testCase name="SignIn page should be able to sign in" duration="4"/>
+    <testCase name="SignIn page should not be able to sign in with invalid credentials" duration="4"/>
+  </file>
+</testExecutions>
