@@ -194,7 +194,7 @@ function Login() {
           <Link to="/auth/cadastro">Cadastre-se</Link>
         </div>
 
-        <p>É de graça <img src={purpleHeartImg} alt="Coração roxo" /></p>
+        <p>É de graça <img src={purpleHeartImg} alt="Coração azul" /></p>
       </footer>
     </div>
   )
