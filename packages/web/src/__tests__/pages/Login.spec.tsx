@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, fireEvent, wait } from '@testing-library/react'
+import { render, fireEvent, waitFor } from '@testing-library/react'
 
 import Login from '../../pages/Register/Login'
 
@@ -43,9 +43,8 @@ describe('SignIn page', () => {
 
     fireEvent.click(buttonElement)
 
-    await wait(() => {
-      // expect(mockedHistoryPush).toHaveBeenCalledWith('/menu')
-      expect(mockedHistoryPush).toHaveBeenCalled()
+    await waitFor(() => {
+      expect(mockedHistoryPush).toHaveBeenCalledWith('/menu')
     })
   })
 
@@ -65,7 +64,7 @@ describe('SignIn page', () => {
 
     fireEvent.click(buttonElement)
 
-    await wait(() => {
+    await waitFor(() => {
       expect(mockedHistoryPush).not.toHaveBeenCalled()
     })
   })
