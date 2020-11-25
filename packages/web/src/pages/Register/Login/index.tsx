@@ -8,7 +8,7 @@ import { useAuth } from '../../../hooks/auth'
 import InputInfo from '../../../components/InputInfo'
 
 // Images
-import purpleHeartImg from '../../../assets/images/icons/purple-heart.svg'
+import blueHeartImg from '../../../assets/images/icons/blue-heart.svg'
 
 // Icons
 import { Icon } from '@iconify/react'
@@ -194,7 +194,7 @@ function Login() {
           <Link to="/auth/cadastro">Cadastre-se</Link>
         </div>
 
-        <p>É de graça <img src={purpleHeartImg} alt="Coração azul" /></p>
+        <p>É de graça <img src={blueHeartImg} alt="Coração azul" /></p>
       </footer>
     </div>
   )

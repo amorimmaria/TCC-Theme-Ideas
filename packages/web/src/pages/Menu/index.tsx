@@ -10,7 +10,7 @@ import logo from '../../assets/images/logo.svg'
 import menu from '../../assets/images/landing.svg'
 import searchIcon from '../../assets/images/icons/lupa.svg'
 import suggestIcon from '../../assets/images/icons/lampada.svg'
-import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg'
+import blueHeartIcon from '../../assets/images/icons/blue-heart.svg'
 import signoutIcon from '../../assets/images/icons/signout.svg'
 
 // CSS styles
@@ -86,7 +86,7 @@ function Menu() {
 
         <span id="total-connections">
           {feedback}
-          {!error && <img src={purpleHeartIcon} alt="Coração roxo" />}
+          {!error && <img src={blueHeartIcon} alt="Coração roxo" />}
         </span>
       </div>
     </div>
