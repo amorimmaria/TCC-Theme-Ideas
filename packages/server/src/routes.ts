@@ -6,6 +6,7 @@ import ThemesController from "./controllers/ThemesController"
 import ConnectionsController from "./controllers/ConnectionsController"
 import AuthenticationController from "./controllers/AuthenticationController"
 import ProfileController from "./controllers/ProfileController"
+import ThemesCadastradosController from "./controllers/ ThemesCadastradosController"
 
 // Middlewares
 import AuthMiddleware from "./middlewares/auth"
@@ -32,6 +33,9 @@ routes.post("/themes", AuthMiddleware, ThemesController.create)
 routes.get("/themes/favourites", AuthMiddleware, ThemesController.indexFavourites)
 routes.post("/themes/favourites", AuthMiddleware, ThemesController.createFavourite)
 routes.delete("/themes/favourites", AuthMiddleware, ThemesController.deleteFavourite)
+
+// Temas Cadatrados
+routes.get("/get-themesCadastrados", AuthMiddleware, ThemesCadastradosController.index)
 
 // Conexões
 routes.get("/connections", ConnectionsController.index)

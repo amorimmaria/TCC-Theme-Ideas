@@ -1,408 +1,180 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import axios from '../../axios-config'
-
-
-// Images
-import noAvatarImg from '../../assets/images/sem-avatar.svg'
+import { useHistory } from 'react-router-dom'
 
 // Components
 import PageHeader from '../../components/PageHeader'
-import Input from '../../components/UI/Input'
-import Select from '../../components/UI/Select'
+import ThemeItem from '../../components/ThemeItem'
 import Spinner from '../../components/UI/Spinner'
-import FeedbackModal from '../../components/FeedbackModal'
 
 // hooks
 import { useAuth } from '../../hooks/auth'
 
-// Interfaces
-import { FormFields } from '../../interfaces/forms'
+// Images
+import notFoundIcon from '../../assets/images/icons/not-found.svg'
 
 // CSS styles
 import './styles.css'
 
-
-const initialFields: FormFields = {
-
-  emailContato: {
-    value: '',
-    validation: /^[a-z-_\d.]{3,}@[a-z]{3,}(\.com|\.br|\.com\.br)$/i,
-    valid: false,
-    info: 'O email precisa estar no formato adequado: exemplo@dominio.com',
-    showInfo: "initial",
-    touched: false
-  },
-  descricao: {
-    value: '',
-    validation: /^[\d\w\sà-ú,.!-]{30,1000}$/,
-    valid: false,
-    info: 'A descricao precisa conter de 30 a 1000 caracteres.',
-    showInfo: "initial",
-    touched: false
-},
-  sugestaoDeTema: {
-    value: '',
-    validation:  /^[\d\w\sà-ú,.!-]{10,300}$/,
-    valid: false,
-    info: 'O tema tem quer ter mais de 10 caracteres',
-    showInfo: "initial",
-    touched: false
-  },
-  linksArtigos: {
-    value: '',
-    validation:  /^[\d\w\sà-ú0-9,/:.!-]{10,1000}$/,
-    valid: false,
-    info: 'O link tem que ser válido',
-    showInfo: "initial",
-    touched: false
-  }
+interface ClassItem {
+  id: number,
+  name: 'string',
+  avatar: string,
+  emailContato: string,
+  sugestaoDeTema: string,
+  tipoDeUsuario: string,
+  curso: string,
+  descricao: string,
+  area: string,
+  linksArtigos: string
 }
 
-function Profile() {
+function SearchTheme() {
 
-  const authContext = useAuth()
-  const [modalType, setModalType] = useState("update-profile")
-  const [fields, setFields] = useState(initialFields)
-  const [formValid, setFormValid] = useState(false)
-  const [avatar, setAvatar] = useState<string>('')
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-
-  const [tipoDeUsuario] = useState('')
-  const [curso, setCurso]= useState('');
-  const [area, setArea]= useState('');
-
+  const [classList, setClassList] = useState<ClassItem[]>([])
   const [loading, setLoading] = useState(false)
-  const [pageReady, setPageReady] = useState(false)
-  const [showModal, setShowModal] = useState(true)
-  const [status, setStatus] = useState("none")
+  const [loadingMore, setLoadingMore] = useState(false)
+  const [loadingFeedback, setLoadingFeedback] = useState('')
+  const [reFetch, setReFetch] = useState(true)
+
+
+  const [pageNumber, setPageNumber] = useState(1)
+  const [hasMore, setHasMore] = useState(true)
+  const observer: any = useRef()
+  const searchMoreNodeRef = useCallback(node => {
+    if (loadingMore) return
+    if (observer.current) observer.current.disconnect()
+    observer.current = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && hasMore) {
+        setPageNumber(pageNumber + 1)
+      }
+    })
+    if (node) observer.current.observe(node)
+  }, [loadingMore, hasMore, classList.length]) //eslint-disable-line
+
+  const history = useHistory()
+  const authContext = useAuth()
 
   useEffect(() => {
-    (function fetchProfileData() {
-      setLoading(true)
-      axios.get("/get-profile", {
-        headers: {
-          authorization: "Bearer " + authContext.token,
-          userid: authContext.user?.__id
-        }
-      })
-
+      (function fetchThemes() {
+        if (reFetch && hasMore) {
+          setReFetch(false)
+          setLoading(true)
+          axios.get('/get-themesCadastrados', {
+            headers: {
+              authorization: 'Bearer ' + authContext.token
+            }
+          })
           .then(response => {
             setLoading(false)
-            const profileData = response.data
-            let emailContato = ''
+            setClassList(response.data.resultsInfo.results)
+            setHasMore(!!response.data.resultsInfo.next)
 
-            if (profileData.emailContato)
-              emailContato = (profileData.emailContato)
-
-            setFields({
-
-              ...fields,
-              emailContato: {
-                ...fields.emailContato,
-                value: profileData.emailContato ? String(profileData.emailContato) : '',
-                validation: !profileData.curso
-                  ? /^[a-z-_\d.]{3,}@[a-z]{3,}(\.com|\.br|\.com\.br)$/i
-                  : fields.emailContato.validation
-              },
-
-              descricao: {
-                ...fields.descricao,
-                value: profileData.descricao ? String(profileData.descricao) : '',
-                validation: !profileData.curso
-                  ? /^[\d\w\sà-ú,.!-]{30,1000}$/
-                  : fields.descricao.validation
-
-              },
-              sugestaoDeTema: {
-                ...fields.sugestaoDeTema,
-                value: profileData.sugestaoDeTema ? String(profileData.sugestaoDeTema) : '',
-                validation: !profileData.curso
-                  ? /^[\d\w\sà-ú,.!-]{10,300}$/
-                  : fields.sugestaoDeTema.validation
-              },
-              linksArtigos: {
-                ...fields.linksArtigos,
-                value: profileData.linksArtigos ? String(profileData.linksArtigos) : '',
-                validation: !profileData.curso
-                  ? /^[\d\w\sà-ú0-9,/:.!-]{10,1000}$/
-                  : fields.linksArtigos.validation
-
-              }
-            })
-
-            if (profileData.avatar) setAvatar(profileData.avatar)
-            else setAvatar(noAvatarImg)
-
-            setName(profileData.name)
-            setEmail(profileData.email)
-
-
-
-            if (profileData.curso)
-              setCurso(profileData.curso)
-
-            if (profileData.area)
-              setArea(profileData.area)
-
-            setPageReady(true)
-
-        })
-        .catch(err => {
-          setLoading(false)
-          console.log(err)
-        })
+          })
+          .catch(() => {
+            setLoading(false)
+            alert('Ocorreu um erro desconhecido ao carregar os temas.')
+            history.replace('/')
+          })
+        }
     })()
-  }, []) // eslint-disable-line
+  }, [reFetch]) // eslint-disable-line
 
-
-  function updateFormStatus() {
-    if (pageReady) {
-      const fieldsNames = Object.keys(fields)
-      let isFormValid = true
-      fieldsNames.forEach(fieldName => {
-        if (isFormValid)
-          isFormValid = fields[fieldName].validation.test(fields[fieldName].value)
-      })
-      setFormValid(isFormValid)
-    }
-  }
-
-  function updateProfile(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    setModalType("update-profile")
-
-    // const parsedemailContato = fields.emailContato.value.replace(/[)(\s-]/g, "")
-    const parsedDescricao = fields.descricao.value
-    const parsedSugestaoDeTema = fields.sugestaoDeTema.value
-    const parsedLinksArtigos = fields.linksArtigos.value
-    const parsedEmailContato = fields.emailContato.value
-
-    const userData = {
-      avatar,
-      emailContato: parsedEmailContato,
-      descricao: parsedDescricao,
-      sugestaoDeTema: parsedSugestaoDeTema,
-      linksArtigos: parsedLinksArtigos,
-      curso,
-      area,
-      tipoDeUsuario,
-    }
-
-    axios.put("/update-profile", userData, {
+  useEffect(() => {
+    setLoadingMore(true)
+    axios.get('/get-themesCadastrados', {
+      params: {
+        page: pageNumber
+      },
       headers: {
-        authorization: "Bearer " + authContext.token,
+        authorization: 'Bearer ' + authContext.token,
         userid: authContext.user?.__id
       }
     })
-      .then(() => {
-        setStatus("success")
-        setShowModal(true)
-        authContext.user = {
-          ...authContext.user!,
-          avatar,
-          emailContato: fields.emailContato.value,
-        }
+      .then(response => {
+        setLoadingMore(false)
+        setClassList([...classList, ...response.data.resultsInfo.results])
+        setHasMore(!!response.data.resultsInfo.next)
+        if(!!!response.data.resultsInfo.next)
+          setLoadingFeedback('Estes são todos os resultados')
       })
       .catch(() => {
-        setStatus("error")
-        setShowModal(true)
+        setLoadingMore(false)
+        setLoadingFeedback('Erro ao buscar mais temas. Tente novamente mais tarde.')
       })
-  }
+  }, [pageNumber]) // eslint-disable-line
 
-  function removeTheme() {
-    setLoading(true)
-    setModalType("remove-theme")
-    axios.delete("/remove-theme", {
-      headers: {
-        authorization: "Bearer " + authContext.token,
-        userid: authContext.user?.__id
-      }
-  })
-    .then(() => {
-      setLoading(false)
-      setStatus("success")
-      setShowModal(true)
-    })
-    .catch(() => {
-      setLoading(false)
-      setStatus("error")
-      setShowModal(true)
-  })
-  }
 
-  const updatedModal = (
-    <FeedbackModal
-      status={status as "success" | "error"}
-      message="O perfil foi atualizado com sucesso!"
-      onCloseModal={() => setShowModal(false)}
-    />
-)
 
-  const updateFailureModal = (
-    <FeedbackModal
-      status={status as "success" | "error"}
-      message="Ocorreu um erro ao atualizar o perfil.
-      Tente novamente mais tarde."
-      onCloseModal={() => setShowModal(false)}
-    />
-  )
+  return (
+    <div id="page-theme-list" className="container">
+      <PageHeader
+        title="Estes são os seus temas cadastrados."
+      >
+      </PageHeader>
 
-  const removedClassModal = (
-    <FeedbackModal
-      status={status as "success" | "error"}
-      message="Tema removido com sucesso!"
-      onCloseModal={() => {
-        setShowModal(false)
-        setCurso("")
-      }}
-    />
-  )
-
-  const removeThemeFailureModal = (
-    <FeedbackModal
-      status={status as "success" | "error"}
-      message="Ocorreu um erro ao remover o tema. Tente novamente mais tarde."
-      onCloseModal={() => setShowModal(false)}
-    />
-  )
-
-  const mainContent = (
-    <div id="theme-profile">
-      <PageHeader title="Meu perfil" />
-
-      <main>
-        <form onSubmit={updateProfile}>
-          {
-            curso && (
+    <main>
+      {
+        loading
+          ? <div className="spinner-resizer"><Spinner /></div>
+          : classList.length > 0
+            ? (
               <>
-                <fieldset>
-                  <legend>
-                    Sobre sugestão de tema
-                      <button
-                        type="button"
-                        onClick={removeTheme}
-                      >Remover tema</button>
-                  </legend>
-                  <div id="suggest-theme">
-                    <Select
-                        selectLabel="Curso"
-                        selected={{ value: curso, label: curso }}
-                        items={[
-                          {value: 'Ciência da Computação', label: 'Ciência da Computação'},
-                          {value: 'Ciências e Tecnologias', label: 'Ciências e Tecnologias'},
-                          {value: 'Design', label: 'Design'},
-                          {value: 'Engenharia de Computação', label: 'Engenharia de Computação'},
-                          {value: 'Engenharia de Software', label: 'Engenharia de Software'},
-                          {value: 'Matemática', label: 'Matemática'},
-                          {value: 'Sistemas de Informação', label: 'Sistemas de Informação'},
-                        ]}
-                        onOptionSelect={selected => {
-                          setCurso(selected.value)
-                          updateFormStatus()
-                        }}
+                {classList.map((currentClass, index) => {
+                  if (index === classList.length - 4)
+                    return (
+                      <ThemeItem
+                        key={index}
+                        themeRef={searchMoreNodeRef}
+                        themeId={currentClass.id}
+                        themePhotoURL={currentClass.avatar}
+                        themeName={currentClass.name}
+                        themeCurso={currentClass.curso}
+                        themeDescricao={currentClass.descricao}
+                        themeArea={currentClass.area}
+                        themeSugestaoDeTema={currentClass.sugestaoDeTema}
+                        themeTipoDeUsuario={currentClass.tipoDeUsuario}
+                        themeLinksArtigos={currentClass.linksArtigos}
+                        themeEmailContato={currentClass.emailContato}
+                      />
+                    )
+                  return (
+                    <ThemeItem
+                      key={index}
+                      themeId={currentClass.id}
+                      themePhotoURL={currentClass.avatar}
+                      themeName={currentClass.name}
+                      themeCurso={currentClass.curso}
+                      themeDescricao={currentClass.descricao}
+                      themeArea={currentClass.area}
+                      themeSugestaoDeTema={currentClass.sugestaoDeTema}
+                      themeTipoDeUsuario={currentClass.tipoDeUsuario}
+                      themeLinksArtigos={currentClass.linksArtigos}
+                      themeEmailContato={currentClass.emailContato}
                     />
-                    <Input
-                      value={fields.sugestaoDeTema.value}
-                      inputId="sugestaoDeTema"
-                      inputLabel="Sugestão de tema"
-                      inputType="textarea"
-                      inputContentType="text"
-                      fields={fields}
-                      setFields={setFields}
-                      formValid={formValid}
-                      setFormValid={setFormValid}
-                      hasInfo
-                    />
-
-                    <Input
-                      value={fields.descricao.value}
-                      inputId="descricao"
-                      inputLabel="Descrição (max 300 caracteres)"
-                      inputType="textarea"
-                      inputContentType="text"
-                      fields={fields}
-                      setFields={setFields}
-                      formValid={formValid}
-                      setFormValid={setFormValid}
-                      hasInfo
-                    />
-                    <Select
-                        selectLabel="Área"
-                        selected={{ value: area, label: area }}
-                        items={[
-                          {value: 'IoT', label: 'IoT'},
-                          {value: 'Segurança', label: 'Segurança'},
-                          {value: 'Banco de Dados', label: 'Banco de Dados'},
-                          {value: 'Desenvolvimento', label: 'Desenvolvimento'},
-                          {value: 'Engenharia de Software', label: 'Engenharia de Software'},
-                          {value: 'Inteligencia Artificial', label: 'Inteligencia Artificial'},
-                          {value: 'Ciencia de Dados', label: 'Ciencia de Dados'},
-                        ]}
-                        onOptionSelect={selected => {
-                          setArea(selected.value)
-                          updateFormStatus()
-                        }}
-                    />
-                    <Input
-                      value={fields.linksArtigos.value}
-                      inputId="linksArtigos"
-                      inputLabel="Links de Artigos"
-                      inputType="textarea"
-                      inputContentType="text"
-                      fields={fields}
-                      setFields={setFields}
-                      formValid={formValid}
-                      setFormValid={setFormValid}
-                      hasInfo
-                    />
-                  </div>
-                </fieldset>
+                  )
+                })}
+                {
+                  hasMore
+                    ? loadingMore && <div className="spinner-resizer"><Spinner /></div>
+                    : <p id="all-results">{loadingFeedback}</p>
+                }
               </>
             )
-          }
+            : (
+                <section className="no-themes-found">
+                  <header>
+                    Oops! Parece que não foi encontrado nenhum tema <br />
+                    disponível.
+                  </header>
 
-          <footer>
-            <button type="submit" disabled={!formValid || loading}>
-              {
-                loading
-                  ? <div className="spinner-resizer"><Spinner /></div>
-                  : "Salvar modificações"
-              }
-            </button>
-          </footer>
-        </form>
+                  <img src={notFoundIcon} alt="Nenhum tema foi encontrado" />
+                </section>
+            )
+      }
       </main>
     </div>
   )
-
-  return (
-    <>
-      {
-        modalType === "update-profile"
-        ? (
-          showModal && (
-            status === "success"
-              ? updatedModal :
-              status === "error"
-              && updateFailureModal
-          )
-        )
-        : (
-          modalType === "remove-theme"
-          && (
-              showModal && (
-                status === "success"
-                  ? removedClassModal :
-                  status === "error"
-                  && removeThemeFailureModal
-            )
-          )
-        )
-      }
-      { mainContent }
-    </>
-  )
 }
 
-export default Profile
+export default SearchTheme
