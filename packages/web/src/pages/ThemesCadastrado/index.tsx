@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom'
 
 // Components
 import PageHeader from '../../components/PageHeader'
-import ThemeItem from '../../components/ThemeItem'
+import CadastradosItem from '../../components/CadastradosItem'
 import Spinner from '../../components/UI/Spinner'
 
 // hooks
@@ -123,7 +123,7 @@ function SearchTheme() {
                 {classList.map((currentClass, index) => {
                   if (index === classList.length - 4)
                     return (
-                      <ThemeItem
+                      <CadastradosItem
                         key={index}
                         themeRef={searchMoreNodeRef}
                         themeId={currentClass.id}
@@ -139,7 +139,7 @@ function SearchTheme() {
                       />
                     )
                   return (
-                    <ThemeItem
+                    <CadastradosItem
                       key={index}
                       themeId={currentClass.id}
                       themePhotoURL={currentClass.avatar}
