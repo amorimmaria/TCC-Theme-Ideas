@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
+import { Redirect, useHistory } from 'react-router-dom'
 import axios from '../../axios-config'
 
 
@@ -277,7 +277,8 @@ function SuggestTheme() {
             </p>
 
             <button type="submit" disabled={!formValid || loading}>
-              {loading ? <div className="spinner-resizer"><Spinner /></div> : "Salvar sugestão"}
+              {loading ? <div className="spinner-resizer"><Spinner /><Redirect to="/menu"/></div> : "Salvar sugestão" }
+
             </button>
           </footer>
         </form>
