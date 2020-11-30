@@ -7,20 +7,15 @@ import { useAuth } from '../../hooks/auth'
 // Images
 import LixeiraIcon from '../../assets/images/icons/lixeira.png'
 import EditarIcon from '../../assets/images/icons/editar.svg'
-import noAvatarImg from '../../assets/images/sem-avatar.svg'
-
 // CSS styles
 import './styles.css'
 
 
 interface ThemeItemProps {
   themeId: number,
-  themePhotoURL: string,
-  themeName: string,
   themeCurso: string,
   themeArea: string,
   themeEmailContato: string,
-  themeTipoDeUsuario: string,
   themeSugestaoDeTema: string,
   themeDescricao: string,
   themeLinksArtigos: string,
@@ -46,15 +41,6 @@ const CadastradosItem: React.FC<ThemeItemProps> = React.memo(props => {
   return (
     <article className="theme-item" ref={props.themeRef}>
       <header>
-        <img src={
-          props.themePhotoURL
-            ? props.themePhotoURL
-            : noAvatarImg
-        } alt={props.themeName} />
-        <div>
-          <strong>{props.themeName}</strong>
-          <span>{props.themeTipoDeUsuario}</span>
-        </div>
         <span>
           <p><strong>Curso: </strong>{props.themeCurso}</p>
           <p><strong>Sugestão de Tema: </strong>{props.themeSugestaoDeTema}</p>

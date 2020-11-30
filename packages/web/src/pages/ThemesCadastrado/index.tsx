@@ -127,13 +127,10 @@ function SearchTheme() {
                         key={index}
                         themeRef={searchMoreNodeRef}
                         themeId={currentClass.id}
-                        themePhotoURL={currentClass.avatar}
-                        themeName={currentClass.name}
                         themeCurso={currentClass.curso}
                         themeDescricao={currentClass.descricao}
                         themeArea={currentClass.area}
                         themeSugestaoDeTema={currentClass.sugestaoDeTema}
-                        themeTipoDeUsuario={currentClass.tipoDeUsuario}
                         themeLinksArtigos={currentClass.linksArtigos}
                         themeEmailContato={currentClass.emailContato}
                       />
@@ -142,13 +139,10 @@ function SearchTheme() {
                     <CadastradosItem
                       key={index}
                       themeId={currentClass.id}
-                      themePhotoURL={currentClass.avatar}
-                      themeName={currentClass.name}
                       themeCurso={currentClass.curso}
                       themeDescricao={currentClass.descricao}
                       themeArea={currentClass.area}
                       themeSugestaoDeTema={currentClass.sugestaoDeTema}
-                      themeTipoDeUsuario={currentClass.tipoDeUsuario}
                       themeLinksArtigos={currentClass.linksArtigos}
                       themeEmailContato={currentClass.emailContato}
                     />
