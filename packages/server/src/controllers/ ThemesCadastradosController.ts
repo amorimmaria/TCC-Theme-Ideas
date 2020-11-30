@@ -71,5 +71,18 @@ export default class ThemesCadastradosController {
     }
   }
 
+  static async delete(req: Request, res: Response) {
+    const userid  = req.headers.userid as string
+
+    try {
+      await db("themes")
+        .where("__user_id", "=", userid) //apaga todos os temas de um usuário
+        .del()
+
+      return res.status(200).json({ message: "Tema deletado com sucesso." })
+      } catch (error) {
+        return res.status(500).json({ error })
+      }
+    }
 }
 
