@@ -29,7 +29,7 @@ interface ClassItem {
   linksArtigos: string
 }
 
-function SearchTheme() {
+function ThemesCadastrados() {
 
   const [classList, setClassList] = useState<ClassItem[]>([])
   const [loading, setLoading] = useState(false)
@@ -171,4 +171,4 @@ function SearchTheme() {
   )
 }
 
-export default SearchTheme
+export default ThemesCadastrados
