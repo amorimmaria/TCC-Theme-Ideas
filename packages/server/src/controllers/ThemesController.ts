@@ -48,22 +48,16 @@ export default class ThemesController {
         if (tipoDeUsuario) returnSearchItem = s.tipoDeUsuario === tipoDeUsuario
         if (area) returnSearchItem = s.area === area
 
+        if (curso && tipoDeUsuario && area){
+          returnSearchItem =
+            s.curso === curso &&
+            s.tipoDeUsuario === tipoDeUsuario &&
+            s.area === area
+        }
+
         if (curso && area){
           returnSearchItem =
             s.curso === curso &&
-            s.area === area
-        }
-
-         if (curso && tipoDeUsuario && area){
-          returnSearchItem =
-            s.curso === curso &&
-            s.tipoDeUsuario === tipoDeUsuario &&
-            s.area === area
-        }
-
-        if (tipoDeUsuario && area){
-          returnSearchItem =
-            s.tipoDeUsuario === tipoDeUsuario &&
             s.area === area
         }
 
@@ -72,6 +66,12 @@ export default class ThemesController {
             s.curso === curso &&
             s.tipoDeUsuario === tipoDeUsuario
 
+        }
+
+        if (tipoDeUsuario && area){
+          returnSearchItem =
+            s.tipoDeUsuario === tipoDeUsuario &&
+            s.area === area
         }
 
         if (returnSearchItem) return s
