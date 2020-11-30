@@ -67,10 +67,11 @@ export default class ThemesController {
             s.area === area
         }
 
-        if (tipoDeUsuario && curso){
+        if (curso && tipoDeUsuario ){
           returnSearchItem =
-            s.tipoDeUsuario === tipoDeUsuario &&
-            s.curso === curso
+            s.curso === curso &&
+            s.tipoDeUsuario === tipoDeUsuario
+
         }
 
         if (returnSearchItem) return s
