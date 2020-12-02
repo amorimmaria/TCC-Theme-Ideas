@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import axios from '../../axios-config'
+import { useHistory } from 'react-router-dom'
 
 // hooks
 import { useAuth } from '../../hooks/auth'
@@ -11,6 +12,7 @@ import EditarIcon from '../../assets/images/icons/editar.svg'
 import './styles.css'
 import { Redirect } from 'react-router-dom'
 
+import FeedbackModal from '../../components/FeedbackModal'
 
 interface ThemeItemProps {
   themeId: number,
@@ -24,13 +26,19 @@ interface ThemeItemProps {
 
 }
 
-const CadastradosItem: React.FC<ThemeItemProps> = React.memo(props => {
 
+
+const CadastradosItem: React.FC<ThemeItemProps> = React.memo(props => {
+  const history = useHistory()
   const authContext = useAuth()
+  const [modalType, setModalType] = useState("remove-theme")
+  const [loading, setLoading] = useState(false)
+  const [showModal, setShowModal] = useState(true)
+  const [status, setStatus] = useState("none")
 
   function removeTheme() {
-    // setLoading(true)
-    // setModalType("remove-theme")
+    setLoading(true)
+    setModalType("remove-theme")
     axios.delete("/remove-themesCadastrados", {
 
       headers: {
@@ -39,8 +47,37 @@ const CadastradosItem: React.FC<ThemeItemProps> = React.memo(props => {
         courseTheme: props.themeSugestaoDeTema
       },
     })
+    .then(() => {
+      setLoading(false)
+      setStatus("success")
+      setShowModal(true)
+    })
+    .catch(() => {
+        setLoading(false)
+        setStatus("error")
+        setShowModal(true)
+    })
 
   }
+
+  const removedThemeModal = (
+    <FeedbackModal
+      status={status as "success" | "error"}
+      message="Tema removido com sucesso!"
+      onCloseModal={() => {
+        setShowModal(false)
+        history.replace('/')
+      }}
+    />
+  )
+
+  const removeThemeFailureModal = (
+    <FeedbackModal
+      status={status as "success" | "error"}
+      message="Ocorreu um erro ao remover o tema. Tente novamente mais tarde."
+      onCloseModal={() => setShowModal(false)}
+    />
+  )
 
   return (
     <article className="theme-item" ref={props.themeRef}>
@@ -68,10 +105,24 @@ const CadastradosItem: React.FC<ThemeItemProps> = React.memo(props => {
             <img src={LixeiraIcon} alt="Ícone da lixeira" />
             Remover tema
           </a>
+          <>
+            {
+              modalType === "remove-theme"
+              && (
+                  showModal && (
+                    status === "success"
+                      ? removedThemeModal :
+                      status === "error"
+                      && removeThemeFailureModal
+                  )
+              )
+            }
+          </>
         </div>
       </footer>
     </article>
   )
+
 })
 
 export default CadastradosItem
