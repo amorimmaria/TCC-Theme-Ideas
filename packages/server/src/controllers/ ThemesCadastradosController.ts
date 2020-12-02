@@ -72,11 +72,11 @@ export default class ThemesCadastradosController {
   }
 
   static async delete(req: Request, res: Response) {
-    const userid  = req.headers.userid as string
+    const themeSuggestion = req.headers.coursetheme
 
     try {
-      await db("themes")
-        .where("__user_id", "=", userid) //apaga todos os temas de um usuário
+      await db.table("themes")
+        .where("sugestaoDeTema", themeSuggestion) //apaga todos os temas de um usuário
         .del()
 
       return res.status(200).json({ message: "Tema deletado com sucesso." })

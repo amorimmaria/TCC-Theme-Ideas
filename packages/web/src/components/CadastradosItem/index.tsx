@@ -9,6 +9,7 @@ import LixeiraIcon from '../../assets/images/icons/lixeira.png'
 import EditarIcon from '../../assets/images/icons/editar.svg'
 // CSS styles
 import './styles.css'
+import { Redirect } from 'react-router-dom'
 
 
 interface ThemeItemProps {
@@ -35,9 +36,12 @@ const CadastradosItem: React.FC<ThemeItemProps> = React.memo(props => {
       headers: {
         authorization: "Bearer " + authContext.token,
         userid: authContext.user?.__id,
-      }
+        courseTheme: props.themeSugestaoDeTema
+      },
     })
+
   }
+
   return (
     <article className="theme-item" ref={props.themeRef}>
       <header>
