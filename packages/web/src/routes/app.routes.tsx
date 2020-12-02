@@ -7,6 +7,7 @@ import Profile from '../pages/Profile'
 import SearchTheme from '../pages/SearchTheme'
 import SuggestTheme from '../pages/SuggestTheme'
 import ThemesCadastrado from '../pages/ThemesCadastrado'
+import EditarThemes from '../pages/EditarThemes'
 
 function AppRoutes() {
     return (
@@ -16,6 +17,7 @@ function AppRoutes() {
         <Route path="/search" component={SearchTheme} />
         <Route path="/suggest" component={SuggestTheme} />
         <Route path="/cadastrado" component={ThemesCadastrado} />
+        <Route path="/update" component={EditarThemes}/>
         <Redirect to="/menu"/>
       </Switch>
     )

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from '../../axios-config'
-import { useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 // hooks
 import { useAuth } from '../../hooks/auth'
@@ -10,7 +10,6 @@ import LixeiraIcon from '../../assets/images/icons/lixeira.png'
 import EditarIcon from '../../assets/images/icons/editar.svg'
 // CSS styles
 import './styles.css'
-import { Redirect } from 'react-router-dom'
 
 import FeedbackModal from '../../components/FeedbackModal'
 
@@ -25,7 +24,6 @@ interface ThemeItemProps {
   themeRef?: any
 
 }
-
 
 
 const CadastradosItem: React.FC<ThemeItemProps> = React.memo(props => {
@@ -45,7 +43,7 @@ const CadastradosItem: React.FC<ThemeItemProps> = React.memo(props => {
         authorization: "Bearer " + authContext.token,
         userid: authContext.user?.__id,
         courseTheme: props.themeSugestaoDeTema
-      },
+      }
     })
     .then(() => {
       setLoading(false)
@@ -92,11 +90,11 @@ const CadastradosItem: React.FC<ThemeItemProps> = React.memo(props => {
       </header>
       <footer>
         <div id="buttons">
-          <a className="editar"
-            onClick={removeTheme}
-          >
-            <img src={EditarIcon} alt="Ícone da lixeira" />
-            Editar tema
+          <a className="editar">
+            <Link to="/update" className="editar">
+              <img src={EditarIcon} alt="Ícone da lixeira" />
+              Editar tema
+            </Link>
           </a>
 
           <a className="lixeira"
