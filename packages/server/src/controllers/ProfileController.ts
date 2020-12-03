@@ -37,6 +37,7 @@ export default class ProfileController {
         ...classData[0],
         themes: [...themeData] // Acho que ñ precisa
       }
+      console.log(classData)
 
       await trx.commit()
       return res.status(200).json(profileData)
