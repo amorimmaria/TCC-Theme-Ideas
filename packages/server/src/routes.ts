@@ -36,6 +36,7 @@ routes.delete("/themes/favourites", AuthMiddleware, ThemesController.deleteFavou
 
 // Temas Cadatrados
 routes.get("/get-themesCadastrados", AuthMiddleware, ThemesCadastradosController.index)
+routes.put("/update-themeCadastrados", AuthMiddleware, ThemesCadastradosController.update)
 routes.delete("/remove-themesCadastrados", AuthMiddleware, ThemesCadastradosController.delete)
 
 // Conexões
