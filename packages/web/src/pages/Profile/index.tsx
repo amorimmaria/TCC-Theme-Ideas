@@ -119,8 +119,6 @@ function Profile() {
         }
     }
 
-
-
     function uploadAvatar() {
         const fileInput = document.getElementById('upload-avatar')! as HTMLInputElement
         fileInput.click()

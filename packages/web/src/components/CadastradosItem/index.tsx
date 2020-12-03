@@ -26,7 +26,6 @@ interface ThemeItemProps {
 
 }
 
-
 const CadastradosItem: React.FC<ThemeItemProps> = React.memo(props => {
   const history = useHistory()
   const authContext = useAuth()

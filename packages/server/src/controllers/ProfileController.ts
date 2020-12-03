@@ -35,9 +35,8 @@ export default class ProfileController {
       const profileData = {
         ...userData,
         ...classData[0],
-        themes: [...themeData] // Acho que ñ precisa
+        themes: [...themeData]
       }
-      console.log(classData)
 
       await trx.commit()
       return res.status(200).json(profileData)

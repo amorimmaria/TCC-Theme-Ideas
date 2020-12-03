@@ -82,14 +82,11 @@ export default class ThemesCadastradosController {
 
     } = req.body
 
-    // const userID = req.headers.userid as string
-
-    // if (!userID) return res.status(400).json({ error: "ID do usuário não recebido." })
     const themeId = req.headers.themeId as string
     const trx = await db.transaction()
 
     try {
-        // Atualizando dados do usuário
+        // Atualizando dados do tema
       await trx("themes")
         .where("id", themeId)
         .update({
@@ -101,26 +98,6 @@ export default class ThemesCadastradosController {
           linksArtigos
         })
 
-      // if (curso) {
-      //   const fetchedClassIds = await trx("themes")
-      //     .select("id")
-      //     .where("__user_id", "=", userID)
-      //     .distinct()
-
-      //   if (fetchedClassIds.length !== 0 && fetchedClassIds.length === 1) {
-      //       // Atualizando dados do tema
-      //     await trx("themes")
-      //       .where("__user_id", "=", userID)
-      //       .update({
-      //         curso,
-      //         sugestaoDeTema,
-      //         tipoDeUsuario,
-      //         descricao,
-      //         area,
-      //         linksArtigos
-      //       })
-      //   }
-      // }
       await trx.commit()
       return res.status(200).json({ status: "Tema atualizado com sucesso." })
     } catch (err) {
@@ -134,7 +111,7 @@ export default class ThemesCadastradosController {
 
     try {
       await db.table("themes")
-        .where("sugestaoDeTema", themeSuggestion) //apaga todos os temas de um usuário
+        .where("sugestaoDeTema", themeSuggestion)
         .del()
 
       return res.status(200).json({ message: "Tema deletado com sucesso." })
@@ -142,18 +119,6 @@ export default class ThemesCadastradosController {
         return res.status(500).json({ error })
       }
     }
-    // const { userid }  = req.headers
 
-    // try {
-    //   await db("themes")
-    //     .where("__user_id", "=", userid as string)
-    //     .del()
-
-    //     return res.status(200).json({ message: "Tema deletado com sucesso." })
-    //   }
-    //   catch(error) {
-    //     return res.status(500).json({ error })
-    //   }
-    // }
 }
 

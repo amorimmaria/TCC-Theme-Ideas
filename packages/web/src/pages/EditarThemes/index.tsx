@@ -62,7 +62,7 @@ interface HistoryStateProps{
   id: string
 }
 
-function Profile() {
+function EditarThemes() {
 
   const history = useHistory()
   const { state } = history.location
@@ -180,7 +180,6 @@ function Profile() {
     e.preventDefault()
     setModalType("update-profile")
 
-    // const parsedemailContato = fields.emailContato.value.replace(/[)(\s-]/g, "")
     const parsedDescricao = fields.descricao.value
     const parsedSugestaoDeTema = fields.sugestaoDeTema.value
     const parsedLinksArtigos = fields.linksArtigos.value
@@ -220,27 +219,6 @@ function Profile() {
         setShowModal(true)
       })
   }
-
-  // function removeTheme() {
-  //   setLoading(true)
-  //   setModalType("remove-theme")
-  //   axios.delete("/remove-theme", {
-  //     headers: {
-  //       authorization: "Bearer " + authContext.token,
-  //       userid: authContext.user?.__id
-  //     }
-  // })
-  //   .then(() => {
-  //     setLoading(false)
-  //     setStatus("success")
-  //     setShowModal(true)
-  //   })
-  //   .catch(() => {
-  //     setLoading(false)
-  //     setStatus("error")
-  //     setShowModal(true)
-  // })
-  // }
 
   const updatedModal = (
     <FeedbackModal
@@ -416,4 +394,4 @@ function Profile() {
   )
 }
 
-export default Profile
+export default EditarThemes
