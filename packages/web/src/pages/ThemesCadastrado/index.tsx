@@ -126,6 +126,7 @@ function ThemesCadastrados() {
                       <CadastradosItem
                         key={index}
                         themeRef={searchMoreNodeRef}
+                        userId={currentClass.id}
                         themeId={currentClass.id}
                         themeCurso={currentClass.curso}
                         themeDescricao={currentClass.descricao}
@@ -138,6 +139,7 @@ function ThemesCadastrados() {
                   return (
                     <CadastradosItem
                       key={index}
+                      userId={currentClass.id}
                       themeId={currentClass.id}
                       themeCurso={currentClass.curso}
                       themeDescricao={currentClass.descricao}

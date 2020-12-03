@@ -20,7 +20,7 @@ import { FormFields } from '../../interfaces/forms'
 
 // CSS styles
 import './styles.css'
-import SuggestTheme from '../SuggestTheme'
+import { useHistory } from 'react-router-dom'
 
 
 const initialFields: FormFields = {
@@ -58,8 +58,15 @@ const initialFields: FormFields = {
     touched: false
   }
 }
+interface HistoryStateProps{
+  id: string
+}
 
 function Profile() {
+
+  const history = useHistory()
+  const { state } = history.location
+  const historyState = state as HistoryStateProps
 
   const authContext = useAuth()
   const [modalType, setModalType] = useState("update-profile")
@@ -102,7 +109,7 @@ function Profile() {
               emailContato: {
                 ...fields.emailContato,
                 value: profileData.emailContato ? String(profileData.emailContato) : '',
-                validation: !profileData.curso
+                validation: !profileData.emailContato
                   ? /^[a-z-_\d.]{3,}@[a-z]{3,}(\.com|\.br|\.com\.br)$/i
                   : fields.emailContato.validation
               },
@@ -194,7 +201,8 @@ function Profile() {
       headers: {
         authorization: "Bearer " + authContext.token,
         userid: authContext.user?.__id,
-        courseTheme: parsedSugestaoDeTema
+        courseTheme: parsedSugestaoDeTema,
+        themeId: historyState.id
       }
     })
       .then(() => {
@@ -204,6 +212,7 @@ function Profile() {
           ...authContext.user!,
           avatar,
           emailContato: fields.emailContato.value,
+
         }
       })
       .catch(() => {
@@ -212,31 +221,31 @@ function Profile() {
       })
   }
 
-  function removeTheme() {
-    setLoading(true)
-    setModalType("remove-theme")
-    axios.delete("/remove-theme", {
-      headers: {
-        authorization: "Bearer " + authContext.token,
-        userid: authContext.user?.__id
-      }
-  })
-    .then(() => {
-      setLoading(false)
-      setStatus("success")
-      setShowModal(true)
-    })
-    .catch(() => {
-      setLoading(false)
-      setStatus("error")
-      setShowModal(true)
-  })
-  }
+  // function removeTheme() {
+  //   setLoading(true)
+  //   setModalType("remove-theme")
+  //   axios.delete("/remove-theme", {
+  //     headers: {
+  //       authorization: "Bearer " + authContext.token,
+  //       userid: authContext.user?.__id
+  //     }
+  // })
+  //   .then(() => {
+  //     setLoading(false)
+  //     setStatus("success")
+  //     setShowModal(true)
+  //   })
+  //   .catch(() => {
+  //     setLoading(false)
+  //     setStatus("error")
+  //     setShowModal(true)
+  // })
+  // }
 
   const updatedModal = (
     <FeedbackModal
       status={status as "success" | "error"}
-      message="O perfil foi atualizado com sucesso!"
+      message="O tema foi atualizado com sucesso!"
       onCloseModal={() => setShowModal(false)}
     />
 )
@@ -244,7 +253,7 @@ function Profile() {
   const updateFailureModal = (
     <FeedbackModal
       status={status as "success" | "error"}
-      message="Ocorreu um erro ao atualizar o perfil.
+      message="Ocorreu um erro ao atualizar o tema.
       Tente novamente mais tarde."
       onCloseModal={() => setShowModal(false)}
     />
@@ -281,10 +290,10 @@ function Profile() {
                 <fieldset>
                   <legend>
                     Sobre sugestão de tema
-                      <button
+                      {/* <button
                         type="button"
                         onClick={removeTheme}
-                      >Remover tema</button>
+                      >Remover tema</button> */}
                   </legend>
                   <div id="suggest-theme">
                     <Select
