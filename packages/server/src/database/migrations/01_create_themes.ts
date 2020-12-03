@@ -5,7 +5,7 @@ export async function up(knex: Knex) {
     table.increments()
     table.string('tipoDeUsuario').notNullable();
     table.string('curso').notNullable();
-    table.string('sugestaoDeTema').notNullable();
+    table.string('sugestaoDeTema').unique().notNullable();
     table.string('descricao').notNullable();
     table.string('area').notNullable();
     table.string('linksArtigos').notNullable();
