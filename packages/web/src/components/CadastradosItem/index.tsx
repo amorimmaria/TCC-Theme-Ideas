@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState} from 'react'
 import axios from '../../axios-config'
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 // hooks
 import { useAuth } from '../../hooks/auth'
@@ -15,6 +15,7 @@ import FeedbackModal from '../../components/FeedbackModal'
 
 interface ThemeItemProps {
   themeId: number,
+  userId:number,
   themeCurso: string,
   themeArea: string,
   themeEmailContato: string,
@@ -77,6 +78,12 @@ const CadastradosItem: React.FC<ThemeItemProps> = React.memo(props => {
     />
   )
 
+  const navigateToThemeUpdate = useCallback(()=>{
+    history.push('update',{
+      id: props.themeId,
+    })
+  },[history])
+
   return (
     <article className="theme-item" ref={props.themeRef}>
       <header>
@@ -90,11 +97,13 @@ const CadastradosItem: React.FC<ThemeItemProps> = React.memo(props => {
       </header>
       <footer>
         <div id="buttons">
-          <a className="editar">
-            <Link to="/update" className="editar">
+          <a className="editar"  onClick={navigateToThemeUpdate}>
+            {/* <Link to="/update" className="editar">
               <img src={EditarIcon} alt="Ícone da lixeira" />
               Editar tema
-            </Link>
+            </Link> */}
+            <img src={EditarIcon} alt="Ícone da lixeira" />
+              Editar tema
           </a>
 
           <a className="lixeira"
