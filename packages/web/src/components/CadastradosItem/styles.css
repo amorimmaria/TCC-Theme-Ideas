@@ -84,14 +84,14 @@
   background: var(--color-primary-lighter);
 }
 
-.theme-item footer #buttons  a:hover {
+.theme-item footer #buttons  a.editar:hover {
   background: var(--color-primary-light);
 }
 
 .theme-item footer #buttons  a.lixeira{
   background: var(--color-secundary);
 }
-.theme-item footer #buttons  a:hover {
+.theme-item footer #buttons  a.lixeira:hover {
   background: var(--color-secundary-dark);
 }
 
