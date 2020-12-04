@@ -35,11 +35,13 @@ const CadastradosItem: React.FC<ThemeItemProps> = React.memo(props => {
   const [status, setStatus] = useState("none")
 
   function removeTheme() {
+
     setLoading(true)
     setModalType("remove-theme")
     axios.delete("/remove-themesCadastrados", {
 
       headers: {
+        loading,
         authorization: "Bearer " + authContext.token,
         userid: authContext.user?.__id,
         courseTheme: props.themeSugestaoDeTema
@@ -112,6 +114,7 @@ const CadastradosItem: React.FC<ThemeItemProps> = React.memo(props => {
             Remover tema
           </a>
           <>
+
             {
               modalType === "remove-theme"
               && (
