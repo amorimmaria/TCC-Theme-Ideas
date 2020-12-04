@@ -73,8 +73,8 @@ function EditarThemes() {
   const [fields, setFields] = useState(initialFields)
   const [formValid, setFormValid] = useState(false)
   const [avatar, setAvatar] = useState<string>('')
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
+  // const [name, setName] = useState("")
+  // const [email, setEmail] = useState("")
 
   const [tipoDeUsuario] = useState('')
   const [curso, setCurso]= useState('');
@@ -98,10 +98,10 @@ function EditarThemes() {
           .then(response => {
             setLoading(false)
             const profileData = response.data
-            let emailContato = ''
+            // let emailContato = ''
 
-            if (profileData.emailContato)
-              emailContato = (profileData.emailContato)
+            // if (profileData.emailContato)
+            //   emailContato = (profileData.emailContato)
 
             setFields({
 
@@ -142,8 +142,8 @@ function EditarThemes() {
             if (profileData.avatar) setAvatar(profileData.avatar)
             else setAvatar(noAvatarImg)
 
-            setName(profileData.name)
-            setEmail(profileData.email)
+            // setName(profileData.name)
+            // setEmail(profileData.email)
 
 
 
