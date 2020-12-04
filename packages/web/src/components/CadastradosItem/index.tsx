@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useCallback, useState} from 'react'
 import axios from '../../axios-config'
 import { useHistory } from 'react-router-dom'
@@ -35,13 +36,11 @@ const CadastradosItem: React.FC<ThemeItemProps> = React.memo(props => {
   const [status, setStatus] = useState("none")
 
   function removeTheme() {
-
     setLoading(true)
     setModalType("remove-theme")
     axios.delete("/remove-themesCadastrados", {
 
       headers: {
-        loading,
         authorization: "Bearer " + authContext.token,
         userid: authContext.user?.__id,
         courseTheme: props.themeSugestaoDeTema
@@ -83,7 +82,7 @@ const CadastradosItem: React.FC<ThemeItemProps> = React.memo(props => {
     history.push('update',{
       id: props.themeId,
     })
-  },[history])
+  },[history, props]) //add o props
 
   return (
     <article className="theme-item" ref={props.themeRef}>
@@ -114,7 +113,6 @@ const CadastradosItem: React.FC<ThemeItemProps> = React.memo(props => {
             Remover tema
           </a>
           <>
-
             {
               modalType === "remove-theme"
               && (
