@@ -48,7 +48,6 @@ function Profile() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     // const [emailContato, setEmailContato] = useState("")
-
     const [tipoDeUsuario, setTipoDeUsuario] = useState('')
     // const [curso, setCurso]= useState('');
 
