@@ -1,15 +1,12 @@
 import React from 'react'
 import axios from '../../axios-config'
 
-// Components
-
 // Images
 import EmailIcon from '../../assets/images/icons/email.png'
 import noAvatarImg from '../../assets/images/sem-avatar.svg'
 
 // CSS styles
 import './styles.css'
-
 
 interface ThemeItemProps {
   themeId: number,
