@@ -6,13 +6,15 @@ import { useHistory } from 'react-router-dom'
 // hooks
 import { useAuth } from '../../hooks/auth'
 
+// components
+import FeedbackModal from '../../components/FeedbackModal'
+
 // Images
 import LixeiraIcon from '../../assets/images/icons/lixeira.png'
 import EditarIcon from '../../assets/images/icons/editar.svg'
+
 // CSS styles
 import './styles.css'
-
-import FeedbackModal from '../../components/FeedbackModal'
 
 interface ThemeItemProps {
   themeId: number,
