@@ -52,8 +52,8 @@ const Input: React.FC<InputProps> = ({
     const inputIdentifier = e.target.id
     let newInputValue: string = e.target.value
 
-    if (inputIdentifier === "emailContato")
-      newInputValue = (newInputValue)
+    // if (inputIdentifier === "emailContato")
+    //   newInputValue = (newInputValue)
 
     const allFields = Object.keys(fields!)
 
