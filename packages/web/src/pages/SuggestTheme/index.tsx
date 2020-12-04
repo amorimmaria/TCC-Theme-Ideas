@@ -128,6 +128,7 @@ function SuggestTheme() {
       tipoDeUsuario,
     }, {
       headers: {
+        showModal,
         authorization: "Bearer " + authContext.token,
         userid: authContext.user?.__id
       }
