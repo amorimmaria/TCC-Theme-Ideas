@@ -47,10 +47,10 @@ function Profile() {
     const [avatar, setAvatar] = useState<string>('')
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
-    const [emailContato, setEmailContato] = useState("")
+    // const [emailContato, setEmailContato] = useState("")
 
     const [tipoDeUsuario, setTipoDeUsuario] = useState('')
-    const [curso, setCurso]= useState('');
+    // const [curso, setCurso]= useState('');
 
     const [loading, setLoading] = useState(false)
     const [pageReady, setPageReady] = useState(false)
@@ -69,10 +69,10 @@ function Profile() {
                 .then(response => {
                     setLoading(false)
                     const profileData = response.data
-                    let emailContato = ''
+                    // let emailContato = ''
 
-                    if (profileData.emailContato)
-                        emailContato = (profileData.emailContato)
+                    // if (profileData.emailContato)
+                    //     emailContato = (profileData.emailContato)
 
                     setFields({
 
@@ -93,8 +93,8 @@ function Profile() {
                     setName(profileData.name)
                     setEmail(profileData.email)
 
-                    if(profileData.emailContato)
-                      setEmailContato(profileData.emailContato)
+                    // if(profileData.emailContato)
+                    //   setEmailContato(profileData.emailContato)
 
                     setPageReady(true)
 
@@ -192,7 +192,7 @@ function Profile() {
       message="Tema removido com sucesso!"
       onCloseModal={() => {
         setShowModal(false)
-        setCurso("")
+        // setCurso("")
       }}
     />
   )
