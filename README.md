@@ -93,3 +93,6 @@ O TCC Theme Ideas é uma plataforma que  tem como objetivo ajudar alunos de grad
 
 ### Página de buscar tema
 ![Home](img/buscarTema.png)
+
+### Página dos temas cadastrados
+![Home](img/meustemas.png)
