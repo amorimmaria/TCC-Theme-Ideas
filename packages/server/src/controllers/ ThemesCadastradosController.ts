@@ -81,18 +81,17 @@ export default class ThemesCadastradosController {
       linksArtigos
 
     } = req.body
-
-    const themeId = req.headers.themeId as string
+    const idTheme = req.headers.idtheme as string
     const trx = await db.transaction()
 
     try {
-        // Atualizando dados do tema
+
       await trx("themes")
-        .where("id", themeId)
+        .where("id", idTheme)
         .update({
-          tipoDeUsuario,
           curso,
           sugestaoDeTema,
+          tipoDeUsuario,
           descricao,
           area,
           linksArtigos
@@ -118,7 +117,24 @@ export default class ThemesCadastradosController {
       } catch (error) {
         return res.status(500).json({ error })
       }
-    }
+  }
+
+  static async indexTheme (req: Request, res: Response) {
+    const idTheme = req.headers.idtheme as string
+
+    try {
+      const trx = await db.transaction()
+
+    const theme = await trx("themes")
+      .select("id", "curso", "sugestaoDeTema","descricao", "area", "linksArtigos" )
+      .where("id", "=", idTheme)
+
+      await trx.commit();
+      return res.status(200).json(theme)
+  } catch (error) {
+    return res.status(500).json({ error })
+  }
+}
 
 }
 

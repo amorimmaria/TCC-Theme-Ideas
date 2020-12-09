@@ -80,7 +80,7 @@ const CadastradosItem: React.FC<ThemeItemProps> = React.memo(props => {
     />
   )
 
-  const navigateToThemeUpdate = useCallback(()=>{
+   useCallback(()=>{
     history.push('update',{
       id: props.themeId,
     })
@@ -99,11 +99,9 @@ const CadastradosItem: React.FC<ThemeItemProps> = React.memo(props => {
       </header>
       <footer>
         <div id="buttons">
-          <a className="editar"  onClick={navigateToThemeUpdate}>
-            {/* <Link to="/update" className="editar">
-              <img src={EditarIcon} alt="Ícone da lixeira" />
-              Editar tema
-            </Link> */}
+          <a className="editar"  onClick={() => {
+            history.push('update', props.themeId)
+          }}>
             <img src={EditarIcon} alt="Ícone da lixeira" />
               Editar tema
           </a>

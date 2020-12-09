@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react'
 import axios from '../../axios-config'
 
 
-// Images
-import noAvatarImg from '../../assets/images/sem-avatar.svg'
-
 // Components
 import PageHeader from '../../components/PageHeader'
 import Input from '../../components/UI/Input'
@@ -20,19 +17,11 @@ import { FormFields } from '../../interfaces/forms'
 
 // CSS styles
 import './styles.css'
-import { useHistory } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 
 const initialFields: FormFields = {
 
-  emailContato: {
-    value: '',
-    validation: /^[a-z-_\d.]{3,}@[a-z]{3,}(\.com|\.br|\.com\.br)$/i,
-    valid: false,
-    info: 'O email precisa estar no formato adequado: exemplo@dominio.com',
-    showInfo: "initial",
-    touched: false
-  },
   descricao: {
     value: '',
     validation: /^[\d\w\sà-ú,.!-]{30,1000}$/,
@@ -58,62 +47,41 @@ const initialFields: FormFields = {
     touched: false
   }
 }
-interface HistoryStateProps{
-  id: string
-}
+
 
 function EditarThemes() {
 
-  const history = useHistory()
-  const { state } = history.location
-  const historyState = state as HistoryStateProps
+  const location = useLocation();
 
   const authContext = useAuth()
-  const [modalType, setModalType] = useState("update-profile")
+  const [modalType, setModalType] = useState('')
   const [fields, setFields] = useState(initialFields)
   const [formValid, setFormValid] = useState(false)
-  const [avatar, setAvatar] = useState<string>('')
-  // const [name, setName] = useState("")
-  // const [email, setEmail] = useState("")
 
-  const [tipoDeUsuario] = useState('')
   const [curso, setCurso]= useState('');
   const [area, setArea]= useState('');
 
   const [loading, setLoading] = useState(false)
   const [pageReady, setPageReady] = useState(false)
   const [showModal, setShowModal] = useState(true)
-  const [status, setStatus] = useState("none")
+  const [status, setStatus] = useState('')
 
   useEffect(() => {
     (function fetchProfileData() {
       setLoading(true)
-      axios.get("/get-profile", {
+      axios.get("/get-theme", {
         headers: {
           authorization: "Bearer " + authContext.token,
-          userid: authContext.user?.__id
+          idtheme: location.state
         }
       })
-
           .then(response => {
             setLoading(false)
-            const profileData = response.data
-            // let emailContato = ''
-
-            // if (profileData.emailContato)
-            //   emailContato = (profileData.emailContato)
+            const profileData = response.data[0]
 
             setFields({
 
               ...fields,
-              emailContato: {
-                ...fields.emailContato,
-                value: profileData.emailContato ? String(profileData.emailContato) : '',
-                validation: !profileData.emailContato
-                  ? /^[a-z-_\d.]{3,}@[a-z]{3,}(\.com|\.br|\.com\.br)$/i
-                  : fields.emailContato.validation
-              },
-
               descricao: {
                 ...fields.descricao,
                 value: profileData.descricao ? String(profileData.descricao) : '',
@@ -138,14 +106,6 @@ function EditarThemes() {
 
               }
             })
-
-            if (profileData.avatar) setAvatar(profileData.avatar)
-            else setAvatar(noAvatarImg)
-
-            // setName(profileData.name)
-            // setEmail(profileData.email)
-
-
 
             if (profileData.curso)
               setCurso(profileData.curso)
@@ -183,25 +143,20 @@ function EditarThemes() {
     const parsedDescricao = fields.descricao.value
     const parsedSugestaoDeTema = fields.sugestaoDeTema.value
     const parsedLinksArtigos = fields.linksArtigos.value
-    const parsedEmailContato = fields.emailContato.value
 
-    const userData = {
-      avatar,
-      emailContato: parsedEmailContato,
+    const themeData = {
       descricao: parsedDescricao,
       sugestaoDeTema: parsedSugestaoDeTema,
       linksArtigos: parsedLinksArtigos,
       curso,
       area,
-      tipoDeUsuario,
     }
 
-    axios.put("/update-themeCadastrados", userData, {
+    axios.put("/update-themeCadastrados", themeData, {
       headers: {
         authorization: "Bearer " + authContext.token,
         userid: authContext.user?.__id,
-        courseTheme: parsedSugestaoDeTema,
-        themeId: historyState.id
+        idtheme: location.state,
       }
     })
       .then(() => {
@@ -209,9 +164,6 @@ function EditarThemes() {
         setShowModal(true)
         authContext.user = {
           ...authContext.user!,
-          avatar,
-          emailContato: fields.emailContato.value,
-
         }
       })
       .catch(() => {
@@ -237,25 +189,6 @@ function EditarThemes() {
     />
   )
 
-  const removedClassModal = (
-    <FeedbackModal
-      status={status as "success" | "error"}
-      message="Tema removido com sucesso!"
-      onCloseModal={() => {
-        setShowModal(false)
-        setCurso("")
-      }}
-    />
-  )
-
-  const removeThemeFailureModal = (
-    <FeedbackModal
-      status={status as "success" | "error"}
-      message="Ocorreu um erro ao remover o tema. Tente novamente mais tarde."
-      onCloseModal={() => setShowModal(false)}
-    />
-  )
-
   const mainContent = (
     <div id="theme-profile">
       <PageHeader title="Meu perfil" />
@@ -268,10 +201,6 @@ function EditarThemes() {
                 <fieldset>
                   <legend>
                     Sobre sugestão de tema
-                      {/* <button
-                        type="button"
-                        onClick={removeTheme}
-                      >Remover tema</button> */}
                   </legend>
                   <div id="suggest-theme">
                     <Select
@@ -367,29 +296,19 @@ function EditarThemes() {
 
   return (
     <>
-      {
+    {
         modalType === "update-profile"
-        ? (
+        && (
           showModal && (
-            status === "success"
-              ? updatedModal :
-              status === "error"
-              && updateFailureModal
-          )
-        )
-        : (
-          modalType === "remove-theme"
-          && (
-              showModal && (
-                status === "success"
-                  ? removedClassModal :
-                  status === "error"
-                  && removeThemeFailureModal
-            )
+            status === "success" ?
+             updatedModal
+             : status === "error"
+              ? updateFailureModal
+               : updateFailureModal
           )
         )
       }
-      { mainContent }
+    { mainContent }
     </>
   )
 }

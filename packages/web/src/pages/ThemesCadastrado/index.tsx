@@ -23,6 +23,7 @@ interface ClassItem {
   emailContato: string,
   sugestaoDeTema: string,
   tipoDeUsuario: string,
+  themeId: number,
   curso: string,
   descricao: string,
   area: string,
@@ -127,7 +128,7 @@ function ThemesCadastrados() {
                         key={index}
                         themeRef={searchMoreNodeRef}
                         userId={currentClass.id}
-                        themeId={currentClass.id}
+                        themeId={currentClass.themeId}
                         themeCurso={currentClass.curso}
                         themeDescricao={currentClass.descricao}
                         themeArea={currentClass.area}
@@ -140,7 +141,7 @@ function ThemesCadastrados() {
                     <CadastradosItem
                       key={index}
                       userId={currentClass.id}
-                      themeId={currentClass.id}
+                      themeId={currentClass.themeId}
                       themeCurso={currentClass.curso}
                       themeDescricao={currentClass.descricao}
                       themeArea={currentClass.area}
