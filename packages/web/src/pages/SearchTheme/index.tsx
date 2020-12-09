@@ -186,7 +186,7 @@ function SearchTheme() {
             selected={{ value: "", label: "Todas as áreas" }}
             items={[
               {value: "", label: "Todas as áreas"},
-              {value: 'IoT', label: 'IoT'},
+              {value: 'Internet das coisas', label: 'Internet das coisas'},
               {value: 'Segurança', label: 'Segurança'},
               {value: 'Banco de Dados', label: 'Banco de Dados'},
               {value: 'Desenvolvimento', label: 'Desenvolvimento'},

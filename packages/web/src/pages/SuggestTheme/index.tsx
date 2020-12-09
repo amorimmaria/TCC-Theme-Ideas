@@ -246,7 +246,7 @@ function SuggestTheme() {
                   selectLabel="Área"
                   selected={{ value: "Escolha uma opção", label: "Escolha uma opção" }}
                   items={[
-                    {value: 'IoT', label: 'IoT'},
+                    {value: 'Internet das coisas', label: 'Internet das coisas'},
                     {value: 'Segurança', label: 'Segurança'},
                     {value: 'Banco de Dados', label: 'Banco de Dados'},
                     {value: 'Desenvolvimento', label: 'Desenvolvimento'},

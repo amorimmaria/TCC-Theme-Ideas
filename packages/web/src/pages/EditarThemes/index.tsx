@@ -254,7 +254,7 @@ function EditarThemes() {
                         selectLabel="Área"
                         selected={{ value: area, label: area }}
                         items={[
-                          {value: 'IoT', label: 'IoT'},
+                          {value: 'Internet das coisas', label: 'Internet das coisas'},
                           {value: 'Segurança', label: 'Segurança'},
                           {value: 'Banco de Dados', label: 'Banco de Dados'},
                           {value: 'Desenvolvimento', label: 'Desenvolvimento'},
