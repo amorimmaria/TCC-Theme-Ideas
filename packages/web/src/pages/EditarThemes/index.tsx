@@ -201,7 +201,7 @@ function EditarThemes() {
       <main>
         <form onSubmit={updateProfile}>
           {
-            curso && (
+            curso && area && (
               <>
                 <fieldset>
                   <legend>
