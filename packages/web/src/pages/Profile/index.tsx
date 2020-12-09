@@ -24,6 +24,7 @@ import { FormFields } from '../../interfaces/forms'
 
 // CSS styles
 import './styles.css'
+import Select from '../../components/UI/Select'
 
 
 const initialFields: FormFields = {
@@ -91,6 +92,7 @@ function Profile() {
 
                     setName(profileData.name)
                     setEmail(profileData.email)
+                    setTipoDeUsuario(profileData.tipoDeUsuario)
 
                     // if(profileData.emailContato)
                     //   setEmailContato(profileData.emailContato)
@@ -225,7 +227,7 @@ function Profile() {
             </div>
             <div id="profile-avatar-description">
               <p>{name}</p>
-              <p>{tipoDeUsuario ? setTipoDeUsuario : "Discente"}</p>
+              <p>{tipoDeUsuario}</p>
             </div>
           </div>
           <fieldset>
@@ -259,6 +261,23 @@ function Profile() {
               formValid={formValid}
               setFormValid={setFormValid}
               hasInfo
+            />
+
+            <Select
+              selectLabel="Docente ou discente?"
+              selected={{ value: tipoDeUsuario, label:  tipoDeUsuario }}
+              items={[
+                {value: 'Docente', label: 'Docente'},
+                {value: 'Discente', label: 'Discente'}
+              ]}
+
+
+              onOptionSelect={selected => {
+                setTipoDeUsuario(selected.value)
+                updateFormStatus()
+
+              }}
+
             />
 
 
