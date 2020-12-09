@@ -37,7 +37,7 @@ const initialFields: FormFields = {
     value: '',
     validation: /^[Á-Ź\d\w\sà-ú,Á;:/.!-]{30,1000}$/,
     valid: false,
-    info: 'A descricao precisa conter de 50 a 300 caracteres.',
+    info: 'A descricao precisa conter de 30 a 1000 caracteres.',
     showInfo: "initial",
     touched: false
   },
