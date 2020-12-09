@@ -241,7 +241,7 @@ function EditarThemes() {
                     <Input
                       value={fields.descricao.value}
                       inputId="descricao"
-                      inputLabel="Descrição (max 300 caracteres)"
+                      inputLabel="Descrição (max 1000 caracteres)"
                       inputType="textarea"
                       inputContentType="text"
                       fields={fields}
