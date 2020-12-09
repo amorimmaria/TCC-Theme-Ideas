@@ -26,7 +26,7 @@ import { FormFields } from '../../../interfaces/forms'
 const initialFields = {
   name: {
     value: '',
-    validation: /^[a-zà-ú]{3,20}$/i,
+    validation: /^[a-zà-ú\s]{3,20}$/i,
     valid: false,
     info: 'O nome precisa ter entre 3 a 20 caracteres.',
     showInfo: "initial",
@@ -34,7 +34,7 @@ const initialFields = {
   },
   surname: {
     value: '',
-    validation: /^[a-zà-ú]{5,30}$/i,
+    validation: /^[a-zà-ú\s]{5,30}$/i,
     valid: false,
     info: 'O sobrenome precisa ter entre 5 a 30 caracteres',
     showInfo: "initial",
