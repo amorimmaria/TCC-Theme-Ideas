@@ -25,7 +25,7 @@ const initialFields: FormFields = {
 
   descricao: {
     value: '',
-    validation: /^[\d\w\sà-ú,.!-]{30,1000}$/,
+    validation: /^[Á-Ź\d\w\sà-ú,;:/.!-]{30,1000}$/,
     valid: false,
     info: 'A descricao precisa conter de 30 a 1000 caracteres.',
     showInfo: "initial",
@@ -33,7 +33,7 @@ const initialFields: FormFields = {
 },
   sugestaoDeTema: {
     value: '',
-    validation:  /^[\d\w\sà-ú,.!-]{10,300}$/,
+    validation:  /^[Á-Ź\d\w\sà-ú,;:/.!-]{10,300}$/,
     valid: false,
     info: 'O tema tem quer ter mais de 10 caracteres',
     showInfo: "initial",
@@ -88,7 +88,7 @@ function EditarThemes() {
                 ...fields.descricao,
                 value: profileData.descricao ? String(profileData.descricao) : '',
                 validation: !profileData.curso
-                  ? /^[\d\w\sà-ú,.!-]{30,1000}$/
+                  ? /^[Á-Ź\d\w\sà-ú,;:/.!-]{30,1000}$/
                   : fields.descricao.validation
 
               },
@@ -96,7 +96,7 @@ function EditarThemes() {
                 ...fields.sugestaoDeTema,
                 value: profileData.sugestaoDeTema ? String(profileData.sugestaoDeTema) : '',
                 validation: !profileData.curso
-                  ? /^[\d\w\sà-ú,.!-]{10,300}$/
+                  ? /^[Á-Ź\d\w\sà-ú,;:/.!-]{10,300}$/
                   : fields.sugestaoDeTema.validation
               },
               linksArtigos: {

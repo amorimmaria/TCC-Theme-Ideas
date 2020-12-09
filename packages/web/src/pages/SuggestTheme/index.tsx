@@ -35,7 +35,7 @@ const initialFields: FormFields = {
 
   descricao: {
     value: '',
-    validation: /^[\d\w\sà-ú,.!-]{30,1000}$/,
+    validation: /^[Á-Ź\d\w\sà-ú,Á;:/.!-]{30,1000}$/,
     valid: false,
     info: 'A descricao precisa conter de 50 a 300 caracteres.',
     showInfo: "initial",
@@ -44,7 +44,7 @@ const initialFields: FormFields = {
 
   sugestaoDeTema: {
     value: '',
-    validation:  /^[\d\w\sà-ú,.!-]{10,300}$/,
+    validation:  /^[Á-Ź\d\w\sà-ú,;:/.!-]{10,300}$/,
     valid: false,
     info: 'O tema tem quer ter mais de 10 caracteres',
     showInfo: "initial",
