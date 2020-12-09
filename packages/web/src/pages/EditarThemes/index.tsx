@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from '../../axios-config'
+import { useHistory } from 'react-router-dom'
 
 
 // Components
@@ -51,6 +52,7 @@ const initialFields: FormFields = {
 
 function EditarThemes() {
 
+  const history = useHistory()
   const location = useLocation();
 
   const authContext = useAuth()
@@ -176,7 +178,10 @@ function EditarThemes() {
     <FeedbackModal
       status={status as "success" | "error"}
       message="O tema foi atualizado com sucesso!"
-      onCloseModal={() => setShowModal(false)}
+      onCloseModal={() => {
+        setShowModal(false)
+        history.replace('/')
+      }}
     />
 )
 
@@ -296,15 +301,14 @@ function EditarThemes() {
 
   return (
     <>
-    {
+      {
         modalType === "update-profile"
         && (
           showModal && (
-            status === "success" ?
-             updatedModal
-             : status === "error"
-              ? updateFailureModal
-               : updateFailureModal
+            status === "success"
+            ? updatedModal
+            : status === "error"
+            && updateFailureModal
           )
         )
       }
