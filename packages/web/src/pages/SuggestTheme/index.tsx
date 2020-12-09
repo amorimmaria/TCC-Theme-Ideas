@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Redirect, useHistory } from 'react-router-dom'
+import {  useHistory } from 'react-router-dom'
 import axios from '../../axios-config'
 
 
