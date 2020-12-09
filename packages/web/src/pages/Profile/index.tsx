@@ -207,11 +207,13 @@ function Profile() {
   )
 
   const mainContent = (
+
     <div id="theme-profile">
       <PageHeader title="Meu perfil" />
 
       <main>
         <form onSubmit={updateProfile}>
+
           <div id="profile-avatar">
             <div id="profile-avatar-image">
               <img src={avatar} alt="Profile" />
@@ -230,66 +232,68 @@ function Profile() {
               <p>{tipoDeUsuario}</p>
             </div>
           </div>
-          <fieldset>
-            <legend>Seus dados</legend>
-            <Input
-              value={name}
-              inputId="name"
-              inputLabel="Nome"
-              inputType="input"
-              inputContentType="text"
-              disabled
-            />
-            <Input
-              value={email}
-              inputId="email"
-              inputLabel="Email"
-              inputType="input"
-              inputContentType="email"
-              disabled
-            />
+          {
+            tipoDeUsuario && (
+              <>
+                <fieldset>
+                  <legend>Seus dados</legend>
+                  <Input
+                    value={name}
+                    inputId="name"
+                    inputLabel="Nome"
+                    inputType="input"
+                    inputContentType="text"
+                    disabled
+                  />
+                  <Input
+                    value={email}
+                    inputId="email"
+                    inputLabel="Email"
+                    inputType="input"
+                    inputContentType="email"
+                    disabled
+                  />
 
-            <Input
-              value={fields.emailContato.value}
-              inputId="emailContato"
-              inputLabel="E-mail para contato"
-              placeholder= "E-mail"
-              inputType="input"
-              inputContentType="text"
-              fields={fields}
-              setFields={setFields}
-              formValid={formValid}
-              setFormValid={setFormValid}
-              hasInfo
-            />
+                  <Input
+                    value={fields.emailContato.value}
+                    inputId="emailContato"
+                    inputLabel="E-mail para contato"
+                    placeholder= "E-mail"
+                    inputType="input"
+                    inputContentType="text"
+                    fields={fields}
+                    setFields={setFields}
+                    formValid={formValid}
+                    setFormValid={setFormValid}
+                    hasInfo
+                  />
 
-            <Select
-              selectLabel="Docente ou discente?"
-              selected={{ value: tipoDeUsuario, label:  tipoDeUsuario }}
-              items={[
-                {value: 'Docente', label: 'Docente'},
-                {value: 'Discente', label: 'Discente'}
-              ]}
-
-
-              onOptionSelect={selected => {
-                setTipoDeUsuario(selected.value)
-                updateFormStatus()
-
-              }}
-
-            />
-
-
-          </fieldset>
+                  <Select
+                    selectLabel="Docente ou discente?"
+                    selected={{ value: tipoDeUsuario, label:  tipoDeUsuario }}
+                    items={[
+                      {value: 'Docente', label: 'Docente'},
+                      {value: 'Discente', label: 'Discente'}
+                    ]}
+                    onOptionSelect={selected => {
+                      setTipoDeUsuario(selected.value)
+                      updateFormStatus()
+                    }}
+                  />
+                </fieldset>
+              </>
+            )
+          }
             {
               <div id="buttons-container">
-              <Link to="/cadastrado" className="cadastrado">
-                  <img src={cp} alt="Temas cadastrado" />
-                  Meus temas cadastrados
-              </Link>
-          </div>
+                <Link to="/cadastrado" className="cadastrado">
+                    <img src={cp} alt="Temas cadastrado" />
+                    Meus temas cadastrados
+                </Link>
+              </div>
             }
+
+
 
             <footer>
               <button type="submit" disabled={!formValid || loading}>
@@ -302,6 +306,7 @@ function Profile() {
             </footer>
         </form>
       </main>
+      )}
     </div>
   )
 
