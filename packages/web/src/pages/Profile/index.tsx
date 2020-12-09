@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 // Icons
 import { Icon } from '@iconify/react'
 import cameraIcon from '@iconify/icons-mdi/camera'
+import iconFavourites from '../../assets/images/icons/favourites.png'
 
 // Images
 import noAvatarImg from '../../assets/images/sem-avatar.svg'
@@ -289,6 +290,14 @@ function Profile() {
                 <Link to="/cadastrado" className="cadastrado">
                     <img src={cp} alt="Temas cadastrado" />
                     Meus temas cadastrados
+                </Link>
+              </div>
+            }
+            {
+              <div id="buttons-container">
+                <Link to="/favoritos" className="favourites">
+                    <img src={iconFavourites} alt="Temas favoritos" />
+                    Meus favoritos
                 </Link>
               </div>
             }

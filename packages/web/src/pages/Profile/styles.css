@@ -147,6 +147,7 @@
   cursor: not-allowed;
 }
 
+
 #theme-profile main form fieldset .theme-item {
   background: #eee;
   padding: 1.6rem;
@@ -202,24 +203,26 @@
 #theme-profile #buttons-container {
   display: flex;
   justify-content: center;
-  margin: 1rem 0;
+  margin: 2rem 0;
 }
 
 #theme-profile #buttons-container a {
-  width: 22rem;
-  height: 10.4rem;
+  width: 20rem;
+  height: 5.6rem;
+  color: var(--color-primary);
+  border: 0;
   border-radius: 0.8rem;
+  cursor: pointer;
   font: 700 2rem Archivo;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none;
-  color: var(--color-primary);
   transition: background-color 200ms;
+  text-decoration: none;
 }
 
 #theme-profile  #buttons-container a:first-child {
-  margin-right: 1.6rem;
+  margin-right: 4rem;
 }
 
 #theme-profile  #buttons-container a img {
@@ -227,3 +230,7 @@
   margin-right: 2rem;
 }
 
+#theme-profile  #buttons-container a.favourites img {
+  width: 6rem;
+  margin-right: 1rem;
+}
