@@ -287,18 +287,22 @@ function Profile() {
           }
             {
               <div id="buttons-container">
-                <Link to="/cadastrado" className="cadastrado">
-                    <img src={cp} alt="Temas cadastrado" />
-                    Meus temas cadastrados
-                </Link>
+                <a className="cadastrado">
+                  <Link to="/cadastrado">
+                      <img src={cp} alt="Temas cadastrado" />
+                      Meus temas cadastrados
+                  </Link>
+                </a>
               </div>
             }
             {
               <div id="buttons-container">
-                <Link to="/favoritos" className="favourites">
-                    <img src={iconFavourites} alt="Temas favoritos" />
-                    Meus favoritos
-                </Link>
+                <a className="favourites">
+                  <Link to="/favourites">
+                      <img src={iconFavourites} alt="Temas favoritos" />
+                      Meus favoritos
+                  </Link>
+                </a>
               </div>
             }
 
@@ -315,7 +319,6 @@ function Profile() {
             </footer>
         </form>
       </main>
-      )}
     </div>
   )
 

@@ -8,6 +8,7 @@ import SearchTheme from '../pages/SearchTheme'
 import SuggestTheme from '../pages/SuggestTheme'
 import ThemesCadastrado from '../pages/ThemesCadastrado'
 import EditarThemes from '../pages/EditarThemes'
+import Favourites from '../pages/Favourites'
 
 function AppRoutes() {
     return (
@@ -18,6 +19,7 @@ function AppRoutes() {
         <Route path="/suggest" component={SuggestTheme} />
         <Route path="/cadastrado" component={ThemesCadastrado} />
         <Route path="/update" component={EditarThemes}/>
+        <Route path="/favourites" component={Favourites} />
         <Redirect to="/menu"/>
       </Switch>
     )

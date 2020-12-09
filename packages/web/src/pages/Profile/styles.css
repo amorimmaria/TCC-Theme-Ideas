@@ -207,7 +207,7 @@
 }
 
 #theme-profile #buttons-container a {
-  width: 20rem;
+  width: 35rem;
   height: 5.6rem;
   color: var(--color-primary);
   border: 0;
@@ -230,7 +230,3 @@
   margin-right: 2rem;
 }
 
-#theme-profile  #buttons-container a.favourites img {
-  width: 6rem;
-  margin-right: 1rem;
-}
