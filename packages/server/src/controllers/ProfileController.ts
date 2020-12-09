@@ -50,12 +50,7 @@ static async update(req: Request, res: Response) {
   const {
     avatar,
     emailContato,
-    tipoDeUsuario,
-    curso,
-    sugestaoDeTema,
-    descricao,
-    area,
-    linksArtigos
+    tipoDeUsuario
 
   } = req.body
 
@@ -78,26 +73,6 @@ static async update(req: Request, res: Response) {
     .update({
       tipoDeUsuario
     })
-
-    // if (curso) {
-    //   const fetchedClassIds = await trx("themes")
-    //     .select("id")
-    //     .where("__user_id", "=", userID)
-    //     .distinct()
-
-    //   if (fetchedClassIds.length !== 0 && fetchedClassIds.length === 1) {
-    //       // Atualizando dados do tema
-    //     await trx("themes")
-    //       .where("__user_id", "=", userID)
-    //       .update({
-    //         curso,
-    //         sugestaoDeTema,
-    //         descricao,
-    //         area,
-    //         linksArtigos
-    //       })
-    //   }
-    // }
 
     await trx.commit()
     return res.status(200).json({ status: "Perfil atualizado com sucesso." })
