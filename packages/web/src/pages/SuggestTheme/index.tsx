@@ -143,20 +143,23 @@ function SuggestTheme() {
     })
   }
 
-  // const errorModal = (
-  //   <FeedbackModal
-  //     status="error"
-  //     message="Você já cadastrou um tema!"
-  //     onCloseModal={() => history.replace("/menu")}
-  //   />
-  // )
+  const errorModal = (
+    <FeedbackModal
+      status="error"
+      message="Você já cadastrou esse tema!"
+      onCloseModal={() => history.replace("/menu")}
+    />
+  )
 
   const successModal = (
     <FeedbackModal
       status="success"
       message="Tema cadastrado com sucesso!
       Você pode editar informações sobre o tema no seu perfil."
-      onCloseModal={() => history.replace("/menu")}
+      onCloseModal={() => {
+        setShowModal(false)
+        history.replace('/')
+      }}
     />
   )
 
@@ -278,7 +281,7 @@ function SuggestTheme() {
             </p>
 
             <button type="submit" disabled={!formValid || loading}>
-              {loading ? <div className="spinner-resizer"><Spinner /><Redirect to="/menu"/></div> : "Salvar sugestão" }
+              {loading ? <div className="spinner-resizer"><Spinner /></div> : "Salvar sugestão" }
 
             </button>
           </footer>
@@ -290,8 +293,11 @@ function SuggestTheme() {
   return (
     <>
       {
-        hasClass ? successModal :
-        mainContent
+        hasClass
+        ? showModal && errorModal
+        : showModal
+        ? successModal
+        :mainContent
       }
     </>
   )
