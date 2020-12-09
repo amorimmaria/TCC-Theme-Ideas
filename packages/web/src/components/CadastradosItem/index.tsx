@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useCallback, useState} from 'react'
+import React, {  useState } from 'react'
 import axios from '../../axios-config'
 import { useHistory } from 'react-router-dom'
 
@@ -32,9 +32,9 @@ interface ThemeItemProps {
 const CadastradosItem: React.FC<ThemeItemProps> = React.memo(props => {
   const history = useHistory()
   const authContext = useAuth()
-  const [modalType, setModalType] = useState("remove-theme")
+  const [modalType, setModalType] = useState('')
   const [loading, setLoading] = useState(false)
-  const [showModal, setShowModal] = useState(true)
+  const [showModal, setShowModal] = useState(false)
   const [status, setStatus] = useState("none")
 
   function removeTheme() {
@@ -44,7 +44,8 @@ const CadastradosItem: React.FC<ThemeItemProps> = React.memo(props => {
       headers: {
         authorization: "Bearer " + authContext.token,
         userid: authContext.user?.__id,
-        courseTheme: props.themeSugestaoDeTema,
+        themeid: props.themeId,
+        // courseTheme: props.themeSugestaoDeTema,
         loading
       }
     })
@@ -79,12 +80,6 @@ const CadastradosItem: React.FC<ThemeItemProps> = React.memo(props => {
       onCloseModal={() => setShowModal(false)}
     />
   )
-
-   useCallback(()=>{
-    history.push('update',{
-      id: props.themeId,
-    })
-  },[history, props]) //add o props
 
   return (
     <article className="theme-item" ref={props.themeRef}>

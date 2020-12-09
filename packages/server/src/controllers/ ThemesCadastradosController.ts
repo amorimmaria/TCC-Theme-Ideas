@@ -104,13 +104,12 @@ export default class ThemesCadastradosController {
         return commonErrors.internalServerError(res)
     }
   }
-
   static async delete(req: Request, res: Response) {
-    const themeSuggestion = req.headers.coursetheme
+    const idTheme = req.headers.themeid
 
     try {
       await db.table("themes")
-        .where("sugestaoDeTema", themeSuggestion)
+        .where("id", idTheme)
         .del()
 
       return res.status(200).json({ message: "Tema deletado com sucesso." })
@@ -118,6 +117,21 @@ export default class ThemesCadastradosController {
         return res.status(500).json({ error })
       }
   }
+
+
+  // static async delete(req: Request, res: Response) {
+  //   const themeSuggestion = req.headers.coursetheme
+
+  //   try {
+  //     await db.table("themes")
+  //       .where("sugestaoDeTema", themeSuggestion)
+  //       .del()
+
+  //     return res.status(200).json({ message: "Tema deletado com sucesso." })
+  //     } catch (error) {
+  //       return res.status(500).json({ error })
+  //     }
+  // }
 
   static async indexTheme (req: Request, res: Response) {
     const idTheme = req.headers.idtheme as string
