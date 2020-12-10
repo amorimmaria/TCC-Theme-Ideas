@@ -148,27 +148,7 @@ static async create(req: Request, res: Response) {
 
 static async indexFavourites(req: Request, res: Response) {
   const { page = "1", getAll = false } = req.query
-  // const userid = req.headers.userid //favoritos
 
-  // const sql = `select
-  // users.__id AS id,
-  // users.name,
-  // users.avatar,
-  // themes.curso,
-  // themes.area,
-  // themes.tipoDeUsuario,
-  // themes.sugestaoDeTema,
-  // themes.descricao,
-  // themes.linksArtigos,
-  // users.emailContato
-
-  // from users
-  // join themes
-  // on themes.__user_id = "__user_id"
-  // join favourites
-  // on favourites.user_id = "${userid}"
-  // where favourites.favourite_id = users.__id
-  // `
   const sql = `select
   users.__id AS id,
   users.name,
