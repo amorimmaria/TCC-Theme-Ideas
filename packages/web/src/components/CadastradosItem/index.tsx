@@ -45,7 +45,6 @@ const CadastradosItem: React.FC<ThemeItemProps> = React.memo(props => {
         authorization: "Bearer " + authContext.token,
         userid: authContext.user?.__id,
         themeid: props.themeId,
-        // courseTheme: props.themeSugestaoDeTema,
         loading
       }
     })
