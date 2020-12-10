@@ -118,21 +118,6 @@ export default class ThemesCadastradosController {
       }
   }
 
-
-  // static async delete(req: Request, res: Response) {
-  //   const themeSuggestion = req.headers.coursetheme
-
-  //   try {
-  //     await db.table("themes")
-  //       .where("sugestaoDeTema", themeSuggestion)
-  //       .del()
-
-  //     return res.status(200).json({ message: "Tema deletado com sucesso." })
-  //     } catch (error) {
-  //       return res.status(500).json({ error })
-  //     }
-  // }
-
   static async indexTheme (req: Request, res: Response) {
     const idTheme = req.headers.idtheme as string
 
