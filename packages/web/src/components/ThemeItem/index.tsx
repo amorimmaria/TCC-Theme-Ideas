@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from 'react'
 import axios from '../../axios-config'
+import { useHistory } from 'react-router-dom'
 
 // hooks
 import { useAuth } from '../../hooks/auth'
@@ -13,6 +14,7 @@ import unfavouriteHeartImg from '../../assets/images/icons/unfavorite.png'
 
 // CSS styles
 import './styles.css'
+import FeedbackModal from '../FeedbackModal'
 
 interface ThemeItemProps {
   themeId: number,
@@ -31,11 +33,31 @@ interface ThemeItemProps {
 
 const ThemeItem: React.FC<ThemeItemProps> = React.memo(props => {
   const [isFavourited, setIsFavourited] = useState(false)
+  const [status, setStatus] = useState("none")
+  const [showModal, setShowModal] = useState(false)
   const authContext = useAuth()
-
+  const history = useHistory()
   function createConnection() {
     axios.post('/connections', { user_id: props.themeId })
   }
+
+  const removedThemeModal = (
+    <FeedbackModal
+      status={status as "success" | "error"}
+      message="Favorito deletado com sucesso!"
+      onCloseModal={() => {
+        setShowModal(false)
+        history.replace('/')
+      }}
+    />
+  )
+  const removeThemeFailureModal = (
+    <FeedbackModal
+      status={status as "success" | "error"}
+      message="Ocorreu um erro ao remover o tema. Tente novamente mais tarde."
+      onCloseModal={() => setShowModal(false)}
+    />
+  )
   useEffect(() => {
     setIsFavourited(props.isFavourited as boolean)
   }, [props.isFavourited])
@@ -50,19 +72,21 @@ const ThemeItem: React.FC<ThemeItemProps> = React.memo(props => {
     }
 
     if (isFavourited) {
-        axios.delete("/themes/favourites", config)
-            .then(() => (
-              setIsFavourited(!isFavourited),
-              alert("Favorito deletado com sucesso!")
-              ))
-    } else {
-        axios.post("/themes/favourites", null, config)
-            .then(() => (
-              setIsFavourited(!isFavourited),
-              alert("Tema favoritado com sucesso!")
-              ))
-            .catch(() => alert('Tema já favoritado'))
-    }
+      axios.delete("/themes/favourites", config)
+        .then(() => (
+          setIsFavourited(!isFavourited),
+          // alert("Favorito deletado com sucesso!")
+          setStatus("success"),
+          setShowModal(true)
+          ))
+        } else {
+            axios.post("/themes/favourites", null, config)
+              .then(() => (
+                setIsFavourited(!isFavourited),
+                alert("Tema favoritado com sucesso!")
+                ))
+              .catch(() => alert('Tema já favoritado'))
+        }
   }
 
   return (
@@ -106,6 +130,18 @@ const ThemeItem: React.FC<ThemeItemProps> = React.memo(props => {
               }
           />
         </a>
+        <>
+            {
+               (
+                showModal && (
+                  status === "success"
+                    ? removedThemeModal :
+                    status === "error"
+                    && removeThemeFailureModal
+                )
+              )
+            }
+          </>
       </footer>
     </article>
   )
