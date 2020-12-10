@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+/*eslint-disable no-sequences */
 import React, { useEffect, useState } from 'react'
 import axios from '../../axios-config'
 import { useHistory } from 'react-router-dom'
