@@ -22,6 +22,7 @@ interface ClassItem {
   avatar: string,
   emailContato: string,
   sugestaoDeTema: string,
+  themeId: number,
   tipoDeUsuario: string,
   curso: string,
   descricao: string,
@@ -67,14 +68,14 @@ function ThemesFavourites(props: { navigation: any }) {
         setLoading(true)
         axios.get('/themes/favourites', {
           headers: {
-            authorization: 'Bearer ' + authContext.token
+            authorization: 'Bearer ' + authContext.token,
+            userid: authContext.user?.__id,
           }
         })
         .then(response => {
           setLoading(false)
           setClassList(response.data.resultsInfo.results)
           setHasMore(!!response.data.resultsInfo.next)
-
         })
         .catch(() => {
           setLoading(false)
@@ -85,34 +86,29 @@ function ThemesFavourites(props: { navigation: any }) {
   })()
 }, [reFetch]) // eslint-disable-line
 
-useEffect(() => {
-  setLoadingMore(true)
-  axios.get('/themes/favourites', {
-    params: {
-      page: pageNumber
-    },
-    headers: {
-      authorization: 'Bearer ' + authContext.token,
-      userid: authContext.user?.__id
-    }
-  })
-    .then(response => {
-      setLoadingMore(false)
-      setClassList([...classList, ...response.data.resultsInfo.results])
-      setHasMore(!!response.data.resultsInfo.next)
-      if(!!!response.data.resultsInfo.next)
-        setLoadingFeedback('Estes são todos os resultados')
-    })
-    .catch(() => {
-      setLoadingMore(false)
-      setLoadingFeedback('Erro ao buscar mais temas. Tente novamente mais tarde.')
-    })
-}, [pageNumber]) // eslint-disable-line
-
-
-
-
-
+// useEffect(() => {
+//   setLoadingMore(true)
+//   axios.get('/themes/favourites', {
+//     params: {
+//       page: pageNumber
+//     },
+//     headers: {
+//       authorization: 'Bearer ' + authContext.token,
+//       userid: authContext.user?.__id
+//     }
+//   })
+//     .then(response => {
+//       setLoadingMore(false)
+//       setClassList([...classList, ...response.data.resultsInfo.results])
+//       setHasMore(!!response.data.resultsInfo.next)
+//       if(!!!response.data.resultsInfo.next)
+//         setLoadingFeedback('Estes são todos os resultados')
+//     })
+//     .catch(() => {
+//       setLoadingMore(false)
+//       setLoadingFeedback('Erro ao buscar mais temas. Tente novamente mais tarde.')
+//     })
+// }, [pageNumber]) // eslint-disable-line
 
   return (
     <div id="page-theme-list" className="container">
@@ -134,7 +130,7 @@ useEffect(() => {
                       <ThemeItem
                         key={index}
                         themeRef={searchMoreNodeRef}
-                        themeId={currentClass.id}
+                        themeId={currentClass.themeId}
                         themePhotoURL={currentClass.avatar}
                         themeName={currentClass.name}
                         themeCurso={currentClass.curso}
@@ -144,14 +140,14 @@ useEffect(() => {
                         themeTipoDeUsuario={currentClass.tipoDeUsuario}
                         themeLinksArtigos={currentClass.linksArtigos}
                         themeEmailContato={currentClass.emailContato}
-                        isFavourited={favourites.map(f => f.id).includes(currentClass.id)}
+                        isFavourited={!!currentClass.themeId}
                       />
                     )
                   return (
                     <ThemeItem
                       key={index}
                       themeRef={searchMoreNodeRef}
-                      themeId={currentClass.id}
+                      themeId={currentClass.themeId}
                       themePhotoURL={currentClass.avatar}
                       themeName={currentClass.name}
                       themeCurso={currentClass.curso}
@@ -161,7 +157,7 @@ useEffect(() => {
                       themeTipoDeUsuario={currentClass.tipoDeUsuario}
                       themeLinksArtigos={currentClass.linksArtigos}
                       themeEmailContato={currentClass.emailContato}
-                      isFavourited={favourites.map(f => f.id).includes(currentClass.id)}
+                      isFavourited={!!currentClass.themeId}
                     />
                   )
                 })}

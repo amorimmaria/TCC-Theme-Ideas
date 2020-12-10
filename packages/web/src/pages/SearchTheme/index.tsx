@@ -25,6 +25,7 @@ interface ClassItem {
   id: number,
   name: 'string',
   avatar: string,
+  themeId: number,
   emailContato: string,
   sugestaoDeTema: string,
   tipoDeUsuario: string,
@@ -216,7 +217,7 @@ function SearchTheme() {
                       <ThemeItem
                         key={index}
                         themeRef={searchMoreNodeRef}
-                        themeId={currentClass.id}
+                        themeId={currentClass.themeId}
                         themePhotoURL={currentClass.avatar}
                         themeName={currentClass.name}
                         themeCurso={currentClass.curso}
@@ -231,7 +232,7 @@ function SearchTheme() {
                   return (
                     <ThemeItem
                       key={index}
-                      themeId={currentClass.id}
+                      themeId={currentClass.themeId}
                       themePhotoURL={currentClass.avatar}
                       themeName={currentClass.name}
                       themeCurso={currentClass.curso}

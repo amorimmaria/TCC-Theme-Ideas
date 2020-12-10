@@ -10,13 +10,13 @@ export async function up(knex: Knex) {
       .onUpdate("CASCADE")
 
     table.integer("favourite_id")
+      .unique()
       .notNullable()
       .references("__id")
       .inTable("users")
       .onDelete("CASCADE")
       .onUpdate("CASCADE")
 
-    table.string("token")
   })
 }
 

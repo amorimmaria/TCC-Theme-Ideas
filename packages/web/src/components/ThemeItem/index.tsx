@@ -25,19 +25,19 @@ interface ThemeItemProps {
   themeSugestaoDeTema: string,
   themeDescricao: string,
   themeLinksArtigos: string,
-  isFavourited: boolean,
+  isFavourited?: boolean,
   themeRef?: any
 }
 
 const ThemeItem: React.FC<ThemeItemProps> = React.memo(props => {
-  const [isFavourited, setIsFavourited] = useState(props.isFavourited)
+  const [isFavourited, setIsFavourited] = useState(false)
   const authContext = useAuth()
 
   function createConnection() {
     axios.post('/connections', { user_id: props.themeId })
   }
   useEffect(() => {
-    setIsFavourited(props.isFavourited)
+    setIsFavourited(props.isFavourited as boolean)
   }, [props.isFavourited])
 
   function toggleFavourite() {
@@ -51,10 +51,17 @@ const ThemeItem: React.FC<ThemeItemProps> = React.memo(props => {
 
     if (isFavourited) {
         axios.delete("/themes/favourites", config)
-            .then(() => setIsFavourited(!isFavourited))
+            .then(() => (
+              setIsFavourited(!isFavourited),
+              alert("Favorito deletado com sucesso!")
+              ))
     } else {
         axios.post("/themes/favourites", null, config)
-            .then(() => setIsFavourited(!isFavourited))
+            .then(() => (
+              setIsFavourited(!isFavourited),
+              alert("Tema favoritado com sucesso!")
+              ))
+            .catch(() => alert('Tema já favoritado'))
     }
   }
 
@@ -97,7 +104,7 @@ const ThemeItem: React.FC<ThemeItemProps> = React.memo(props => {
                 ? unfavouriteHeartImg
                 : favouriteHeartImg
               }
-              alt="Favoritos" />
+          />
         </a>
       </footer>
     </article>
