@@ -97,7 +97,7 @@ const ThemeItem: React.FC<ThemeItemProps> = React.memo(props => {
                 ? unfavouriteHeartImg
                 : favouriteHeartImg
               }
-          />
+              alt="Favoritos" />
         </a>
       </footer>
     </article>
