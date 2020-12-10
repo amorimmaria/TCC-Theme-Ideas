@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from 'react'
 import axios from '../../axios-config'
 import { Link } from 'react-router-dom'
@@ -233,42 +234,40 @@ function Profile() {
               <p>{tipoDeUsuario}</p>
             </div>
           </div>
-          {
-            tipoDeUsuario && (
-              <>
-                <fieldset>
-                  <legend>Seus dados</legend>
-                  <Input
-                    value={name}
-                    inputId="name"
-                    inputLabel="Nome"
-                    inputType="input"
-                    inputContentType="text"
-                    disabled
-                  />
-                  <Input
-                    value={email}
-                    inputId="email"
-                    inputLabel="Email"
-                    inputType="input"
-                    inputContentType="email"
-                    disabled
-                  />
+            <fieldset>
+              <legend>Seus dados</legend>
+              <Input
+                value={name}
+                inputId="name"
+                inputLabel="Nome"
+                inputType="input"
+                inputContentType="text"
+                disabled
+              />
+              <Input
+                value={email}
+                inputId="email"
+                inputLabel="Email"
+                inputType="input"
+                inputContentType="email"
+                disabled
+              />
 
-                  <Input
-                    value={fields.emailContato.value}
-                    inputId="emailContato"
-                    inputLabel="E-mail para contato"
-                    placeholder= "E-mail"
-                    inputType="input"
-                    inputContentType="text"
-                    fields={fields}
-                    setFields={setFields}
-                    formValid={formValid}
-                    setFormValid={setFormValid}
-                    hasInfo
-                  />
-
+              <Input
+                value={fields.emailContato.value}
+                inputId="emailContato"
+                inputLabel="E-mail para contato"
+                placeholder= "E-mail"
+                inputType="input"
+                inputContentType="text"
+                fields={fields}
+                setFields={setFields}
+                formValid={formValid}
+                setFormValid={setFormValid}
+                hasInfo
+              />
+              {tipoDeUsuario && (
+                <>
                   <Select
                     selectLabel="Docente ou discente?"
                     selected={{ value: tipoDeUsuario, label:  tipoDeUsuario }}
@@ -281,10 +280,10 @@ function Profile() {
                       updateFormStatus()
                     }}
                   />
-                </fieldset>
-              </>
-            )
-          }
+                </>
+              )}
+            </fieldset>
+
             {
               <div id="buttons-container">
                 <a className="cadastrado">
