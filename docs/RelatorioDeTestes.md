@@ -17,6 +17,9 @@
 | Teste |Descrição | Especificação | Resultado |
 |---|---|---|---|
 | **Teste 01: Incluir tema**| O usuário informa na tela sugerir tema todos os dados para cadastrar corretamente uma sugestão de tema, ao clicar em salvar sugestão ele é notificado com uma mensagem de sucesso. Mensagem: Tema cadastrado com sucesso! Você pode editar informações sobre o tema no seu perfil. |  A implementação está de acordo com o especificado.| Ok|
+| **Teste 02: Editar tema**|  O usuário ao acessar seus temas cadastrados, poderá alterar um tema, ao clicar em editar, o usuário terá acesso as informações da qual ele cadastrou e poderá fazer as alterações que são necessárias, ao fazer todas as alterações, o usuário poderá clicar no botão de salvar modificações, ao qual será em seguida notificado com a seguinte mensagem: Tema alterado com sucesso., |  A implementação está de acordo com o especificado.| Ok|
+| **Teste 03: Remover tema**| O usuário ao acessar seus temas cadastradoss, poderá remover um tema, ao clicar em remover, o usuário é notificado com a seguinte mensagem: Tema removido com sucesso.|  A implementação está de acordo com o especificado.| Ok|
+
 
 ### US02 - Buscar tema
 | Teste |Descrição | Especificação | Resultado |
@@ -40,6 +43,14 @@
 | **Teste 01: Favoritar tema**| O usuário acessa a página de buscar tema  e clica no botão do coração, que favorita o tema, ele é notificado com uma mensagem de sucesso. Mensagem: Tema favoritado com sucesso! Você pode ver seus temas favoritados no seu perfil. | A implementação está de acordo com o especificado.| Ok|
 | **Teste 02: Mostrar temas favoritos**| O usuário acessa a página do perfil e clica na opção 'Meus favoritos' onde será redirecionado para a página dos temas favoritados, onde mostrará todos os temas que ele favoritou. | A implementação está de acordo com o especificado.| Ok |
 | **Teste 02: Remover tema dos favoritos**| O usuário acessa a página do perfil e clica na opção 'Meus favoritos' onde será redirecionado para a página dos temas favoritados, onde ele poderá remover um tema dos favoritos, ele será notificado com uma mensagem de sucesso. Mensagem: Favorito deletado com sucesso!| A implementação está de acordo com o especificado.| Ok |
+
+### US06 - Perfil de Usuário
+| Teste |Descrição | Especificação | Resultado |
+|---|---|---|---|
+|**Teste 01: Alterar informações**| O usuário acessa a página de perfil do usuário onde ele poderá editar email de contato e se ele é docente ou discente, ao clicar em Salvar modificações ele é notificado com uma mensagem de sucesso. Mensagem: O perfil foi atualizado com sucesso! | A implementação está de acordo com o especificado.| Ok|
+| **Teste 02: Incluir foto do perfil**| O usuário acessa a página de perfil do usuário onde ele poderá colocar uma foto no perfil, ao clicar em Salvar modificações ele é notificado com uma mensagem de sucesso. Mensagem: O perfil foi atualizado com sucesso! | A implementação está de acordo com o especificado.| Ok|
+|**Teste 03: Acessar a página Meus temas cadastrados**| O usuário clica na opção 'Meus temas cadastrados' onde será redirecionado para a tela dos temas cadastrados, onde ele poderá editar e remover um determinado tema. | A implementação está de acordo com o especificado.| Ok |
+|**Teste 04: Acessar a página Meus favoritos**| O usuário clica na opção 'Meus favoritos' onde será redirecionado para a página dos temas favoritados, onde ele poderá remover um tema dos favoritos. | A implementação está de acordo com o especificado.| Ok |
 
 
 
