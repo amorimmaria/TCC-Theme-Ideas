@@ -92,25 +92,30 @@ const ThemeItem: React.FC<ThemeItemProps> = React.memo(props => {
     }
 
     if (isFavourited) {
+      setModalType("remove-theme")
       axios.delete("/themes/favourites", config)
         .then(() => (
-          setModalType("remove-theme"),
           setIsFavourited(!isFavourited),
-          // alert("Favorito deletado com sucesso!")
           setStatus("success"),
           setShowModal(true)
           ))
-        } else {
-            axios.post("/themes/favourites", null, config)
-              .then(() => (
-                setModalType("favoritar-theme"),
-                setIsFavourited(!isFavourited),
-                // alert("Tema favoritado com sucesso!"),
-                setStatus("success"),
-                setShowModal(true)
-                ))
-              .catch(() => alert('Tema já favoritado'))
-        }
+          .catch(() => {
+            setStatus("error")
+            setShowModal(true)
+          })
+    } else {
+        setModalType("favoritar-theme")
+        axios.post("/themes/favourites", null, config)
+          .then(() => (
+            setIsFavourited(!isFavourited),
+            setStatus("success"),
+            setShowModal(true)
+          ))
+          .catch(() => {
+            setStatus("error")
+            setShowModal(true)
+          })
+    }
   }
 
   return (
@@ -160,7 +165,9 @@ const ThemeItem: React.FC<ThemeItemProps> = React.memo(props => {
               ? (
                 showModal && (
                   status === "success"
-                    && successModal
+                    ? successModal :
+                    status === "error"
+                    && errorModal
                 )
               )
               : (
