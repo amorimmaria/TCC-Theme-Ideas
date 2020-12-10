@@ -35,6 +35,7 @@ const ThemeItem: React.FC<ThemeItemProps> = React.memo(props => {
   const [isFavourited, setIsFavourited] = useState(false)
   const [status, setStatus] = useState("none")
   const [showModal, setShowModal] = useState(false)
+  const [modalType, setModalType] = useState('')
   const authContext = useAuth()
   const history = useHistory()
   function createConnection() {
@@ -58,6 +59,25 @@ const ThemeItem: React.FC<ThemeItemProps> = React.memo(props => {
       onCloseModal={() => setShowModal(false)}
     />
   )
+
+  const successModal = (
+    <FeedbackModal
+      status="success"
+      message="Tema favoritado com sucesso!
+      Você pode ver seus temas favoritados no seu perfil."
+      onCloseModal={() => {
+        setShowModal(false)
+      }}
+    />
+  )
+  const errorModal = (
+    <FeedbackModal
+        status="error"
+        message="Tema já favoritado"
+        onCloseModal={() => history.replace("/menu")}
+    />
+  )
+
   useEffect(() => {
     setIsFavourited(props.isFavourited as boolean)
   }, [props.isFavourited])
@@ -74,6 +94,7 @@ const ThemeItem: React.FC<ThemeItemProps> = React.memo(props => {
     if (isFavourited) {
       axios.delete("/themes/favourites", config)
         .then(() => (
+          setModalType("remove-theme"),
           setIsFavourited(!isFavourited),
           // alert("Favorito deletado com sucesso!")
           setStatus("success"),
@@ -82,8 +103,11 @@ const ThemeItem: React.FC<ThemeItemProps> = React.memo(props => {
         } else {
             axios.post("/themes/favourites", null, config)
               .then(() => (
+                setModalType("favoritar-theme"),
                 setIsFavourited(!isFavourited),
-                alert("Tema favoritado com sucesso!")
+                // alert("Tema favoritado com sucesso!"),
+                setStatus("success"),
+                setShowModal(true)
                 ))
               .catch(() => alert('Tema já favoritado'))
         }
@@ -130,14 +154,24 @@ const ThemeItem: React.FC<ThemeItemProps> = React.memo(props => {
               }
           />
         </a>
-        <>
+          <>
             {
-               (
+              modalType === "favoritar-theme"
+              ? (
                 showModal && (
                   status === "success"
-                    ? removedThemeModal :
-                    status === "error"
-                    && removeThemeFailureModal
+                    && successModal
+                )
+              )
+              : (
+                modalType === "remove-theme"
+                && (
+                    showModal && (
+                      status === "success"
+                        ? removedThemeModal :
+                        status === "error"
+                        && removeThemeFailureModal
+                    )
                 )
               )
             }
