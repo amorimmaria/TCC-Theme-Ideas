@@ -33,10 +33,9 @@ interface ClassItem {
 // Interfaces
 // import  ClassItem  from '../SearchTheme' //eslint-disable
 
-type FavouriteData = [ClassItem[], number | null, number]
+// type FavouriteData = [ClassItem[], number | null, number]
 
 function ThemesFavourites(props: { navigation: any }) {
-  const [favourites, setFavourites] = useState<ClassItem[]>([])
   const [classList, setClassList] = useState<ClassItem[]>([])
   const [loading, setLoading] = useState(false)
   const [loadingMore, setLoadingMore] = useState(false)
@@ -48,6 +47,7 @@ function ThemesFavourites(props: { navigation: any }) {
   const [hasMore, setHasMore] = useState(true)
   const observer: any = useRef()
   const searchMoreNodeRef = useCallback(node => {
+
     if (loadingMore) return
     if (observer.current) observer.current.disconnect()
     observer.current = new IntersectionObserver(entries => {
@@ -70,6 +70,8 @@ function ThemesFavourites(props: { navigation: any }) {
           headers: {
             authorization: 'Bearer ' + authContext.token,
             userid: authContext.user?.__id,
+            setLoadingMore,
+            setLoadingFeedback,
           }
         })
         .then(response => {
