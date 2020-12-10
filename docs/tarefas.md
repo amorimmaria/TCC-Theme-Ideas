@@ -11,8 +11,7 @@ It2      | 27/09/2020  | 10/10/2020 | 09/10/2020   | Jaine | Implementar US00 - 
 It3      | 11/10/2020  | 24/10/2020 | 23/10/2020   | Maria | Implementar US01 - Cadastro de Tema, US02 - Buscar Tema e detalhar US03 - Manter Usuário, Testar  US00 - Home Page
 It4      | 25/10/2020  | 07/11/2020 | 06/11/2020   | Jaine | Implementar US03 - Manter Usuário, US04 - Recuperar Senha, US06 - Perfil do Usuário e atualizar US00 - Home page, US01 - Cadastro de Tema e US02 - Buscar Tema
 It5      | 08/11/2020  | 21/11/2020 | 20/11/2020   | Maria | Adicionar funcionalidade para cadastrar mais de um tema, Adicionar quantidade de temas cadastrados, Adicionar quantidade de conexões, Adicionar funcionalidade para entrar em contato com o e-mail, Testes de unidade do Frontend.
-It6      | 22/11/2020  | 05/12/2020 | 04/12/2020   | Jaine |
-
+It6      | 22/11/2020  | 10/12/2020 | 10/12/2020   | Jaine | Implementar User Story US05 - Favoritar Tema, Adicionar mensagem de sucesso/error ao cadastrar um tema - US01 - Cadastro de Tema, Corrigir o Remover e o Editar temas - US01 - Cadastro de Tema, Adicionar mais opções de filtros -  US02 - Buscar Tema.
 * Observação 1: Cada Iteração de ser cadastrada como Milestones no GitHub.
 * Observação 2: Use este repositório como Modelo.
 
