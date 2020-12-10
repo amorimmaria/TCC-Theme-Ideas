@@ -30,10 +30,6 @@ interface ClassItem {
   linksArtigos: string,
   isFavourited: boolean
 }
-// Interfaces
-// import  ClassItem  from '../SearchTheme' //eslint-disable
-
-// type FavouriteData = [ClassItem[], number | null, number]
 
 function ThemesFavourites(props: { navigation: any }) {
   const [classList, setClassList] = useState<ClassItem[]>([])
@@ -87,30 +83,6 @@ function ThemesFavourites(props: { navigation: any }) {
       }
   })()
 }, [reFetch]) // eslint-disable-line
-
-// useEffect(() => {
-//   setLoadingMore(true)
-//   axios.get('/themes/favourites', {
-//     params: {
-//       page: pageNumber
-//     },
-//     headers: {
-//       authorization: 'Bearer ' + authContext.token,
-//       userid: authContext.user?.__id
-//     }
-//   })
-//     .then(response => {
-//       setLoadingMore(false)
-//       setClassList([...classList, ...response.data.resultsInfo.results])
-//       setHasMore(!!response.data.resultsInfo.next)
-//       if(!!!response.data.resultsInfo.next)
-//         setLoadingFeedback('Estes são todos os resultados')
-//     })
-//     .catch(() => {
-//       setLoadingMore(false)
-//       setLoadingFeedback('Erro ao buscar mais temas. Tente novamente mais tarde.')
-//     })
-// }, [pageNumber]) // eslint-disable-line
 
   return (
     <div id="page-theme-list" className="container">
